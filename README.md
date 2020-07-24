@@ -2,7 +2,7 @@
 Proyecto Integrador Grupo 7
 
 
-#Market Place: Dulce Azalea - Fiestas Temáticas 
+ Market Place: Dulce Azalea - Fiestas Temáticas 
 
 Servicios ofrecidos:
 Estamos en cada detalle de la planificación del día especial a festejar.
@@ -26,7 +26,7 @@ Páginas de inspiración
 
 - https://www.pirulero.com.ar/
 
--https://www.todobonito.com/
+- https://www.todobonito.com/
 
 - https://frog.com.ar/tienda/
 
