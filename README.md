@@ -25,10 +25,15 @@ Que buscan originalidad, y calidad en los productos.
 Páginas de inspiración 
 
 https://www.pirulero.com.ar/
+
 https://www.todobonito.com/
+
 https://frog.com.ar/tienda/
+
 https://www.munki.com.ar/
+
 https://www.candybarlumen.com.ar/
+
 http://www.partyplace.com.ar/
 
 Elegidas por los tipos de productos que ofrece y la estética.
