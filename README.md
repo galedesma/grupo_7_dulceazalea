@@ -2,7 +2,7 @@
 Proyecto Integrador Grupo 7
 
 
-Market Place: Dulce Azalea - Fiestas Temáticas 
+#Market Place: Dulce Azalea - Fiestas Temáticas 
 
 Servicios ofrecidos:
 Estamos en cada detalle de la planificación del día especial a festejar.
@@ -24,17 +24,17 @@ Que buscan originalidad, y calidad en los productos.
 
 Páginas de inspiración 
 
-https://www.pirulero.com.ar/
+- https://www.pirulero.com.ar/
 
-https://www.todobonito.com/
+-https://www.todobonito.com/
 
-https://frog.com.ar/tienda/
+- https://frog.com.ar/tienda/
 
-https://www.munki.com.ar/
+- https://www.munki.com.ar/
 
-https://www.candybarlumen.com.ar/
+- https://www.candybarlumen.com.ar/
 
-http://www.partyplace.com.ar/
+- http://www.partyplace.com.ar/
 
 Elegidas por los tipos de productos que ofrece y la estética.
 
@@ -42,6 +42,6 @@ Elegidas por los tipos de productos que ofrece y la estética.
 
 Breve descripción de los integrantes del equipo
 
--Franco Fallatti, 19 años, estudiante de licenciatura en sistemas en la Universidad Nacional de General Sarmiento.
--Gonzalo Ledesma, 25 años, vive en San Miguel, actualmente estudiante de ingeniería en computación en la Universidad Nacional de Tres de Febrero.
--Nicol Riquelme Valdéz, 27 años, Diseñadora Gráfica, emprendedora.
+- Franco Fallatti, 19 años, estudiante de licenciatura en sistemas en la Universidad Nacional de General Sarmiento.
+- Gonzalo Ledesma, 25 años, vive en San Miguel, actualmente estudiante de ingeniería en computación en la Universidad Nacional de Tres de Febrero.
+- Nicol Riquelme Valdéz, 27 años, Diseñadora Gráfica, emprendedora.
