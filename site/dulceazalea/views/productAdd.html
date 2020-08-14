@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Añadir producto</title>
+    <!-- ETIQUETAS LINK PARA VINCULAR CON FONTAWESOME Y BOOTSTRAP-->
+    <script src="https://kit.fontawesome.com/c20ccd4767.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="../public/stylesheets/productAdd.css">
+</head>
+<body>
+    <header class="container-fluid">
+        <div class="row align-items-center justify-content-around">
+            <div class="col-auto col-sm-2 col-md-2 col-lg-2 logo">
+                <a href=""><img src="../public/img/weebly_image_sample.png" alt="Responsive image" class="img-fluid"></a>
+            </div>
+            <div class="col-2 col-sm-2 col-md-2 col-lg-2 button">
+                <button type="button" class="btn btn-link">Categorías</button>
+            </div>
+            <div class="col-auto col-sm-5 col-md-auto col-lg-auto search">
+                <form action="">
+                    <input type="text " placeholder="Buscar..." class="buscar">
+                    <button type="button" class="icono-busqueda"><i class="fas fa-search "></i></button>
+                </form>
+            </div>
+            <div class="col-2 col-sm-auto col-md-3 col-lg-3 nav">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <a class="navbar-brand" href="#"></a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                      <div class="navbar-nav">
+                        <a class="nav-item nav-link active" href="#"><i class="fas fa-user-circle"></i> Cuenta</a>
+                        <a class="nav-item nav-link active" href="#"><i class="fas fa-shopping-cart"></i> Carrito</a>
+                        <a class="nav-item nav-link active" href="#"><i class="fas fa-question-circle"></i> Ayuda</a>
+                      </div>
+                    </div>
+                  </nav>
+            </div>
+        </div>
+    </header>
+    <section class="container formularioCarga">
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6 align-items-center justify-content-center vistaPrevia">
+                <img src="../public/img/weebly_image_sample.png" class="image-fluid" alt="Responsive image">
+                <form action="/action_page.php">
+                    <label for="img">Select image:</label>
+                    <input type="file" id="img" name="img" accept="image/*">
+                  </form>
+            </div>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6 align-items-center justify-content-center formularioCarga">
+                <form action="validar.php" method="POST">
+                    <ul>
+                        <li>
+                            <p>Nombre del producto: </p>
+                            <textarea name="nombreProducto" id="" cols="30" rows="1"></textarea>
+                        </li>
+                        <li>
+                            <p>Descripción: </p>
+                            <textarea name="descripcion" id="" cols="30" rows="4"></textarea>
+                        </li>
+                        <li>
+                            <p>Producto: </p>
+                            <select name="producto" id="">
+                                <option value="p1">Producto1</option>
+                                <option value="p2">Producto2</option>
+                                <option value="p3">Producto3</option>
+                                <option value="p4">Producto4</option>
+                            </select>
+                        </li>
+                        <li>
+                            <p>Tipo: </p>
+                            <select name="tipo" id="">
+                                <option value="ti1">Tipo1</option>
+                                <option value="ti2">Tipo2</option>
+                                <option value="ti3">Tipo3</option>
+                                <option value="ti4">Tipo4</option>
+                            </select>
+                        </li>
+                        <li>
+                            <p>Tema: </p>
+                            <select name="tema" id="">
+                                <option value="te1">Tema1</option>
+                                <option value="te2">Tema2</option>
+                                <option value="te3">Tema3</option>
+                                <option value="te4">Tema4</option>
+                            </select>
+                        </li>
+                        <li>
+                            <p>Evento</p>
+                            <select name="evento" id="">
+                                <option value="e1">Evento1</option>
+                                <option value="e2">Evento2</option>
+                                <option value="e3">Evento3</option>
+                                <option value="e4">Evento4</option>
+                            </select>
+                        </li>
+                        <li>
+                            <p>Color</p>
+                            <select name="color" id="">
+                                <option value="c1">Color1</option>
+                                <option value="c2">Color2</option>
+                                <option value="c3">Color3</option>
+                                <option value="c4">Color4</option>
+                            </select>
+                        </li>
+                        <li>
+                            <p>Precio: </p>
+                            <input type="number">
+                        </li>
+                        <li>
+                            <p>Stock: </p>
+                            <input type="number" name="" id="">
+                        </li>
+                    </ul>
+                    <button type="submit">Cargar Producto</button>
+                    <button type="reset">Borrar Formulario</button>
+                </form>
+            </div>
+        </div>
+
+    </section>
+    <footer class="conatainer-fluid">
+        <div class="row"> 
+          <div class="col-12 col-md-6 col-lg-3">
+            <h2 id="footer_title">NAVEGACION</h2>
+            <li><a href="">INICIO</a></li>
+            <li><a href="">PRODUCTOS</a></li>
+            <li><a href="">CONTACTOS</a></li>
+            <li><a href="">PREGUNTAS FRECUENTES</a></li>
+            <li><a href="">MI CUENTA</a></li>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3
+          contactos">
+            <h2 id="footer_title">CONTACTOS</h2>
+            <li><a href=""><i class="fab fa-whatsapp"></i>1100000000</a></li>
+            <li><a href=""><i class="fas fa-phone"></i>(011)1500000000</a></li>
+            <li><a href=""><i class="far fa-envelope"></i>ejemplo@gmail.com</a></li>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d841742.3440867211!2d-58.506395042700184!3d-34.50146374504295!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2sar!4v1596893234208!5m2!1ses-419!2sar"
+            class="map"
+            ></iframe>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 redes">
+            <h2 id="footer_title">SEGUINOS</h2>
+            <i class="fab fa-facebook-square" id="icons__footer"></i>
+            <i class="fab fa-instagram" id="icons__footer"></i>
+          </div>
+          <div class="col-12 pagos">
+            <h2 id="footer_title">MEDIOS DE PAGO</h2>
+            <i class="fab fa-cc-mastercard" id="icons__footer"></i>
+            <i class="fab fa-cc-amex" id="icons__footer"></i>
+            <i class="fas fa-money-check-alt" id="icons__footer"></i>
+          </div>
+          <div class="col-12">
+            <h2 id="derechos">
+            ©Copyright Dulce Azalea - 2020, Todos los derechos reservados
+            </h2>
+          </div>
+        </div>  
+      </footer>
+
+
+
+    <!--scripts de bootstrap-->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</body>
+</html>
