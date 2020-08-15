@@ -86,7 +86,6 @@ h1 {
 }
 form #boton {
 	padding: 6px 0px;
-	width: 302px;
 	margin: auto;
 	border-radius: 10px;
 	background-color: var(--color-azul);
@@ -118,6 +117,11 @@ footer .map {
 }
 footer #icons__footer {
 	font-size: 40px;
+}
+footer img {
+	height: 40px;
+	border-radius: 5px;
+	margin-bottom: 5px;
 }
 footer #derechos {
 	background-color: var(--color-azul);

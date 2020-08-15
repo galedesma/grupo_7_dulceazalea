@@ -113,6 +113,11 @@ footer .map {
 footer #icons__footer {
 	font-size: 40px;
 }
+footer img {
+	height: 40px;
+	border-radius: 5px;
+	margin-bottom: 5px;
+}
 footer #derechos {
 	background-color: var(--color-azul);
 	font-size: 15px;

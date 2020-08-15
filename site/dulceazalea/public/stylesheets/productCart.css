@@ -1,6 +1,6 @@
 * {
-    box-sizing: border-box;
-    margin: 0px;
+	box-sizing: border-box;
+	margin: 0px;
 }
 :root {
 	--color-rosa: #fda8bb;
@@ -21,112 +21,119 @@ li {
 /*
 HEADER
 */
-header{
-    background-color: var(--color-rosa);
-    height: 100%;
-    align-items: center;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    vertical-align: middle;
+header {
+	background-color: var(--color-rosa);
+	height: 100%;
+	align-items: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	vertical-align: middle;
 }
-.btn{
-    background-color: var(--color-rosa);
-    border: 1px solid black;
+.btn {
+	background-color: var(--color-rosa);
+	border: 1px solid black;
 }
-.btn-link{
-    color: black;
+.btn-link {
+	color: black;
 }
-header .buscar{
-    max-width: 80%; /*Evita que el botón de búsqueda se coloque debajo de la barra de búsqueda en varios anchos de pantalla*/
-    border-radius: 10px;
-    border: 1px solid black;
+header .buscar {
+	max-width: 80%; /*Evita que el botón de búsqueda se coloque debajo de la barra de búsqueda en varios anchos de pantalla*/
+	border-radius: 10px;
+	border: 1px solid black;
 }
-header .icono-busqueda{
-    border-radius: 10px;
-    border: 1px solid black;
+header .icono-busqueda {
+	border-radius: 10px;
+	border: 1px solid black;
 }
-.fa-question-circle{
-    text-align: right;
+.fa-question-circle {
+	text-align: right;
 }
-.nav{
-    background-color: var(--color-rosa);
+.nav {
+	background-color: var(--color-rosa);
 }
-.navbar-nav{
-    border: 1px solid grey;
-    border-radius: 5px;
+.navbar-nav {
+	border: 1px solid grey;
+	border-radius: 5px;
 }
 /*
 Section (grilla, verMas, inferior)
 */
-section{
-    width: 80%; 
-    padding-top: 15px;
-    padding-bottom: 15px;
+section {
+	width: 80%;
+	padding-top: 15px;
+	padding-bottom: 15px;
 }
-section #unidades{
-    width: 90%;
+section #unidades {
+	width: 90%;
 }
-section .cantidad{
-    margin: 0;
+section .cantidad {
+	margin: 0;
 }
-section .verMas{
-    margin-bottom: 20px;
+section .verMas {
+	margin-bottom: 20px;
 }
-section .inferior .login{
-    border: 1px solid black;
-    padding: 10px;
-    margin-bottom: 20px;
+section .inferior .login {
+	border: 1px solid black;
+	padding: 10px;
+	margin-bottom: 20px;
 }
-section .id, .input{ /*Hace que los campos para llenar ocupen todo el ancho de la ventanita login*/
-    width: 100%;
+section .id,
+.input {
+	/*Hace que los campos para llenar ocupen todo el ancho de la ventanita login*/
+	width: 100%;
 }
 .grid-container {
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-    grid-gap: 1px;
-    background-color: var(--color-azul);
-    padding: 10px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+	display: grid;
+	grid-template-columns: auto auto auto auto;
+	grid-gap: 1px;
+	background-color: var(--color-azul);
+	padding: 10px;
+	margin-top: 20px;
+	margin-bottom: 20px;
 }
 .grid-container > div {
-    background-color: rgba(255, 255, 255, 0.8);
-    text-align: center;
-    padding: 20px 0;
-    font-size: auto;
+	background-color: rgba(255, 255, 255, 0.8);
+	text-align: center;
+	padding: 20px 0;
+	font-size: auto;
 }
 /*
 Footer (superior, medio, inferior)
 */
 footer {
-    background-color: var(--color-celeste);
-    text-align: center;
-  }
-  footer #footer_title {
-    margin-top: 10px;
-  }
-  footer .contactos,
-  .redes {
-    padding-bottom: 10px;
-  }
-  footer .pagos {
-    border-top: solid #000000 1px;
-    padding-bottom: 10px;
-  }
-  footer .map {
-    size: 250px;
-    margin-top: 10px;
-    border: 10px solid white;
-  }
-  footer #icons__footer {
-    font-size: 40px;
-  }
-  footer #derechos {
-    background-color: var(--color-azul);
-    font-size: 15px;
-  }
-  @media (min-width: 992px) {
-    footer .map {
-      width: 100%;
-    }
-  }
+	background-color: var(--color-celeste);
+	text-align: center;
+}
+footer #footer_title {
+	margin-top: 10px;
+}
+footer .contactos,
+.redes {
+	padding-bottom: 10px;
+}
+footer .pagos {
+	border-top: solid #000000 1px;
+	padding-bottom: 10px;
+}
+footer .map {
+	size: 250px;
+	margin-top: 10px;
+	border: 10px solid white;
+}
+footer #icons__footer {
+	font-size: 40px;
+}
+footer img {
+	height: 40px;
+	border-radius: 5px;
+	margin-bottom: 5px;
+}
+footer #derechos {
+	background-color: var(--color-azul);
+	font-size: 15px;
+}
+@media (min-width: 992px) {
+	footer .map {
+		width: 100%;
+	}
+}
