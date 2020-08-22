@@ -41,58 +41,29 @@
 						<h2>principales</h2>
 					</div>
 
+					<% principal.forEach(producto => { %>
 					<div class="col-12 col-md-6 col-lg-3">
 						<div class="productos">
 							<figure>
-								<img src="../img/prod1.jpg" alt="" class="figure" />
+								<img
+									src="/img/products/<%- producto.image %> "
+									alt=""
+									class="figure"
+								/>
 							</figure>
 							<article>
 								<!--precio-->
-								<h2>$6.770</h2>
+								<h2>
+									$ <%= producto.price %>
+								</h2>
 								<!--nombre del producto ??-->
-								<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+								<p>
+									<%= producto.name %>
+								</p>
 							</article>
 						</div>
 					</div>
-					<div class="col-12 col-md-6 col-lg-3">
-						<div class="productos">
-							<figure>
-								<img src="../img/cat2.jpg" alt="" class="figure" />
-							</figure>
-							<article>
-								<!--precio-->
-								<h2>$6.770</h2>
-								<!--nombre del producto ??-->
-								<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-							</article>
-						</div>
-					</div>
-					<div class="col-12 col-md-6 col-lg-3">
-						<div class="productos">
-							<figure>
-								<img src="../img/cat3.jpg" alt="" class="figure" />
-							</figure>
-							<article>
-								<!--precio-->
-								<h2>$6.770</h2>
-								<!--nombre del producto ??-->
-								<p>Cafetera Moulinex Dolce Gusto</p>
-							</article>
-						</div>
-					</div>
-					<div class="col-12 col-md-6 col-lg-3">
-						<div class="productos">
-							<figure>
-								<img src="../img/prod1.jpg" alt="" class="figure" />
-							</figure>
-							<article>
-								<!--precio-->
-								<h2>$6.770</h2>
-								<!--nombre del producto ??-->
-								<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-							</article>
-						</div>
-					</div>
+					<% }) %>
 				</div>
 			</section>
 
@@ -100,31 +71,39 @@
 			<section>
 				<div class="row articulos">
 					<div class="col-12 titulo">
-						<h2>principales</h2>
+						<h2>Ofertas</h2>
 					</div>
 
+					<% ofertas.forEach(producto => { %>
 					<div class="col-12 col-md-6 col-lg-3">
 						<div class="productos">
 							<figure>
-								<img src="../img/cat2.jpg" alt="" class="figure" />
+								<img
+									src="/img/products/<%- producto.image %> "
+									alt=""
+									class="figure"
+								/>
 							</figure>
 							<article>
 								<!--precio-->
-								<h2>$6.770</h2>
+								<h2>
+									$ <%= producto.price %>
+								</h2>
 								<!--nombre del producto ??-->
-								<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+								<p>
+									<%= producto.name %>
+								</p>
 							</article>
 						</div>
 					</div>
-					<div class="col-12 col-md-6 col-lg-3">
+					<% }) %>
+					<!-- <div class="col-12 col-md-6 col-lg-3">
 						<div class="productos">
 							<figure>
 								<img src="../img/cat3.jpg" alt="" class="figure" />
 							</figure>
 							<article>
-								<!--precio-->
 								<h2>$6.770</h2>
-								<!--nombre del producto ??-->
 								<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
 							</article>
 						</div>
@@ -135,9 +114,7 @@
 								<img src="../img/prod1.jpg" alt="" class="figure" />
 							</figure>
 							<article>
-								<!--precio-->
 								<h2>$6.770</h2>
-								<!--nombre del producto ??-->
 								<p>Cafetera Moulinex Dolce Gusto</p>
 							</article>
 						</div>
@@ -148,74 +125,43 @@
 								<img src="../img/cat2.jpg" alt="" class="figure" />
 							</figure>
 							<article>
-								<!--precio-->
 								<h2>$6.770</h2>
-								<!--nombre del producto ??-->
 								<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
 							</article>
 						</div>
-					</div>
+					</div> -->
 				</div>
 			</section>
 			<!-- cat3 -->
 			<section>
 				<div class="row articulos">
 					<div class="col-12 titulo">
-						<h2>principales</h2>
+						<h2>Mas Vendidos</h2>
 					</div>
 
+					<% masVendidos.forEach(producto => { %>
 					<div class="col-12 col-md-6 col-lg-3">
 						<div class="productos">
 							<figure>
-								<img src="../img/cat3.jpg" alt="" class="figure" />
+								<img
+									src="/img/products/<%- producto.image %> "
+									alt=""
+									class="figure"
+								/>
 							</figure>
 							<article>
 								<!--precio-->
-								<h2>$6.770</h2>
+								<h2>
+									$ <%= producto.price %>
+								</h2>
 								<!--nombre del producto ??-->
-								<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+								<p>
+									<%= producto.name %>
+								</p>
 							</article>
 						</div>
 					</div>
-					<div class="col-12 col-md-6 col-lg-3">
-						<div class="productos">
-							<figure>
-								<img src="../img/prod1.jpg" alt="" class="figure" />
-							</figure>
-							<article>
-								<!--precio-->
-								<h2>$6.770</h2>
-								<!--nombre del producto ??-->
-								<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-							</article>
-						</div>
-					</div>
-					<div class="col-12 col-md-6 col-lg-3">
-						<div class="productos">
-							<figure>
-								<img src="../img/cat2.jpg" alt="" class="figure" />
-							</figure>
-							<article>
-								<!--precio-->
-								<h2>$6.770</h2>
-								<!--nombre del producto ??-->
-								<p>Cafetera Moulinex Dolce Gusto</p>
-							</article>
-						</div>
-					</div>
-					<div class="col-12 col-md-6 col-lg-3">
-						<div class="productos">
-							<figure>
-								<img src="../img/cat3.jpg" alt="" class="figure" />
-							</figure>
-							<article>
-								<!--precio-->
-								<h2>$6.770</h2>
-								<!--nombre del producto ??-->
-								<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-							</article>
-						</div>
-					</div>
+					<% }) %>
 				</div>
 			</section>
 		</div>
