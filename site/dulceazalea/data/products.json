@@ -1,0 +1,130 @@
+[
+	{
+		"id": 1,
+		"name": "Producto 1",
+		"price": 500,
+		"category": "principal",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempus nec ante sit amet venenatis. Ut posuere diam nec orci fringilla imperdiet. Mauris tincidunt feugiat felis id tincidunt. Nam in diam turpis. Nullam a dictum justo, ac efficitur augue.",
+		"image": "img-prod1.jpg"
+	},
+	{
+		"id": 2,
+		"name": "Producto 2",
+		"price": 999,
+		"category": "principal",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempus nec ante sit amet venenatis. Ut posuere diam nec orci fringilla imperdiet. Mauris tincidunt feugiat felis id tincidunt. Nam in diam turpis. Nullam a dictum justo, ac efficitur augue.",
+		"image": "img-prod2.jpg"
+	},
+	{
+		"id": 3,
+		"name": "Producto 3",
+		"price": 729,
+		"category": "principal",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempus nec ante sit amet venenatis. Ut posuere diam nec orci fringilla imperdiet. Mauris tincidunt feugiat felis id tincidunt. Nam in diam turpis. Nullam a dictum justo, ac efficitur augue.",
+		"image": "img-prod3.jpg"
+	},
+	{
+		"id": 4,
+		"name": "Producto 4",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempus nec ante sit amet venenatis. Ut posuere diam nec orci fringilla imperdiet. Mauris tincidunt feugiat felis id tincidunt. Nam in diam turpis. Nullam a dictum justo, ac efficitur augue.",
+		"price": 4790,
+		"image": "img-prod4.jpg",
+		"category": "principal"
+	},
+	{
+		"id": 5,
+		"name": "Producto 5",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempus nec ante sit amet venenatis. Ut posuere diam nec orci fringilla imperdiet. Mauris tincidunt feugiat felis id tincidunt. Nam in diam turpis. Nullam a dictum justo, ac efficitur augue.",
+		"price": 3000,
+		"image": "img-prod5.jpg",
+		"category": "mas-vendidos"
+	},
+	{
+		"id": 6,
+		"name": "Producto 6",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempus nec ante sit amet venenatis. Ut posuere diam nec orci fringilla imperdiet. Mauris tincidunt feugiat felis id tincidunt. Nam in diam turpis. Nullam a dictum justo, ac efficitur augue.",
+		"price": 250,
+		"image": "img-prod6.jpg",
+		"category": "masVendidos"
+	},
+	{
+		"id": 7,
+		"name": "Producto 7",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempus nec ante sit amet venenatis. Ut posuere diam nec orci fringilla imperdiet. Mauris tincidunt feugiat felis id tincidunt. Nam in diam turpis. Nullam a dictum justo, ac efficitur augue.",
+		"price": 6700,
+		"image": "img-prod7.jpg",
+		"category": "mas-vendidos"
+	},
+	{
+		"id": 8,
+		"name": "Producto 8",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempus nec ante sit amet venenatis. Ut posuere diam nec orci fringilla imperdiet. Mauris tincidunt feugiat felis id tincidunt. Nam in diam turpis. Nullam a dictum justo, ac efficitur augue.",
+		"price": 8000,
+		"image": "img-prod8.jpg",
+		"category": "mas-vendidos"
+	},
+	{
+		"id": 9,
+		"name": "Producto 9",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempus nec ante sit amet venenatis. Ut posuere diam nec orci fringilla imperdiet. Mauris tincidunt feugiat felis id tincidunt. Nam in diam turpis. Nullam a dictum justo, ac efficitur augue.",
+		"price": 390,
+		"image": "img-prod9.jpg",
+		"category": "ofertas"
+	},
+	{
+		"id": 10,
+		"name": "Producto 10",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempus nec ante sit amet venenatis. Ut posuere diam nec orci fringilla imperdiet. Mauris tincidunt feugiat felis id tincidunt. Nam in diam turpis. Nullam a dictum justo, ac efficitur augue.",
+		"price": 1200,
+		"image": "img-prod10.jpg",
+		"category": "ofertas"
+	},
+	{
+		"id": 11,
+		"name": "Producto 11",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempus nec ante sit amet venenatis. Ut posuere diam nec orci fringilla imperdiet. Mauris tincidunt feugiat felis id tincidunt. Nam in diam turpis. Nullam a dictum justo, ac efficitur augue.",
+		"price": 1990,
+		"image": "img-prod11.jpg",
+		"category": "ofertas"
+	},
+	{
+		"id": 12,
+		"name": "Producto 12",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempus nec ante sit amet venenatis. Ut posuere diam nec orci fringilla imperdiet. Mauris tincidunt feugiat felis id tincidunt. Nam in diam turpis. Nullam a dictum justo, ac efficitur augue.",
+		"price": 390,
+		"image": "img-prod12.jpg",
+		"category": "ofertas"
+	},
+	{
+		"id": 13,
+		"name": "Producto 13",
+		"price": 350,
+		"category": "principal",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempus nec ante sit amet venenatis. Ut posuere diam nec orci fringilla imperdiet. Mauris tincidunt feugiat felis id tincidunt. Nam in diam turpis. Nullam a dictum justo, ac efficitur augue.",
+		"image": "img-prod13.jpg"
+	},
+	{
+		"id": 14,
+		"name": "Producto 14",
+		"price": 789,
+		"category": "principal",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempus nec ante sit amet venenatis. Ut posuere diam nec orci fringilla imperdiet. Mauris tincidunt feugiat felis id tincidunt. Nam in diam turpis. Nullam a dictum justo, ac efficitur augue.",
+		"image": "img-prod14.jpg"
+	},
+	{
+		"id": 15,
+		"name": "Producto 15",
+		"price": 600,
+		"category": "principal",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempus nec ante sit amet venenatis. Ut posuere diam nec orci fringilla imperdiet. Mauris tincidunt feugiat felis id tincidunt. Nam in diam turpis. Nullam a dictum justo, ac efficitur augue.",
+		"image": "img-prod15.jpg"
+	},
+	{
+		"id": 16,
+		"name": "Producto 16",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempus nec ante sit amet venenatis. Ut posuere diam nec orci fringilla imperdiet. Mauris tincidunt feugiat felis id tincidunt. Nam in diam turpis. Nullam a dictum justo, ac efficitur augue.",
+		"price": 790,
+		"image": "img-prod16.jpg",
+		"category": "principal"
+	}
+]

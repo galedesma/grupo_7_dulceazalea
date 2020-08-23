@@ -1,30 +1,30 @@
 <!DOCTYPE html>
 <html lang="es">
-	<head>
+    <head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Carrito</title>
-		<!-- ETIQUETAS LINK PARA VINCULAR CON FONTAWESOME Y BOOTSTRAP-->
-		<script
-			src="https://kit.fontawesome.com/c20ccd4767.js"
-			crossorigin="anonymous"
-		></script>
+		<title>Dulce Azalea</title>
+
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
+		/>
 		<link
 			rel="stylesheet"
 			href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
 			integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
 			crossorigin="anonymous"
 		/>
-		<link rel="stylesheet" href="../public/stylesheets/productCart.css" />
+		<link rel="stylesheet" href="../stylesheets/style.css" />
 	</head>
-	<body>
-		<!-- ENCABEZADO -->
+    <body>
+        <!-- ENCABEZADO -->
 		<header class="container-fluid">
 			<div class="row align-items-center justify-content-around">
 				<div class="col-auto col-sm-2 col-md-2 col-lg-2 logo">
 					<a href=""
 						><img
-							src="../public/img/weebly_image_sample.png"
+							src="../img/weebly_image_sample.png"
 							alt="Responsive image"
 							class="img-fluid"
 					/></a>
@@ -71,63 +71,48 @@
 				</div>
 			</div>
 		</header>
-		<!-- ENCABEZADO -->
-		
-		
-		<section class="container">
-			<div class="grid-container">
-				<div>PRODUCTOS</div>
-				<div>CANTIDAD</div>
-				<div>PRECIO</div>
-				<div><br /></div>
-				<div>Producto1</div>
-				<div><input type="number" name="" id="unidades" min="1" /></div>
-				<div>$100</div>
-				<div><i class="fas fa-trash"></i></div>
-				<div>Producto2</div>
-				<div><input type="number" name="" id="unidades" min="1" /></div>
-				<div>$200</div>
-				<div><i class="fas fa-trash"></i></div>
-				<div>Producto3</div>
-				<div><input type="number" name="" id="unidades" min="1" /></div>
-				<div>$300</div>
-				<div><i class="fas fa-trash"></i></div>
-			</div>
-			<div class="row verMas">
-				<div class="col-7">
-					<a href="">Ver más productos</a>
+        <!-- ENCABEZADO -->
+        
+        
+        
+        
+        <div class="container sections">
+            <section>
+				<div class="row articulos">
+					<div class="col-12 titulo">
+						<h2>Ofertas</h2>
+					</div>
+
+					<% productos.forEach(producto => { %>
+					<div class="col-12 col-md-6 col-lg-3">
+						<div class="productos">
+							<figure>
+								<img
+									src="/img/products/<%- producto.image %> "
+									alt=""
+									class="figure"
+								/>
+							</figure>
+							<article>
+								<!--precio-->
+								<h2>
+									$ <%= producto.price %>
+								</h2>
+								<!--nombre del producto ??-->
+								<p>
+									<%= producto.name %>
+								</p>
+							</article>
+						</div>
+					</div>
+					<% }) %>
 				</div>
-				<div class="col-5 total">
-					<h2><i class="fas fa-shopping-bag"></i>Total: $600</h2>
-				</div>
-			</div>
-			<div class="row inferior justify-content-center">
-				<div class="col-lg-7 login">
-					<form>
-						<h5>Acceder</h5>
-						<label for="email">Email</label><br />
-						<input
-							type="email"
-							id="email"
-							name="email"
-							class="input"
-						/><br /><br />
-						<label for="password">Contraseña</label><br />
-						<input
-							type="password"
-							id="password"
-							name="password"
-							class="input"
-						/><br /><br />
-						<input type="submit" value="Acceder" class="id" /><br />
-						<h5>¿Eres Nuevo?</h5>
-						<input type="submit" value="Crear una cuenta" class="id" />
-					</form>
-				</div>
-			</div>
-		</section>
-		
-		<!-- PIE DE PÁGINA -->
+			</section>
+        </div>
+        
+        
+        
+        <!-- PIE DE PÁGINA -->
 		<footer class="conatainer-fluid">
 			<div class="row">
 				<div class="col-12 col-md-6 col-lg-3">
@@ -215,23 +200,5 @@
 		</footer>
 		<!-- PIE DE PÁGINA -->
 
-
-
-		<!--scripts de bootstrap-->
-		<script
-			src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-			integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-			crossorigin="anonymous"
-		></script>
-		<script
-			src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-			integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-			crossorigin="anonymous"
-		></script>
-		<script
-			src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-			integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-			crossorigin="anonymous"
-		></script>
-	</body>
+    </body>
 </html>
