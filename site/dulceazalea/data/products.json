@@ -37,7 +37,7 @@
 		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempus nec ante sit amet venenatis. Ut posuere diam nec orci fringilla imperdiet. Mauris tincidunt feugiat felis id tincidunt. Nam in diam turpis. Nullam a dictum justo, ac efficitur augue.",
 		"price": 3000,
 		"image": "img-prod5.jpg",
-		"category": "mas-vendidos"
+		"category": "masVendidos"
 	},
 	{
 		"id": 6,
@@ -53,7 +53,7 @@
 		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempus nec ante sit amet venenatis. Ut posuere diam nec orci fringilla imperdiet. Mauris tincidunt feugiat felis id tincidunt. Nam in diam turpis. Nullam a dictum justo, ac efficitur augue.",
 		"price": 6700,
 		"image": "img-prod7.jpg",
-		"category": "mas-vendidos"
+		"category": "masVendidos"
 	},
 	{
 		"id": 8,
@@ -61,7 +61,7 @@
 		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempus nec ante sit amet venenatis. Ut posuere diam nec orci fringilla imperdiet. Mauris tincidunt feugiat felis id tincidunt. Nam in diam turpis. Nullam a dictum justo, ac efficitur augue.",
 		"price": 8000,
 		"image": "img-prod8.jpg",
-		"category": "mas-vendidos"
+		"category": "masVendidos"
 	},
 	{
 		"id": 9,
