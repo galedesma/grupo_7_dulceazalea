@@ -1,3 +1,4 @@
+@import 'footer.css';
 /* colores */
 :root {
 	--color-rosa: #fda8bb;
@@ -88,49 +89,10 @@ section .productos figure img {
 	width: 100%;
 }
 
-/* PIE DE PAGINA */
-footer {
-	background-color: var(--color-celeste);
-	text-align: center;
-}
-
-footer #footer_title {
-	margin-top: 10px;
-}
-footer .contactos,
-.redes {
-	padding-bottom: 10px;
-}
-footer .pagos {
-	border-top: solid #000000 1px;
-	padding-bottom: 10px;
-}
-footer .map {
-	size: 250px;
-	margin-top: 10px;
-	border: 10px solid white;
-}
-footer #icons__footer {
-	font-size: 40px;
-}
-footer img {
-	height: 40px;
-	border-radius: 5px;
-	margin-bottom: 5px;
-}
-footer #derechos {
-	background-color: var(--color-azul);
-	font-size: 15px;
-}
-
 /* --- VERSION DE TABLET --- */
 
 @media (min-width: 768px) {
 	.banner {
 		display: block;
-	}
-
-	footer .map {
-		width: 100%;
 	}
 }
