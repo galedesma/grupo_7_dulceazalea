@@ -1,17 +1,17 @@
 [
 	{
 		"id": 1,
-		"name": "Bolsa de regalos de animales",
-		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempus nec ante sit amet venenatis. Ut posuere diam nec orci fringilla imperdiet. Mauris tincidunt feugiat felis id tincidunt. Nam in diam turpis. Nullam a dictum justo, ac efficitur augue.",
+		"name": "Kits de Cuarentena",
+		"description": "✨ Para que ninguno niño/a se quede sin festejar! ✨\n El kit incluye: \n -2 Frascos rellenos. \n -2 Turrones \n -2 Mogul forradas \n -2 Chocolatines \n -2 Cajas milk rellenas \n -Banderín con nombre \n -Cartel para decorar \n -Tematica de animal a elección",
 		"image": "img-prod1.jpg",
 		"category": "principal",
-		"colors": "verde",
+		"colors": "verde, rosa",
 		"price": 500
 	},
 	{
 		"id": 2,
 		"name": "Decoración tematica de Naruto",
-		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempus nec ante sit amet venenatis. Ut posuere diam nec orci fringilla imperdiet. Mauris tincidunt feugiat felis id tincidunt. Nam in diam turpis. Nullam a dictum justo, ac efficitur augue.",
+		"description": "Este articulo incluye: \n -Invitaciones. \n -Banderines con letras. \n -Bolsitas sorpresa. \n -Cajas sorpresa tipo milkbox en varios colores. \n -Cartel bienvenida A3. \n Fajas para botellas. \n -Envoltorios para golosina Tita. \n -Envoltorios para golosina Rhodesia. \n -Envoltorios para golosina Turrón. \n -Envoltorios para golosina Chocolatín de 8g. \n -Etiquetas de agradecimiento estilo tags colgantes",
 		"image": "img-prod2.jpg",
 		"category": "principal",
 		"colors": "celeste",
@@ -19,52 +19,52 @@
 	},
 	{
 		"id": 3,
-		"name": "Producto 3",
-		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempus nec ante sit amet venenatis. Ut posuere diam nec orci fringilla imperdiet. Mauris tincidunt feugiat felis id tincidunt. Nam in diam turpis. Nullam a dictum justo, ac efficitur augue.",
+		"name": "Caja Sorpresa de Regalo ToyStory",
+		"description": "Cajita llena de golosinas \n Incluye: \n -Chocolate \n -Turron \n -Chocolatin \n -Alfajor \n -Colchon de pochoclos \n -Caramelos y pastillitas \n PERSONALIZADO CON LA TEMÁTICA QUE MAS TE GUSTE.",
 		"image": "img-prod3.jpg",
 		"category": "principal",
-		"colors": "verde",
+		"colors": "Blanco",
 		"price": 729
 	},
 	{
 		"id": 4,
-		"name": "Producto 4",
-		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempus nec ante sit amet venenatis. Ut posuere diam nec orci fringilla imperdiet. Mauris tincidunt feugiat felis id tincidunt. Nam in diam turpis. Nullam a dictum justo, ac efficitur augue.",
+		"name": "Mini maquina de chicles",
+		"description": "Mini maquina de golocinas dispensadora d echicles ideal para souvenir \n Incluye: \n -50g de chicles por maquinita. \n -El pack trae 60 maquinas",
 		"image": "img-prod4.jpg",
 		"category": "principal",
-		"colors": "verde",
+		"colors": "Azul",
 		"price": 4790
 	},
 	{
 		"id": 5,
-		"name": "Producto 5",
-		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempus nec ante sit amet venenatis. Ut posuere diam nec orci fringilla imperdiet. Mauris tincidunt feugiat felis id tincidunt. Nam in diam turpis. Nullam a dictum justo, ac efficitur augue.",
+		"name": "Decoración tematica de River/Boca",
+		"description": "Este articulo incluye: \n -Invitaciones. \n -Banderines con letras. \n -Bolsitas sorpresa. \n -Cajas sorpresa tipo milkbox en varios colores. \n -Cartel bienvenida A3. \n Fajas para botellas. \n -Envoltorios para golosina Tita. \n -Envoltorios para golosina Rhodesia. \n -Envoltorios para golosina Turrón. \n -Envoltorios para golosina Chocolatín de 8g. \n -Etiquetas de agradecimiento estilo tags colgantes",
 		"image": "img-prod5.jpg",
 		"category": "masVendidos",
-		"colors": "verde",
+		"colors": "Rojo y blanco, Azul y amarillo",
 		"price": 3000
 	},
 	{
 		"id": 6,
-		"name": "Producto 6",
+		"name": "Decoración tematica de King celeste",
 		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempus nec ante sit amet venenatis. Ut posuere diam nec orci fringilla imperdiet. Mauris tincidunt feugiat felis id tincidunt. Nam in diam turpis. Nullam a dictum justo, ac efficitur augue.",
 		"image": "img-prod6.jpg",
 		"category": "masVendidos",
-		"colors": "verde",
-		"price": 250
+		"colors": "celeste",
+		"price": 760
 	},
 	{
 		"id": 7,
-		"name": "Producto 7",
+		"name": "Decoración tematica de Queen rosa",
 		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempus nec ante sit amet venenatis. Ut posuere diam nec orci fringilla imperdiet. Mauris tincidunt feugiat felis id tincidunt. Nam in diam turpis. Nullam a dictum justo, ac efficitur augue.",
 		"image": "img-prod7.jpg",
 		"category": "masVendidos",
-		"colors": "verde",
-		"price": 6700
+		"colors": "rosa",
+		"price": 760
 	},
 	{
 		"id": 8,
-		"name": "Producto 8",
+		"name": "Tematica de super heroe",
 		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempus nec ante sit amet venenatis. Ut posuere diam nec orci fringilla imperdiet. Mauris tincidunt feugiat felis id tincidunt. Nam in diam turpis. Nullam a dictum justo, ac efficitur augue.",
 		"image": "img-prod8.jpg",
 		"category": "masVendidos",
@@ -73,7 +73,7 @@
 	},
 	{
 		"id": 9,
-		"name": "Producto 9",
+		"name": "Decoracion infantil con helados",
 		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempus nec ante sit amet venenatis. Ut posuere diam nec orci fringilla imperdiet. Mauris tincidunt feugiat felis id tincidunt. Nam in diam turpis. Nullam a dictum justo, ac efficitur augue.",
 		"image": "img-prod9.jpg",
 		"category": "ofertas",
@@ -82,7 +82,7 @@
 	},
 	{
 		"id": 10,
-		"name": "Producto 10",
+		"name": "Fiesta bautismo de unicornio para nena",
 		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempus nec ante sit amet venenatis. Ut posuere diam nec orci fringilla imperdiet. Mauris tincidunt feugiat felis id tincidunt. Nam in diam turpis. Nullam a dictum justo, ac efficitur augue.",
 		"image": "img-prod10.jpg",
 		"category": "ofertas",
@@ -91,16 +91,16 @@
 	},
 	{
 		"id": 11,
-		"name": "Producto 11",
+		"name": "Cumpleaños primer año en cuarentena",
 		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempus nec ante sit amet venenatis. Ut posuere diam nec orci fringilla imperdiet. Mauris tincidunt feugiat felis id tincidunt. Nam in diam turpis. Nullam a dictum justo, ac efficitur augue.",
 		"image": "img-prod11.jpg",
 		"category": "ofertas",
-		"colors": "verde",
+		"colors": "amarillo",
 		"price": 1990
 	},
 	{
 		"id": 12,
-		"name": "Producto 12",
+		"name": "Decoración basica para fiesta primer año",
 		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempus nec ante sit amet venenatis. Ut posuere diam nec orci fringilla imperdiet. Mauris tincidunt feugiat felis id tincidunt. Nam in diam turpis. Nullam a dictum justo, ac efficitur augue.",
 		"image": "img-prod12.jpg",
 		"category": "ofertas",
@@ -109,7 +109,7 @@
 	},
 	{
 		"id": 13,
-		"name": "Producto 13",
+		"name": "Banner/mural de Stitch",
 		"category": "principal",
 		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempus nec ante sit amet venenatis. Ut posuere diam nec orci fringilla imperdiet. Mauris tincidunt feugiat felis id tincidunt. Nam in diam turpis. Nullam a dictum justo, ac efficitur augue.",
 		"image": "img-prod13.jpg",
@@ -118,7 +118,7 @@
 	},
 	{
 		"id": 14,
-		"name": "Producto 14",
+		"name": "Kit de decoracion de animales",
 		"category": "principal",
 		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempus nec ante sit amet venenatis. Ut posuere diam nec orci fringilla imperdiet. Mauris tincidunt feugiat felis id tincidunt. Nam in diam turpis. Nullam a dictum justo, ac efficitur augue.",
 		"image": "img-prod14.jpg",
@@ -127,20 +127,20 @@
 	},
 	{
 		"id": 15,
-		"name": "Producto 15",
+		"name": "Pack 50 vasos descartables",
 		"category": "principal",
 		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempus nec ante sit amet venenatis. Ut posuere diam nec orci fringilla imperdiet. Mauris tincidunt feugiat felis id tincidunt. Nam in diam turpis. Nullam a dictum justo, ac efficitur augue.",
 		"image": "img-prod15.jpg",
-		"colors": "verde",
+		"colors": "Blanco",
 		"price": 600
 	},
 	{
 		"id": 16,
-		"name": "Producto 16",
-		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempus nec ante sit amet venenatis. Ut posuere diam nec orci fringilla imperdiet. Mauris tincidunt feugiat felis id tincidunt. Nam in diam turpis. Nullam a dictum justo, ac efficitur augue.",
+		"name": "Pusheen Cat Perzonalizado con Textos Editables",
+		"description": "Este articulo incluye: \n -Invitaciones. \n -Banderines con letras. \n -Bolsitas sorpresa. \n -Cajas sorpresa tipo milkbox en varios colores. \n -Círculos de 42mm ideales para moneditas de chocolate. \n -Cartel bienvenida A3. \n Fajas para botellas. \n -Envoltorios para golosina Tita. \n -Envoltorios para golosina Rhodesia. \n -Envoltorios para golosina Turrón. \n -Envoltorios para golosina Chocolatín de 8g. \n -Etiquetas de agradecimiento estilo tags colgantes ",
 		"image": "img-prod16.jpg",
 		"category": "principal",
-		"colors": "verde",
+		"colors": "marrón",
 		"price": 790
 	}
 ]
