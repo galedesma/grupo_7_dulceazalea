@@ -19,17 +19,16 @@ module.exports = {
 			title: 'Cargar Producto',
 		});
 	},
-	product: function (req, res) {
-		let id = req.param.id;
+	detalle: function (req, res) {
+		let id = req.params.id;
+
 		let producto = database.filter((producto) => {
 			return producto.id == id;
 		});
 		res.render('productDetail', {
-			title: database.forEach((element) => {
-				if ((id = element.id)) {
-					return element.name;
-				}
-			}),
+			title: 'Detalle del Producto',
+			id: id,
+			producto: producto[0],
 		});
 	},
 };
