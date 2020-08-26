@@ -1,5 +1,7 @@
 @import 'footer.css';
 @import 'productsDetail.css';
+@import 'productAdd.css';
+@import 'productEdit.css';
 /* colores */
 :root {
 	--color-rosa: #fda8bb;

@@ -15,8 +15,12 @@ module.exports = {
 		}); //muestra información de prueba
 	},
 	agregar: function (req, res) {
+		// let Categoria = database.filter((producto) => {
+		// 	return producto.category;
+		// });
 		res.render('productAdd', {
 			title: 'Cargar Producto',
+			// categoria: categoria,
 		});
 	},
 	detalle: function (req, res) {
@@ -29,6 +33,16 @@ module.exports = {
 			title: 'Detalle del Producto',
 			id: id,
 			producto: producto[0],
+		});
+	},
+	edit: function (req, res) {
+		let id = req.params.id;
+		let productoEdit = database.filter((producto) => {
+			return producto.id == id;
+		});
+		res.render('productEdit', {
+			title: 'Editar Producto',
+			productoEdit: productoEdit[0],
 		});
 	},
 };
