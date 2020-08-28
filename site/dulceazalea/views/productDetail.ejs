@@ -2,43 +2,7 @@
 <html lang="en">
 	<%- include('partials/head') %>
 	<body>
-		<header class="container-fluid">
-			<div class="container">
-				<div class="row">
-					<!-- logo -->
-					<div class="col-5 col-md-2 col-lg-2 logo">
-						<a href="home.ejs"
-						><img src="/img/logo-mercado-liebre.svg" alt="logo"/></a>
-					</div>
-
-					<!--barra de busqueda-->
-					<div class="col-7 col-md-6 col-lg-6">
-						<form action="" method="get" class="search-form">
-							<input
-								type="text"
-								name="search"
-								placeholder="¿Qué estás buscando?"
-								class="search-form_input"
-							/>
-							<button type="submit" class="search-form_button">
-							<i class="fas fa-search"></i>
-							</button>
-						</form>
-					</div>
-				</div>
-				<div class="col-12 user">
-					<li>
-						<a href=" "><i class="fas fa-comments">Contacto</i></a>
-					</li>
-					<li>	
-						<a href="productCart.html"><i class="fas fa-shopping-cart">Carrito</i></a>
-					</li>
-					<li>
-						<a href=" "><a href="register.html"><i class="fas fa-user"></i></a>Ingrasar</i></a>
-					</li>
-				</div>
-			</div>
-		</header>
+		<%- include('partials/header') %>
 		<!-- fin del header -->
 
     <div class="container ">

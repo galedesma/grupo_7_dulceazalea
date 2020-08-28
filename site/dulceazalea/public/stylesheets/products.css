@@ -18,33 +18,7 @@ a:hover {
 li {
 	list-style: none;
 }
-/*
-HEADER
-*/
-header {
-	background-color: var(--color-rosa);
-	height: 100%;
-	align-items: center;
-	padding-top: 10px;
-	padding-bottom: 10px;
-	vertical-align: middle;
-}
-.btn {
-	background-color: var(--color-rosa);
-	border: 1px solid black;
-}
-.btn-link {
-	color: black;
-}
-header .buscar {
-	max-width: 80%; /*Evita que el botón de búsqueda se coloque debajo de la barra de búsqueda en varios anchos de pantalla*/
-	border-radius: 10px;
-	border: 1px solid black;
-}
-header .icono-busqueda {
-	border-radius: 10px;
-	border: 1px solid black;
-}
+
 .fa-question-circle {
 	text-align: right;
 }

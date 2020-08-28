@@ -1,60 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
-	<%- include('partials/head') %>
+  <%- include('partials/head') %>
 	<body>
-    <header class="container-fluid">
-			<div class="row align-items-center justify-content-around">
-				<div class="col-auto col-sm-2 col-md-2 col-lg-2 logo">
-					<a href=""
-						><img
-							src="/img/weebly_image_sample.png"
-							alt="Responsive image"
-							class="img-fluid"
-					/></a>
-				</div>
-				<div class="col-2 col-sm-2 col-md-2 col-lg-2 button">
-					<button type="button" class="btn btn-link">Categorías</button>
-				</div>
-				<div class="col-auto col-sm-5 col-md-auto col-lg-auto search">
-					<form action="">
-						<input type="text " placeholder="Buscar..." class="buscar" />
-						<button type="button" class="icono-busqueda">
-							<i class="fas fa-search"></i>
-						</button>
-					</form>
-				</div>
-				<div class="col-2 col-sm-auto col-md-3 col-lg-3 nav">
-					<nav class="navbar navbar-expand-lg navbar-light">
-						<a class="navbar-brand" href="#"></a>
-						<button
-							class="navbar-toggler"
-							type="button"
-							data-toggle="collapse"
-							data-target="#navbarNavAltMarkup"
-							aria-controls="navbarNavAltMarkup"
-							aria-expanded="false"
-							aria-label="Toggle navigation"
-						>
-							<span class="navbar-toggler-icon"></span>
-						</button>
-						<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-							<div class="navbar-nav">
-								<a class="nav-item nav-link active" href="#"
-									><i class="fas fa-user-circle"></i> Cuenta</a
-								>
-								<a class="nav-item nav-link active" href="#"
-									><i class="fas fa-shopping-cart"></i> Carrito</a
-								>
-								<a class="nav-item nav-link active" href="#"
-									><i class="fas fa-question-circle"></i> Ayuda</a
-								>
-							</div>
-						</div>
-					</nav>
-				</div>
-			</div>
-		</header>
-
+		<%- include('partials/header') %>
+		<!-- fin del header -->
+		
 		<section class="container formularioCarga" >
 			<h2>
 				Prublicar Producto
@@ -76,7 +26,7 @@
 				<div
 					class="col-12 col-sm-12 col-md-6 col-lg-6 align-items-center justify-content-center formularioCarga"
 				>
-					<form action="validar.php" method="POST">
+					<form action="" method="POST" enctype="multipart/form-data">
 						<ul>
 							<li>
 								<p>Nombre del producto:</p>

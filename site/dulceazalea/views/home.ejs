@@ -40,106 +40,32 @@
 					<div class="col-12 titulo">
 						<h2>principales</h2>
 					</div>
-					<div
-						id="carouselExampleIndicators"
-						class="carousel slide"
-						data-ride="carousel"
-					>
-						<ol class="carousel-indicators">
-							<li data-target="#carouselExampleIndicators" class="active"></li>
-							<li data-target="#carouselExampleIndicators"></li>
-							<li data-target="#carouselExampleIndicators"></li>
-							<li data-target="#carouselExampleIndicators"></li>
-							<li data-target="#carouselExampleIndicators"></li>
-							<li data-target="#carouselExampleIndicators"></li>
-							<li data-target="#carouselExampleIndicators"></li>
-							<li data-target="#carouselExampleIndicators"></li>
-						</ol>
-						<div class="carousel-inner">
-							<% principal.forEach(producto => { %>
-							<div class="carousel-item">
-								<div class="col-12 col-md-6 col-lg-3">
-									<div class="productos">
-										<figure>
-											<img
-												src="/img/products/<%- producto.image %> "
-												alt=""
-												class="figure"
-											/>
-										</figure>
-										<article>
-											<!--precio-->
-											<h2>
-												$ <%= producto.price %>
-											</h2>
-											<!--nombre del producto ??-->
-											<p>
-												<%= producto.name %>
-											</p>
-										</article>
-									</div>
-								</div>
-							</div>
-							<% }) %>
-						</div>
-						<a
-							class="carousel-control-prev"
-							href="#carouselExampleIndicators"
-							role="button"
-							data-slide="prev"
-						>
-							<span
-								class="carousel-control-prev-icon"
-								aria-hidden="true"
-							></span>
-							<span class="sr-only">Previous</span>
-						</a>
-						<a
-							class="carousel-control-next"
-							href="#carouselExampleIndicators"
-							role="button"
-							data-slide="next"
-						>
-							<span
-								class="carousel-control-next-icon"
-								aria-hidden="true"
-							></span>
-							<span class="sr-only">Next</span>
-						</a>
-					</div>
-				</div>
-			</section>
 
-			<!-- <section>
-				<div class="row articulos">
-					<div class="col-12 titulo">
-						<h2>principales</h2>
-					</div>
-
-					
+					<% principal.forEach(producto => { %>
 					<div class="col-12 col-md-6 col-lg-3">
 						<div class="productos">
 							<figure>
 								<img
-									src="/img/products/ "
+									src="/img/products/<%- producto.image %> "
 									alt=""
 									class="figure"
 								/>
 							</figure>
 							<article>
+								<!--precio-->
 								<h2>
-									$ 
+									$ <%= producto.price %>
 								</h2>
+								<!--nombre del producto ??-->
 								<p>
-									
+									<%= producto.name %>
 								</p>
 							</article>
 						</div>
 					</div>
-					
+					<% }) %>
 				</div>
-			</section> -->
-
+			</section>
 			<!-- cat2 -->
 			<section>
 				<div class="row articulos">

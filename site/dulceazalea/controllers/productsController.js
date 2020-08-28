@@ -35,7 +35,7 @@ module.exports = {
 			producto: producto[0],
 		});
 	},
-	edit: function (req, res) {
+	mostrar: function (req, res) {
 		let id = req.params.id;
 		let productoEdit = database.filter((producto) => {
 			return producto.id == id;
@@ -44,5 +44,9 @@ module.exports = {
 			title: 'Editar Producto',
 			productoEdit: productoEdit[0],
 		});
+	},
+	edit: function (req, res, next) {
+		let id = res.params.id;
+		res.render();
 	},
 };

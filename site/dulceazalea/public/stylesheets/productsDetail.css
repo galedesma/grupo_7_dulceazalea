@@ -26,42 +26,6 @@ li {
 	list-style: none;
 }
 
-/* HEADER */
-
-header {
-	background-color: var(--color-rosa);
-	padding: 15px;
-	/* position: fixed; */
-}
-header .logo {
-	padding: 0px;
-	height: 20px;
-	margin-left: 0px;
-}
-header form {
-	position: relative;
-	display: flex;
-	align-items: center;
-	font-size: 0.8rem;
-}
-header form input {
-	border: solid 1px var(--color-grisClaro);
-	display: block;
-	width: 100%;
-	padding: 7px 0px 7px 0px;
-	border-radius: 5px;
-}
-header form button {
-	position: absolute;
-	right: 2px;
-	height: 60%;
-	background-color: white;
-	border: none;
-}
-header .user li {
-	display: inline;
-	margin: 30px;
-}
 /* FIN DEL HEADER */
 .productDetail {
 	margin: 30px 5px 40px;
