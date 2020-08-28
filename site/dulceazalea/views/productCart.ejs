@@ -1,75 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Carrito</title>
-		<!-- ETIQUETAS LINK PARA VINCULAR CON FONTAWESOME Y BOOTSTRAP-->
-		<script
-			src="https://kit.fontawesome.com/c20ccd4767.js"
-			crossorigin="anonymous"
-		></script>
-		<link
-			rel="stylesheet"
-			href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-			integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
-			crossorigin="anonymous"
-		/>
-		<link rel="stylesheet" href="../public/stylesheets/productCart.css" />
-	</head>
+	<%- include('partials/head') %>
+
 	<body>
-		<header class="container-fluid">
-			<div class="row align-items-center justify-content-around">
-				<div class="col-auto col-sm-2 col-md-2 col-lg-2 logo">
-					<a href=""
-						><img
-							src="../public/img/weebly_image_sample.png"
-							alt="Responsive image"
-							class="img-fluid"
-					/></a>
-				</div>
-				<div class="col-2 col-sm-2 col-md-2 col-lg-2 button">
-					<button type="button" class="btn btn-link">Categorías</button>
-				</div>
-				<div class="col-auto col-sm-5 col-md-auto col-lg-auto search">
-					<form action="">
-						<input type="text " placeholder="Buscar..." class="buscar" />
-						<button type="button" class="icono-busqueda">
-							<i class="fas fa-search"></i>
-						</button>
-					</form>
-				</div>
-				<div class="col-2 col-sm-auto col-md-3 col-lg-3 nav">
-					<nav class="navbar navbar-expand-lg navbar-light">
-						<a class="navbar-brand" href="#"></a>
-						<button
-							class="navbar-toggler"
-							type="button"
-							data-toggle="collapse"
-							data-target="#navbarNavAltMarkup"
-							aria-controls="navbarNavAltMarkup"
-							aria-expanded="false"
-							aria-label="Toggle navigation"
-						>
-							<span class="navbar-toggler-icon"></span>
-						</button>
-						<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-							<div class="navbar-nav">
-								<a class="nav-item nav-link active" href="#"
-									><i class="fas fa-user-circle"></i> Cuenta</a
-								>
-								<a class="nav-item nav-link active" href="#"
-									><i class="fas fa-shopping-cart"></i> Carrito</a
-								>
-								<a class="nav-item nav-link active" href="#"
-									><i class="fas fa-question-circle"></i> Ayuda</a
-								>
-							</div>
-						</div>
-					</nav>
-				</div>
-			</div>
-		</header>
+		<%- include('partials/header') %>
+		<!-- fin del header -->
+
 		<section class="container">
 			<div class="grid-container">
 				<div>PRODUCTOS</div>

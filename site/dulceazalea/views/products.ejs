@@ -1,20 +1,17 @@
 <!DOCTYPE html>
 <html lang="es">
 	<%- include('partials/head') %>
-	</head>
-    <body>
-        <!-- ENCABEZADO -->
-				<%- include('partials/header') %>
-        <!-- ENCABEZADO -->
-        
-        
-        
-        
-    <div class="container sections">
-    	<section>
+
+	<body>
+		<!-- ENCABEZADO -->
+		<%- include('partials/header') %>
+		<!-- ENCABEZADO -->
+
+		<div class="container sections">
+			<section>
 				<div class="row articulos">
 					<div class="col-12 titulo">
-						<h2>Ofertas</h2>
+						<h2>Todos los Productos</h2>
 					</div>
 
 					<% productos.forEach(producto => { %>
@@ -29,24 +26,17 @@
 							</figure>
 							<article>
 								<!--precio-->
-								<h2>
-									$ <%= producto.price %>
-								</h2>
+								<h2>$ <%= producto.price %></h2>
 								<!--nombre del producto ??-->
-								<p>
-									<%= producto.name %>
-								</p>
+								<p><%= producto.name %></p>
 							</article>
 						</div>
 					</div>
 					<% }) %>
 				</div>
 			</section>
-    </div>
-        
-        
-        
-			<%- include('partials/footer') %>
+		</div>
 
-    </body>
+		<%- include('partials/footer') %>
+	</body>
 </html>
