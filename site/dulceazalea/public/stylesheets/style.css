@@ -1,10 +1,6 @@
 @import 'master.css';
-@import 'products.css';
 @import 'productsDetail.css';
-/* 
-@import 'productEdit.css';
-
 @import 'productAdd.css';
 @import 'stylereg.css';
-@import 'productCart.css'; */
+/* @import 'productCart.css'; */
 @import 'footer.css';

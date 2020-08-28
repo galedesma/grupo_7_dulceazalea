@@ -1,27 +1,3 @@
-* {
-	box-sizing: border-box;
-	margin: 0px;
-}
-:root {
-	--color-rosa: #fda8bb;
-	--color-azul: #365e8f;
-	--color-celeste: #cae8ff;
-}
-a {
-	text-decoration: none;
-	color: black;
-}
-a:hover {
-	color: white;
-	text-decoration: none;
-}
-li {
-	list-style: none;
-}
-
-/*
-Section (grilla, verMas, inferior)
-*/
 section {
 	width: 80%;
 	padding-top: 15px;
