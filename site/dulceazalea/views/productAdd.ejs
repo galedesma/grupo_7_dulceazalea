@@ -17,20 +17,20 @@
 						class="image-fluid"
 						alt="Responsive image"
 					/>
-					<form method="POST" action="" enctype="multipart/form-data">
-						<label for="img">Select image:</label>
-						<input type="file" id="img" name="img" accept="image/*" />
-					</form>
 				</div>
 				<div
 					class="col-12 col-sm-12 col-md-6 col-lg-6 align-items-center justify-content-center formularioCarga"
 				>
-					<form action="validar.php" method="POST">
+				
+					<form action="" method="POST" enctype="multipart/form-data">
 						<ul>
+							<li>
+								<input type="file" id="img" name="image" accept="image/*" />
+							</li>
 							<li>
 								<p>Nombre del producto:</p>
 								<textarea
-									name="nombreProducto"
+									name="name"
 									id=""
 									cols="30"
 									rows="1"
@@ -39,7 +39,7 @@
 							<li>
 								<p>Descripción:</p>
 								<textarea
-									name="descripcion"
+									name="description"
 									id=""
 									cols="30"
 									rows="4"
@@ -47,23 +47,27 @@
 							</li>
 							<li>
 								<p>Categoria:</p>
-								<select name="Category" id="Category">
-									<option value="p1">Producto1</option>
-								</select>
+								<input list="categoria" name="category" id="form__categoria__producto">
+  								<datalist id="categoria">
+										<% categorias.forEach(categoria => { %>	 
+										<option value="<%= categoria.name %> ">
+											<% }) %>
+  								</datalist>
 							</li>
 							<li>
 								<p>Color</p>
-									<input type="text" />
+									<input type="text" name="colors"/>
 								</select>
 							</li>
 							<li>
 								<p>Precio:</p>
-								<input type="number" />
+								<input type="number" name="price"/>
 							</li>
 						</ul>
 						<button type="submit">Cargar Producto</button>
 						<button type="reset">Borrar Formulario</button>
 					</form>
+					
 				</div>
 			</div>
 		</section>

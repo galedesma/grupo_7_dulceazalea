@@ -15,12 +15,11 @@
 					class="col-12 col-sm-12 col-md-6 col-lg-6 align-items-center justify-content-center vistaPrevia"
 				>
 					<img
-						src="/img/weebly_image_sample.png"
+						src="/img/products/<%= productoEdit.image %> "
 						class="image-fluid"
 						alt="Responsive image"
 					/>
-					<form action="/action_page.php">
-						<label for="img">Select image:</label>
+					<form action="" style="margin-top: 10px;">
 						<input type="file" id="img" name="img" accept="image/*" />
 					</form>
 				</div>
@@ -31,21 +30,16 @@
 						<ul>
 							<li>
 								<p>Nombre del producto:</p>
-								<textarea
-									name="nombreProducto"
-									id=""
-									cols="30"
-									rows="1"
-								></textarea>
+								<input type="text" value="<%= productoEdit.name %> ">
 							</li>
 							<li>
 								<p>Descripción:</p>
 								<textarea
 									name="descripcion"
-									id=""
+									id="description__product__edit"
 									cols="30"
 									rows="4"
-								></textarea>
+								><%= productoEdit.description %> </textarea>
 							</li>
 							<li>
 								<p>Categoria:</p>
@@ -55,16 +49,16 @@
 							</li>
 							<li>
 								<p>Color</p>
-									<input type="text" />
+									<input type="text" value="<%= productoEdit.colors %> "/>
 								</select>
 							</li>
 							<li>
 								<p>Precio:</p>
-								<input type="number" />
+								<input type="text" value="<%= productoEdit.price %> "/>
 							</li>
 						</ul>
-						<button type="submit">Cargar Producto</button>
-						<button type="reset">Borrar Formulario</button>
+						<button type="submit" name="id" value=<%= productoEdit.id %> >Cargar Producto</button>
+						<button type="reset">Borrar Producto</button>
 					</form>
 				</div>
 			</div>

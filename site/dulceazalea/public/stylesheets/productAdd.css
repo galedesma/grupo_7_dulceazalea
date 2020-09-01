@@ -22,3 +22,6 @@ p {
 .image-fluid {
 	width: 100%;
 }
+form #description__product__edit {
+	width: 100%;
+}

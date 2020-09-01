@@ -35,6 +35,9 @@ a:hover {
 li {
 	list-style: none;
 }
+img {
+	border-radius: 4px;
+}
 /* HEADER */
 header,
 #header {
@@ -68,6 +71,7 @@ header #form button {
 	right: 2px;
 	background-color: white;
 	border: none;
+	border: solid 1px #ffffff;
 }
 header #btn_colapse {
 	text-align: right;
