@@ -73,11 +73,11 @@ module.exports = {
       if (producto.id == id) {
         producto.id = Number(req.body.id);
         producto.name = req.body.name;
-        description: req.body.description;
-        category: req.body.category;
-        colors: req.body.colors;
-        price: Number(req.body.price);
-        image: req.files[0] ? req.files[0].filename : producto.image;
+        producto.description = req.body.description;
+        producto.category = req.body.category;
+        producto.colors = req.body.colors;
+        producto.price = Number(req.body.price);
+        producto.image = req.files[0] ? req.files[0].filename : producto.image;
       }
     });
     fs.writeFileSync(
