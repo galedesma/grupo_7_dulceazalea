@@ -15,22 +15,22 @@
 					class="col-12 col-sm-12 col-md-6 col-lg-6 align-items-center justify-content-center vistaPrevia"
 				>
 					<img
-						src="/img/products/<%= productoEdit.image %> "
+						src="/img/products/<%= producto.image %> "
 						class="image-fluid"
 						alt="Responsive image"
 					/>
-					<form action="" style="margin-top: 10px;">
-						<input type="file" id="img" name="img" accept="image/*" />
-					</form>
 				</div>
 				<div
 					class="col-12 col-sm-12 col-md-6 col-lg-6 align-items-center justify-content-center formularioCarga"
 				>
-					<form action="" method="POST" enctype="multipart/form-data">
+					<form action="/products/sent/<%= producto.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
 						<ul>
 							<li>
+								<input type="file" id="img" name="image" accept="image/*" />
+							</li>
+							<li>
 								<p>Nombre del producto:</p>
-								<input type="text" value="<%= productoEdit.name %> ">
+								<input type="text" name="name" value="<%= producto.name %> ">
 							</li>
 							<li>
 								<p>Descripción:</p>
@@ -39,25 +39,28 @@
 									id="description__product__edit"
 									cols="30"
 									rows="4"
-								><%= productoEdit.description %> </textarea>
+								><%= producto.description %> </textarea>
 							</li>
 							<li>
 								<p>Categoria:</p>
-								<select name="Category" id="Category">
-									<option value="p1">Producto1</option>
-								</select>
+								<input list="categoria" name="category"  >
+  								<datalist id="categoria" >
+										<% categorias.forEach(categoria => { %>	 
+										<option value="<%= categoria.name %> ">
+											<% }) %>
+  								</datalist>
 							</li>
 							<li>
 								<p>Color</p>
-									<input type="text" value="<%= productoEdit.colors %> "/>
+									<input type="text" name="colors" value="<%= producto.colors %> "/>
 								</select>
 							</li>
 							<li>
 								<p>Precio:</p>
-								<input type="text" value="<%= productoEdit.price %> "/>
+								<input type="text" name="price" value="<%= producto.price %> "/>
 							</li>
 						</ul>
-						<button type="submit" name="id" value=<%= productoEdit.id %> >Cargar Producto</button>
+						<button type="submit" name="id" value="<%= producto.id %> ">Cargar Producto</button>
 						<button type="reset">Borrar Producto</button>
 					</form>
 				</div>

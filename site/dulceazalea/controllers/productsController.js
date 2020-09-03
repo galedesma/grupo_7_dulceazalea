@@ -58,17 +58,32 @@ module.exports = {
   },
   mostrar: function (req, res) {
     let id = req.params.id;
-    let productoEdit = database.filter((producto) => {
+    let producto = database.filter((producto) => {
       return producto.id == id;
     });
     res.render('productEdit', {
       title: 'Editar Producto',
-      productoEdit: productoEdit[0],
-      CantProducts: database.length,
+      producto: producto[0],
+      categorias: dbCategorias,
     });
   },
-  edit: function (req, res, next) {
-    let id = res.params.id;
-    res.render();
+  edit: function (req, res) {
+    let id = req.params.id;
+    database.forEach((producto) => {
+      if (producto.id == id) {
+        producto.id = Number(req.body.id);
+        producto.name = req.body.name;
+        description: req.body.description;
+        category: req.body.category;
+        colors: req.body.colors;
+        price: Number(req.body.price);
+        image: req.files[0] ? req.files[0].filename : producto.image;
+      }
+    });
+    fs.writeFileSync(
+      path.join(__dirname, '../data/products.json'),
+      JSON.stringify(database)
+    );
+    res.redirect('/products/' + id);
   },
 };
