@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="es">
 	<%- include('partials/head') %>
+	
 	<body>
 		<%- include('partials/header') %>
-
+		<!-- fin del header -->
+		
 		<section class="container formularioCarga" >
 			<h2>
-				Prublicar Producto
+				Publicar Producto
 			</h2>
 			<div class="row"id="form__create">
 				<div
 					class="col-12 col-sm-12 col-md-6 col-lg-6 align-items-center justify-content-center vistaPrevia"
 				>
 					<img
-						src="/img/weebly_image_sample.png"
+						src="/img/products/<%= producto.image %> "
 						class="image-fluid"
 						alt="Responsive image"
 					/>
@@ -21,34 +23,28 @@
 				<div
 					class="col-12 col-sm-12 col-md-6 col-lg-6 align-items-center justify-content-center formularioCarga"
 				>
-				
-					<form action="" method="POST" enctype="multipart/form-data">
+					<form action="/products/sent/<%= producto.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
 						<ul>
 							<li>
-								<input type="file" id="img" name="image" accept="image/*" />
+								<input type="file" id="image" name="image" accept="image/*" />
 							</li>
 							<li>
 								<p>Nombre del producto:</p>
-								<textarea
-									name="name"
-									id=""
-									cols="30"
-									rows="1"
-								></textarea>
+								<input type="text" name="name" value="<%= producto.name %> ">
 							</li>
 							<li>
 								<p>Descripción:</p>
 								<textarea
-									name="description"
-									id=""
+									name="descripcion"
+									id="description__product__edit"
 									cols="30"
 									rows="4"
-								></textarea>
+								><%= producto.description %> </textarea>
 							</li>
 							<li>
 								<p>Categoria:</p>
-								<input list="categoria" name="category" id="form__categoria__producto">
-  								<datalist id="categoria">
+								<input list="categoria" name="category"  >
+  								<datalist id="categoria" >
 										<% categorias.forEach(categoria => { %>	 
 										<option value="<%= categoria.name %> ">
 											<% }) %>
@@ -56,18 +52,20 @@
 							</li>
 							<li>
 								<p>Color</p>
-									<input type="text" name="colors"/>
+									<input type="text" name="colors" value="<%= producto.colors %> "/>
 								</select>
 							</li>
 							<li>
 								<p>Precio:</p>
-								<input type="number" name="price"/>
+								<input type="text" name="price" value="<%= producto.price %> "/>
 							</li>
 						</ul>
-						<button type="submit">Cargar Producto</button>
+						<button type="submit" name="id" value="<%= producto.id %> ">Cargar Producto</button>
 						<button type="reset">Borrar Formulario</button>
 					</form>
-					
+					<form action="/products/delete/<%= producto.id %>?_method=DELETE" method="POST">
+						<button type="submit">Eliminar Producto</button>
+					</form>
 				</div>
 			</div>
 		</section>

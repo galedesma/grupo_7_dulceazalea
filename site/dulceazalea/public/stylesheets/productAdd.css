@@ -1,72 +1,15 @@
-@import 'footer.css';
-* {
-	box-sizing: border-box;
-	margin: 0px;
-}
-:root {
-	--color-rosa: #fda8bb;
-	--color-azul: #365e8f;
-	--color-celeste: #cae8ff;
-	--color-rosa_claro: #fedcdb;
-}
-a {
-	text-decoration: none;
-	color: black;
-}
-a:hover {
-	color: white;
-	text-decoration: none;
-}
-li {
-	list-style: none;
-}
+/* 
++++++++++++++++++++++++++++++++++++++++++++++++
+PRODUCTADD Y PRODUCTEDIT
++++++++++++++++++++++++++++++++++++++++++++++++
+*/
 
-/*
-HEADER
-*/
-header {
-	background-color: var(--color-rosa);
-	height: 100%;
-	align-items: center;
-	padding-top: 10px;
-	padding-bottom: 10px;
-	vertical-align: middle;
-}
-.btn {
-	background-color: var(--color-rosa);
-	border: 1px solid black;
-}
-.btn-link {
-	color: black;
-}
-header .buscar {
-	max-width: 80%; /*Evita que el botón de búsqueda se coloque debajo de la barra de búsqueda en varios anchos de pantalla*/
-	border-radius: 10px;
-	border: 1px solid black;
-}
-header .icono-busqueda {
-	border-radius: 10px;
-	border: 1px solid black;
-}
-.fa-question-circle {
-	text-align: right;
-}
-.nav {
-	background-color: var(--color-rosa);
-}
-.navbar-nav {
-	border: 1px solid grey;
-	border-radius: 5px;
-}
-/*
-Section
-*/
 .vistaPrevia,
 .formularioCarga {
 	margin-top: 20px;
 	margin-bottom: 20px;
 }
-#form {
+#form__create {
 	background-color: var(--color-rosa_claro);
 	border-radius: 25px;
 	margin: 30px auto;
@@ -79,5 +22,6 @@ p {
 .image-fluid {
 	width: 100%;
 }
-@media (min-width: 992px) {
+form #description__product__edit {
+	width: 100%;
 }

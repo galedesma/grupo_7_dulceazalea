@@ -1,68 +1,3 @@
-@import 'footer.css';
-/* colores */
-:root {
-	--color-rosa: #fda8bb;
-	--color-rosa_claro: #fedcdb;
-	--color-azul: #365e8f;
-	--color-celeste: #cae8ff;
-}
-
-/* GENERAL */
-
-* {
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
-}
-a {
-	text-decoration: none;
-	color: black;
-}
-a:hover {
-	color: white;
-	text-decoration: none;
-}
-li {
-	list-style: none;
-}
-
-/* HEADER */
-
-header {
-	background-color: var(--color-rosa);
-	padding: 15px;
-	/* position: fixed; */
-}
-header .logo {
-	padding: 0px;
-	height: 20px;
-	margin-left: 0px;
-}
-header form {
-	position: relative;
-	display: flex;
-	align-items: center;
-	font-size: 0.8rem;
-}
-header form input {
-	border: solid 1px var(--color-grisClaro);
-	display: block;
-	width: 100%;
-	padding: 7px 0px 7px 0px;
-	border-radius: 5px;
-}
-header form button {
-	position: absolute;
-	right: 2px;
-	height: 60%;
-	background-color: white;
-	border: none;
-}
-header .user li {
-	display: inline;
-	margin: 30px;
-}
-/* FIN DEL HEADER */
 .productDetail {
 	margin: 30px 5px 40px;
 	padding: 20px;
@@ -89,6 +24,15 @@ form #boton {
 	border-top: solid #000000 1px;
 	text-align: center;
 	padding-top: 10px;
+	padding-bottom: 15px;
+}
+.pagos__detail img {
+	height: 40px;
+	border-radius: 5px;
+	margin-bottom: 5px;
+}
+.pagos__detail {
+	padding-bottom: 10px;
 }
 /* PIE DE PAGINA */
 

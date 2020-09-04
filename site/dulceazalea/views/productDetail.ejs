@@ -1,44 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
-	<%- include('partials/head') %>
+<html lang="es">
+  <%- include('partials/head') %>
+  
 	<body>
-		<header class="container-fluid">
-			<div class="container">
-				<div class="row">
-					<!-- logo -->
-					<div class="col-5 col-md-2 col-lg-2 logo">
-						<a href="home.ejs"
-						><img src="/img/logo-mercado-liebre.svg" alt="logo"/></a>
-					</div>
-
-					<!--barra de busqueda-->
-					<div class="col-7 col-md-6 col-lg-6">
-						<form action="" method="get" class="search-form">
-							<input
-								type="text"
-								name="search"
-								placeholder="¿Qué estás buscando?"
-								class="search-form_input"
-							/>
-							<button type="submit" class="search-form_button">
-							<i class="fas fa-search"></i>
-							</button>
-						</form>
-					</div>
-				</div>
-				<div class="col-12 user">
-					<li>
-						<a href=" "><i class="fas fa-comments">Contacto</i></a>
-					</li>
-					<li>	
-						<a href="productCart.html"><i class="fas fa-shopping-cart">Carrito</i></a>
-					</li>
-					<li>
-						<a href=" "><a href="register.html"><i class="fas fa-user"></i></a>Ingrasar</i></a>
-					</li>
-				</div>
-			</div>
-		</header>
+		<%- include('partials/header') %>
 		<!-- fin del header -->
 
     <div class="container ">
@@ -59,11 +24,51 @@
             <form action="">
               <input type="number" class="form-control js-quantity-input form-control-inline" autocorrect="off" autocapitalize="off" name="quantity" value="1" min="1" aria-label="Cambiar cantidad">
               <h3>18 cuotas de <%= (producto.price/18).toFixed(2) %> </h3>
-              <ul class="icon">
-                <li><i class="fab fa-cc-mastercard" id="icons__footer"></i></li>
-                <li><i class="fab fa-cc-amex" id="icons__footer"></i></li>
-                <li><i class="fas fa-money-check-alt" id="icons__footer"></i></li>
-              </ul>
+              <div class="pagos__detail">
+                
+                <img
+                  src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/visa@2x.png"
+                  data-src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/visa@2x.png"
+                  class="icon-logo lazyloaded"
+                  alt="visa"
+                />
+                <img
+                  src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/mastercard@2x.png"
+                  data-src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/mastercard@2x.png"
+                  class="icon-logo lazyloaded"
+                  alt="mastercard"
+                />
+                <img
+                  src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/amex@2x.png"
+                  data-src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/amex@2x.png"
+                  class="icon-logo lazyloaded"
+                  alt="amex"
+                />
+                <img
+                  src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/ar/tarjeta-naranja@2x.png"
+                  data-src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/ar/tarjeta-naranja@2x.png"
+                  class="icon-logo lazyloaded"
+                  alt="ar_tarjeta-naranja"
+                />
+                <img
+                  src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/mercadopago@2x.png"
+                  data-src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/mercadopago@2x.png"
+                  class="icon-logo lazyloaded"
+                  alt="mercadopago"
+                />
+                <img
+                  src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/pagofacil@2x.png"
+                  data-src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/pagofacil@2x.png"
+                  class="icon-logo lazyloaded"
+                  alt="pagofacil"
+                />
+                <img
+                  src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/rapipago@2x.png"
+                  data-src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/rapipago@2x.png"
+                  class="icon-logo lazyloaded"
+                  alt="rapipago"
+                />
+              </div>
               <input type="button" id="boton" value="AGREGAR AL CARRITO">    
             </form>
           </div>
