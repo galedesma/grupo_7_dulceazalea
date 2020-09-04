@@ -3,13 +3,13 @@ const dbProduct = require('../data/database');
 module.exports = {
   index: (req, res) => {
     let principal = dbProduct.filter((producto) => {
-      return producto.category == 'principal';
+      return producto.categoryHome == 'principal';
     });
     let ofertas = dbProduct.filter((producto) => {
-      return producto.category == 'ofertas';
+      return producto.categoryHome == 'ofertas';
     });
     let masVendidos = dbProduct.filter((producto) => {
-      return producto.category == 'masVendidos';
+      return producto.categoryHome == 'masVendidos';
     });
 
     res.render('home', {
@@ -29,11 +29,11 @@ module.exports = {
         productos.push(producto);
       }
     });
-    dbProduct.forEach((producto) => {
+    /* dbProduct.forEach((producto) => {
       if (producto.category.toLowerCase().includes(busqueda)) {
         productos.push(producto);
       }
-    });
+    }) */;
     if (productos.length == 0) {
       titulo = 'Producto no encontrado';
     } else {

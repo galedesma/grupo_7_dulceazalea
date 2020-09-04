@@ -80,7 +80,7 @@ module.exports = {
         producto.image = req.files[0] ? req.files[0].filename : producto.image;
       }
     });
-    fs.writeFileSync(
+    let newDatabase = fs.writeFileSync(
       path.join(__dirname, '../data/products.json'),
       JSON.stringify(database)
     );
