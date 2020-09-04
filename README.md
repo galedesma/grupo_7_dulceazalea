@@ -44,7 +44,6 @@ Breve descripción de los integrantes del equipo
 
 - Franco Fallatti, 19 años, estudiante de licenciatura en sistemas en la Universidad Nacional de General Sarmiento.
 - Gonzalo Ledesma, 25 años, vive en San Miguel, actualmente estudiante de ingeniería en computación en la Universidad Nacional de Tres de Febrero.
-- Nicol Riquelme Valdéz, 27 años, Diseñadora Gráfica, emprendedora.
 
 
 Tablero del proyecto: https://trello.com/b/YQgDG2KT/grupo-7-dulce-azalea
