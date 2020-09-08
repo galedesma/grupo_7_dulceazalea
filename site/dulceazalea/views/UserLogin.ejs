@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+  <%- include('partials/head') %>
+
+  <body>
+    <%- include('partials/header') %>
+    <!-- fin del header -->
+
+    <div class="mt-4">
+      <section class="page-header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <h1>Iniciar Sesión</h1>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="account-page">
+        <div class="container">
+          <div class="row justify-content-md-center">
+            <div class="col-12 col-md-8">
+              <form id="login-form" action="" method="post" class="form__reg">
+                <div class="form-group">
+                  <label class="form-label" for="email">Email</label>
+                  <input
+                    type=""
+                    id="email"
+                    class="form-control"
+                    autocorrect="off"
+                    autocapitalize="off"
+                    name="email"
+                  />
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="password">Contraseña</label>
+                  <input
+                    type="password"
+                    id="password"
+                    class="form-control"
+                    autocorrect="off"
+                    autocapitalize="off"
+                    autocomplete="off"
+                    name="password"
+                  />
+                </div>
+                <div class="form-group">
+                  <input type="checkbox" name="" id="" value="Recordarme" />
+                  <label class="form-label" for="checkbox">Recordarme</label>
+                </div>
+                <input
+                  class="btn btn-primary btn-block"
+                  type="submit"
+                  value="Iniciar Sesión"
+                  name=""
+                  disabled=""
+                  id="boton"
+                />
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <%- include('partials/footer') %>
+  </body>
+</html>

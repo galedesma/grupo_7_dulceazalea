@@ -60,11 +60,10 @@
 								<input type="text" name="price" value="<%= producto.price %> "/>
 							</li>
 						</ul>
-						<button type="submit" name="id" value="<%= producto.id %> ">Cargar Producto</button>
-						<button type="reset">Borrar Formulario</button>
+						<button type="submit" name="id" value="<%= producto.id %> "id="boton">Cargar Producto</button>
 					</form>
 					<form action="/products/delete/<%= producto.id %>?_method=DELETE" method="POST">
-						<button type="submit">Eliminar Producto</button>
+						<button type="submit"id="boton">Eliminar Producto</button>
 					</form>
 				</div>
 			</div>
