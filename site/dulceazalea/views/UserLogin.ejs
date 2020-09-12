@@ -21,7 +21,7 @@
         <div class="container">
           <div class="row justify-content-md-center">
             <div class="col-12 col-md-8">
-              <form id="login-form" action="" method="post" class="form__reg">
+              <form id="login-form" action="" method="POST" class="form__reg">
                 <div class="form-group">
                   <label class="form-label" for="email">Email</label>
                   <input
@@ -49,14 +49,17 @@
                   <input type="checkbox" name="" id="" value="Recordarme" />
                   <label class="form-label" for="checkbox">Recordarme</label>
                 </div>
-                <input
+                <!-- <input
                   class="btn btn-primary btn-block"
                   type="submit"
                   value="Iniciar Sesión"
                   name=""
                   disabled=""
                   id="boton"
-                />
+                /> -->
+                <div class="form-group">
+                  <button type="submit" class="btn btn-primary btn-block" value="Iniciar Sesión" id="boton">Iniciar Sesión</button>
+                </div>
               </form>
             </div>
           </div>
