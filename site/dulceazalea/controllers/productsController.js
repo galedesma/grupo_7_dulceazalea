@@ -86,15 +86,18 @@ module.exports = {
     );
     res.redirect('/products/' + id);
   },
-  eliminar:function(req,res){
-	let idProducto = req.params.id;
-	database.forEach(producto=>{
-		if(producto.id == idProducto){
-			let aEliminar = database.indexOf(producto);
-			database.splice(aEliminar,1);
-		}
-	})
-	fs.writeFileSync(path.join(__dirname, '../data/products.json'), JSON.stringify(database));
-	res.redirect('/products')
-	}
+  eliminar: function (req, res) {
+    let idProducto = req.params.id;
+    database.forEach((producto) => {
+      if (producto.id == idProducto) {
+        let aEliminar = database.indexOf(producto);
+        database.splice(aEliminar, 1);
+      }
+    });
+    fs.writeFileSync(
+      path.join(__dirname, '../data/products.json'),
+      JSON.stringify(database)
+    );
+    res.redirect('/products');
+  },
 };

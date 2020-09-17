@@ -33,8 +33,9 @@ module.exports = {
       if (producto.category.toLowerCase().includes(busqueda)) {
         productos.push(producto);
       }
-    }) */;
-    if (productos.length == 0) {
+    }) */ if (
+      productos.length == 0
+    ) {
       titulo = 'Producto no encontrado';
     } else {
       titulo = 'Resultado de la búsqueda';
@@ -42,6 +43,11 @@ module.exports = {
     res.render('products', {
       title: titulo,
       productos: productos,
+    });
+  },
+  carrito: function (req, res) {
+    res.render('productCart', {
+      title: 'Carrito',
     });
   },
 };

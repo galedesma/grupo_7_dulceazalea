@@ -22,7 +22,7 @@ module.exports = [
       }
       return true;
     })
-    .withMessage('Usuario ya existente'),
+    .withMessage('Email ya existente'),
 
   check('password')
     .isLength({ min: 6, max: 12 })

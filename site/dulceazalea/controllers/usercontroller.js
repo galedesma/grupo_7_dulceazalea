@@ -20,7 +20,7 @@ module.exports = {
         id: LastID + 1,
         first_name: req.body.first_name,
         last_name: req.body.last_name,
-        Email: req.body.Email,
+        email: req.body.email,
         password: bcrypt.hashSync(req.body.password, 10),
         rol: 'user',
       };
