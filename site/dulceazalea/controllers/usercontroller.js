@@ -11,6 +11,38 @@ module.exports = {
     });
   },
   processRegister: function (req, res) {},
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   mostrar_Login: function (req, res) {
     res.render('UserLogin', {
       title: 'Login',
