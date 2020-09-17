@@ -68,11 +68,51 @@
                 ><span class="sr-only">(current)</span></a
               >
             </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="/users/register"
-                ><i class="fas fa-user">Cuenta</i
-                ><span class="sr-only">(current)</span></a
-              >
+            <li class="nav-item active dropdown"">
+              <% if (typeof usuario == 'undefined') { %>
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+                ><i class="fas fa-user"></i>
+                Usuario
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="nav-link" href="/users/login"
+                  > Iniciar Sesión
+                  <span class="sr-only">(current)</span></a
+                >
+                <a class="nav-link" href="/users/register"
+                  > Registrarse
+                  <span class="sr-only">(current)</span></a
+                >
+              </div>
+              <% } else {%> 
+                <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+                ><img src="/img/users/<%= usuario.avatar %> alt=""> <%= usuario.nick %> 
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="nav-link" href="/users/profile"
+                  > Perfil
+                  <span class="sr-only">(current)</span></a
+                >
+                <a class="nav-link" href="/users/logout"
+                  > Cerrar Sesión
+                  <span class="sr-only">(current)</span></a
+                >
+              </div>  
+              <% } %>
             </li>
             <li class="nav-item active">
               <a class="nav-link" href="/carrito"
