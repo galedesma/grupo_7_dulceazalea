@@ -1,5 +1,6 @@
 const {check,validatorResult,body} = require('express-validator');
-const dbUsuarios = require('../data/dbUsers');
+const dbUsers = require('../data/dbUsers');
+const bcrypt = require('bcrypt')
 
 module.exports = [
     check('email')
@@ -12,16 +13,33 @@ module.exports = [
 
     body('email')
     .custom(function(value){
-        dbUsuarios.forEach(usuario => {
-            if(usuario.email != value){
-                result = false
-            }
+        let usuario = dbUsers.filter(function(user){
+            return user.email == value
         })
+
+        if(usuario == false){
+            return false
+        }else{
+            return true
+        }
+    })
+    .withMessage('El usuario no está registrado'),
+
+    body('password')
+    .custom(function(value,{req}){
+        let resultado = true;
+        dbUsers.forEach(function(user){
+            if(user.email == req.body.email){
+                if(!bcrypt.compareSync(value, user.password)){
+                    resultado == false
+                }
+            }
+        });
         if(result == false){
             return false
         }else{
             return true
         }
     })
-    .withMessage('El usuario no está registrado')
+    .withMessage('Contraseña incorrecta')
 ]
