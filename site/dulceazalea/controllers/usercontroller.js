@@ -4,7 +4,6 @@ const { validationResult } = require('express-validator');
 const fs = require('fs');
 const path = require('path');
 const bcrypt = require('bcrypt');
-const { check, validationResult, body } = require('express-validator');
 
 module.exports = {
   mostrar_Registro: function (req, res) {
@@ -58,6 +57,12 @@ module.exports = {
       title: 'Ingresar',
     });
   },
+  mostrar_Login: function (req, res) {
+    res.render('UserLogin', {
+      title: 'UserPerfil',
+    });
+  },
+
   processLogin: function (req, res) {
     let errors = validationResult(req);
     if (errors.isEmpty()) {
