@@ -36,4 +36,23 @@ module.exports = [
       return true;
     })
     .withMessage('Las contraseñas no coinciden'),
+
+  // body('avatar')
+  //   .custom(function (value) {
+  //     //   if (value != 'undefined') {
+  //     //     return true;
+  //     //   }
+  //     //   return false;
+  //     switch (typeof value) {
+  //       case 'jpg':
+  //         true;
+  //         break;
+  //       case 'png':
+  //         true;
+  //         break;
+  //       default:
+  //         false;
+  //     }
+  //   })
+  //   .withMessage('Seleccione un archivo'),
 ];

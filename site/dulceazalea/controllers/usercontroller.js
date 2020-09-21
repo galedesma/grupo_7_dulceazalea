@@ -1,4 +1,5 @@
 const dbUsers = require('../data/dbUsers');
+const dbProducts = require('../data/products.json');
 const fs = require('fs');
 const path = require('path');
 const bcrypt = require('bcrypt');
@@ -13,15 +14,23 @@ module.exports = {
   ProcessRegister: function (req, res) {
     console.log(validationResult(req));
     let errors = validationResult(req);
-    let LastID = dbUsers.length;
+    let lastID = 0;
+    if (dbUsers.length > 0) {
+      dbUsers.forEach((user) => {
+        if (user.id > lastID) {
+          lastID = user.id;
+        }
+      });
+    }
 
     if (errors.isEmpty()) {
       let UserNuevo = {
-        id: LastID + 1,
+        id: lastID + 1,
         first_name: req.body.first_name,
         last_name: req.body.last_name,
         email: req.body.email,
         password: bcrypt.hashSync(req.body.password, 10),
+        avatar: req.files[0].filename,
         rol: 'user',
       };
       dbUsers.push(UserNuevo);
@@ -33,9 +42,14 @@ module.exports = {
       );
     } else {
       // if (!errors.isEmpty()) {
-      return res.render('UserRegister', {
-        errors: errors.errors,
+      // return res.render('UserRegister', {
+      //   errors: errors.errors,
+      //   title: 'Registro',
+      // });
+      res.render('UserRegister', {
         title: 'Registro',
+        errors: errors.mapped(),
+        old: req.body,
       });
     }
 
@@ -52,6 +66,8 @@ module.exports = {
   profile: function (req, res) {
     res.render('UserPerfil', {
       title: 'Perfil',
+      dbUsers: dbUsers,
+      dbProducts: dbProducts,
     });
   },
 };

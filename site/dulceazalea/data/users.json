@@ -6,7 +6,16 @@
     "Email": "francofallatti@gmail.com",
     "password": "8g6kpC",
     "category": "user",
-    "image": "user-profile.jpg",
+    "avatar": "user-profile.jpg",
+    "rol": "user"
+  },
+  {
+    "id": 2,
+    "first_name": "franco    ",
+    "last_name": "fallatti    ",
+    "email": "franckfallatti@gmail.com",
+    "password": "$2b$10$pJRncQQE0ozCp6y/I1iq1.fEUXpHR4nzP/lKvPF9.pssZP6rj222y",
+    "avatar": "avatar-1600697352038.png",
     "rol": "user"
   }
 ]

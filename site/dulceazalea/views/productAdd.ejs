@@ -29,21 +29,28 @@
 							</li>
 							<li>
 								<p>Nombre del producto:</p>
-								<textarea
-									name="name"
+								<input type="text"
+									class="form-control<%= (typeof old != 'undefined' && old.name)?"is-valid":(typeof errors != "undefined" && errors.name)?"is-invalid": "" %>"
+									name="name" 
 									id=""
+									value="<%= (typeof old!= 'undefined' && old.name)?old.name:'' %> "
+									placeholder="Nombre del Producto"
 									cols="30"
 									rows="1"
-								></textarea>
+								/><br>
+								<small class="text-danger"><%= (typeof errors != 'undefined' && errors.name)?errors.name.msg: "" %> </small>
 							</li>
 							<li>
 								<p>Descripción:</p>
 								<textarea
+									class="form-control <%= (typeof old != "undefined" && old.description)?"is-valid":(typeof errors != "undefined" && errors.description)?"is-invalid": "" %>"
 									name="description"
 									id=""
 									cols="30"
 									rows="4"
+									value="<%= (typeof old!='undefined' && old.description)?old.description:'' %> "
 								></textarea>
+								<small class="text-danger"><%= (typeof errors !='undefined' && errors.description)?errors.description.msg: "" %> </small>
 							</li>
 							<li>
 								<p>Categoria:</p>
@@ -61,11 +68,12 @@
 							</li>
 							<li>
 								<p>Precio:</p>
-								<input type="number" name="price"/>
+								<input class="<%= (typeof old != "undefined" && old.price)?"is-valid":(typeof errors != "undefined" && errors.price)?"is-invalid": "" %> " type="number" name="price"
+								value="<%= (typeof old!='undefined' && old.price)?old.price:'' %> "/><br>
+								<small class="text-danger"><%= (typeof errors !='undefined' && errors.price)?errors.price.msg: "" %> </small>
 							</li>
 						</ul>
 						<button type="submit"id="boton">Cargar Producto</button>
-						<button type="reset"id="boton">Borrar Formulario</button>
 					</form>
 					
 				</div>
