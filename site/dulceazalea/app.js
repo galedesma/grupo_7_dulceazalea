@@ -23,7 +23,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(methodOverride('_method'));
-app.use(session({secret:"OjalaEstoFuncione"}));
+app.use(session({ secret: 'DulceAzaleaHome' }));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);

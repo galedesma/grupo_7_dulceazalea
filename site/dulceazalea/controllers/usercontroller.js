@@ -60,22 +60,27 @@ module.exports = {
   mostrar_Login: function (req, res) {
     res.render('UserLogin', {
       title: 'UserPerfil',
+      usuario: req.session.usuario,
     });
   },
 
   processLogin: function (req, res) {
     let errors = validationResult(req);
+    console.log(validationResult(req));
     if (errors.isEmpty()) {
       dbUsers.forEach(function (usuario) {
         if (usuario.email == req.body.email) {
           req.session.usuario = {
             id: usuario.id,
-            nick: usuario.nombre + ' ' + usuario.apellido,
+            nick: usuario.first_name + ' ' + usuario.last_name,
             email: usuario.email,
+            avatar: usuario.avatar,
           };
         }
       });
+
       res.redirect('/');
+      console.log(req.session.usuario);
     } else {
       res.render('UserLogin', {
         title: 'Ingresá a tu cuenta',
@@ -90,6 +95,14 @@ module.exports = {
       title: 'Perfil',
       dbUsers: dbUsers,
       dbProducts: dbProducts,
+      usuario: req.session.usuario,
     });
+  },
+  logout: function (req, res) {
+    req.session.destroy();
+    if (req.cookies.DulceAzaleaHome) {
+      res.cookie('DulceAzaleaHome', '', { maxAge: -1 });
+    }
+    return res.redirect('/');
   },
 };
