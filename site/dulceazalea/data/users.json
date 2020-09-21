@@ -3,9 +3,10 @@
     "id": 1,
     "first_name": "Franco",
     "last_name": "Fallatti",
-    "email": "francofallatti@gmail.com",
+    "Email": "francofallatti@gmail.com",
     "password": "8g6kpC",
     "category": "user",
-    "image": "user-profile.jpg"
+    "image": "user-profile.jpg",
+    "rol": "user"
   }
 ]

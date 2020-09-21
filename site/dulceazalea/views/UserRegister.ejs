@@ -22,38 +22,45 @@
         <div class="container">
           <div class="row justify-content-md-center">
             <div class="col-12 col-md-8">
-              <form id="login-form" action="" method="post" class="form__reg">
+              <form action="" method="POST" class="form__reg">
+                <!-- enctype="multipart/form-data" -->
+                <% if (typeof errors != 'undefined') { %>
+                <ul>
+                  <% for( let i = 0; i < errors.length; i++ ) { %>
+                  <p style="color: red"><%=errors[i].msg %></p>
+                  <% } %>
+                </ul>
+                <% } %>
                 <div class="form-group">
-                  <label class="form-label" for="name">Nombre</label>
+                  <label class="form-label" for="first_name">Nombre</label>
                   <input
                     type="text"
-                    id="name"
+                    id="first_name"
                     class="form-control"
-                    autocorrect="off"
-                    autocapitalize="off"
                     name="first_name"
+                    placeholder="nombre"
                   />
                 </div>
                 <div class="form-group">
                   <label class="form-label" for="name">Apellido</label>
                   <input
                     type="text"
-                    id="name"
+                    id="last_name"
                     class="form-control"
                     autocorrect="off"
-                    autocapitalize="off"
                     name="last_name"
+                    placeholder="Apellido"
                   />
                 </div>
                 <div class="form-group">
                   <label class="form-label" for="email">Email</label>
                   <input
-                    type=""
+                    type="email"
                     id="email"
                     class="form-control"
                     autocorrect="off"
-                    autocapitalize="off"
                     name="email"
+                    placeholder="Email"
                   />
                 </div>
                 <div class="form-group">
@@ -63,9 +70,8 @@
                     id="password"
                     class="form-control"
                     autocorrect="off"
-                    autocapitalize="off"
-                    autocomplete="off"
                     name="password"
+                    placeholder="Contraseña"
                   />
                 </div>
                 <div class="form-group">
@@ -77,20 +83,15 @@
                     id="password_confirmation"
                     class="form-control"
                     autocorrect="off"
-                    autocapitalize="off"
-                    autocomplete="off"
                     name="password_confirmation"
+                    placeholder="Repetir Contraseña"
                   />
                 </div>
-                <div class="form-group"></div>
-                <input
-                  class="btn btn-primary btn-block"
-                  type="submit"
-                  value="Crear cuenta"
-                  name=""
-                  disabled=""
-                  id="boton"
-                />
+                <div class="form-group">
+                  <button id="boton" class="btn btn-primary btn-block">
+                    Crear cuenta
+                  </button>
+                </div>
               </form>
             </div>
           </div>
