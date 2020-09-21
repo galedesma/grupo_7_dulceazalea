@@ -1,42 +1,38 @@
-section {
-	width: 80%;
-	padding-top: 15px;
-	padding-bottom: 15px;
-}
-section #unidades {
-	width: 90%;
-}
-section .cantidad {
-	margin: 0;
-}
-section .verMas {
-	margin-bottom: 20px;
-}
-section .inferior .login {
-	border: 1px solid black;
-	padding: 10px;
-	margin-bottom: 20px;
-}
-section .id,
-.input {
-	/*Hace que los campos para llenar ocupen todo el ancho de la ventanita login*/
-	width: 100%;
-}
-.grid-container {
-	display: grid;
-	grid-template-columns: auto auto auto auto;
-	grid-gap: 1px;
-	background-color: var(--color-azul);
-	padding: 10px;
-	margin-top: 20px;
-	margin-bottom: 20px;
-}
-.grid-container > div {
-	background-color: rgba(255, 255, 255, 0.8);
-	text-align: center;
-	padding: 20px 0;
-	font-size: auto;
+.products__cart {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: var(--color-rosa_claro);
+  border-radius: 25px;
+  margin: 5px 0px;
+  padding-bottom: 10px;
+  padding-top: 5px;
 }
 
-@media (min-width: 992px) {
+/* .products__cart form {
+  width: 100%;
+} */
+.products__cart .Articulo {
+  display: flex;
+}
+.products__cart .Articulo .imagen {
+  width: 40%;
+  padding: 5px;
+}
+.products__cart .Articulo .imagen img {
+  width: 100%;
+  border-radius: 10px;
+}
+.products__cart .Articulo form .product_cart_delete {
+  margin-left: 5px;
+}
+.products__cart__venta {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: var(--color-rosa_claro);
+  width: 100%;
+  border-radius: 25px;
+  margin: 5px 0px;
+  padding-bottom: 10px;
+  padding-top: 5px;
+  text-align: center;
 }

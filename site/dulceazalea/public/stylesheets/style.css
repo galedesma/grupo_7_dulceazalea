@@ -2,5 +2,6 @@
 @import 'productsDetail.css';
 @import 'productAdd.css';
 @import 'stylereg.css';
-/* @import 'productCart.css'; */
+@import 'productCart.css';
+@import 'users.css';
 @import 'footer.css';

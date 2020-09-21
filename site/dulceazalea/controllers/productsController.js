@@ -30,30 +30,35 @@ module.exports = {
     });
   },
   publicar: function (req, res, next) {
-    let lastID = 1;
-    database.forEach(function (producto) {
-      if (producto.id > lastID) {
-        lastID = producto.id;
-      }
-    });
-    let newProduct = {
-      id: lastID + 1,
-      name: req.body.name,
-      description: req.body.description,
-      category: req.body.category,
-      colors: req.body.colors,
-      price: Number(req.body.price),
-      image: req.files[0] ? req.files[0].filename : 'default-image.png',
-    };
+    console.log(validationResult(req));
+    let errors = validationResult(req);
+    let lastID = database.length;
+    if (errors.isEmpty()) {
+      let newProduct = {
+        id: lastID + 1,
+        name: req.body.name,
+        description: req.body.description,
+        category: req.body.category,
+        colors: req.body.colors,
+        price: Number(req.body.price),
+        image: req.files[0] ? req.files[0].filename : 'default-image.png',
+      };
 
-    database.push(newProduct);
+      database.push(newProduct);
 
-    fs.writeFileSync(
-      path.join(__dirname, '..', 'data', 'products.json'),
-      JSON.stringify(database),
-      'utf-8'
-    );
-
+      fs.writeFileSync(
+        path.join(__dirname, '..', 'data', 'products.json'),
+        JSON.stringify(database),
+        'utf-8'
+      );
+    } else {
+      res.render('productAdd', {
+        title: 'Cargar Producto',
+        categorias: dbCategorias,
+        errors: errors.mapped(),
+        old: req.body,
+      });
+    }
     res.redirect('/products');
   },
   mostrar: function (req, res) {
@@ -86,15 +91,18 @@ module.exports = {
     );
     res.redirect('/products/' + id);
   },
-  eliminar:function(req,res){
-	let idProducto = req.params.id;
-	database.forEach(producto=>{
-		if(producto.id == idProducto){
-			let aEliminar = database.indexOf(producto);
-			database.splice(aEliminar,1);
-		}
-	})
-	fs.writeFileSync(path.join(__dirname, '../data/products.json'), JSON.stringify(database));
-	res.redirect('/products')
-	}
+  eliminar: function (req, res) {
+    let idProducto = req.params.id;
+    database.forEach((producto) => {
+      if (producto.id == idProducto) {
+        let aEliminar = database.indexOf(producto);
+        database.splice(aEliminar, 1);
+      }
+    });
+    fs.writeFileSync(
+      path.join(__dirname, '../data/products.json'),
+      JSON.stringify(database)
+    );
+    res.redirect('/products');
+  },
 };
