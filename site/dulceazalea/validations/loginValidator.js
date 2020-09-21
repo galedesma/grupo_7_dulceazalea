@@ -5,9 +5,9 @@ const bcrypt = require('bcrypt');
 module.exports = [
   check('email').isEmail().withMessage('Debes ingresar un email válido'),
 
-  // check('password')
-  // .isEmpty()
-  // .withMessage('Debes ingresar una contraseña'),
+  check('password')
+    .isLength({ min: 1 })
+    .withMessage('Debes ingresar una contraseña'),
 
   body('email')
     .custom(function (value) {
@@ -23,21 +23,21 @@ module.exports = [
     })
     .withMessage('El usuario no está registrado'),
 
-  // body('password')
-  // .custom(function(value,{req}){
-  //     let resultado = true;
-  //     dbUsers.forEach(function(user){
-  //         if(user.email == req.body.email){
-  //             if(!bcrypt.compareSync(value, user.password)){
-  //                 resultado == false
-  //             }
-  //         }
-  //     });
-  //     if(result == false){
-  //         return false
-  //     }else{
-  //         return true
-  //     }
-  // })
-  // .withMessage('Contraseña incorrecta')
+  body('password')
+    .custom(function (value, { req }) {
+      let resultado = true;
+      dbUsers.forEach(function (user) {
+        if (user.email == req.body.email) {
+          if (!bcrypt.compareSync(value, user.password)) {
+            resultado = false;
+          }
+        }
+      });
+      if (resultado == false) {
+        return false;
+      } else {
+        return true;
+      }
+    })
+    .withMessage('Contraseña incorrecta'),
 ];

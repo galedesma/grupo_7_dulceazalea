@@ -78,7 +78,11 @@ module.exports = {
           };
         }
       });
-
+      if (req.body.Recordarme) {
+        res.cookie('userDulceAzalea', req.session.usuario, {
+          maxAge: 1000 * 60 * 2,
+        });
+      }
       res.redirect('/');
       console.log(req.session.usuario);
     } else {
@@ -94,14 +98,15 @@ module.exports = {
     res.render('UserPerfil', {
       title: 'Perfil',
       dbUsers: dbUsers,
-      dbProducts: dbProducts,
+      // dbProducts: dbProducts,
       usuario: req.session.usuario,
     });
+    console.log(usuario, 'test');
   },
   logout: function (req, res) {
     req.session.destroy();
-    if (req.cookies.DulceAzaleaHome) {
-      res.cookie('DulceAzaleaHome', '', { maxAge: -1 });
+    if (req.cookies.userDulceAzalea) {
+      res.cookie('userDulceAzalea', '', { maxAge: -1 });
     }
     return res.redirect('/');
   },
