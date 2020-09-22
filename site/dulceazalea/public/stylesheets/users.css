@@ -1,4 +1,11 @@
+.sections .articulos .imagen_profile {
+  margin-bottom: 15px;
+}
 .sections .articulos .imagen_profile img {
-  width: 30%;
-  border-radius: 50%;
+  /* width: auto;
+  height: 100%;
+  margin-left: -50px; */
+  width: 300px;
+  height: 300px;
+  border-radius: 150px;
 }

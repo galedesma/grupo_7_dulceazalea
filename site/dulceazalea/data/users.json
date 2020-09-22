@@ -1,1 +1,39 @@
-[{"id":1,"first_name":"Franco","last_name":"Fallatti","Email":"francofallatti@gmail.com","password":"8g6kpC","category":"user","image":"user-profile.jpg","rol":"user"},{"id":2,"first_name":"franco    ","last_name":"fallatti    ","email":"franckfallatti@gmail.com","password":"$2b$10$pJRncQQE0ozCp6y/I1iq1.fEUXpHR4nzP/lKvPF9.pssZP6rj222y","avatar":"avatar-1600697352038.png","rol":"user"},{"id":3,"first_name":" Gonzalo","last_name":"Ledesma","email":"gonzalo@ledesma.com","password":"$2b$10$G.EbiM6HnpHgw0iSxuzYqOlIVJauEP.Csq5ArqeW5GhI9jl/9kUOW","avatar":"avatar-1600700924824.jpg","rol":"user"},{"id":4,"first_name":" jose","last_name":"perez","email":"joseperez@gmail.com","password":"$2b$10$XuqHXvqfRlB3de7aAhYWpOZ8gO.jJ5WukXv1H13u.SGaagpcvwpKy","avatar":"avatar-1600701043138.jpg","rol":"user"},{"id":5,"first_name":"jose","last_name":"perez","email":"joseperez1@gmail.com","password":"$2b$10$2Qi9244Tuh9JkMUGCAqcy.F92ALNK11UVPJ0cn5kgz/wj7D/Q/5Rm","avatar":"avatar-1600701162913.jpg","rol":"user"}]
+[
+  {
+    "id": 1,
+    "first_name": "Franco",
+    "last_name": "Fallatti",
+    "Email": "francofallatti@gmail.com",
+    "password": "8g6kpC",
+    "category": "user",
+    "image": "user-profile.jpg",
+    "rol": "user"
+  },
+  {
+    "id": 2,
+    "first_name": "franco    ",
+    "last_name": "fallatti    ",
+    "email": "franckfallatti@gmail.com",
+    "password": "$2b$10$pJRncQQE0ozCp6y/I1iq1.fEUXpHR4nzP/lKvPF9.pssZP6rj222y",
+    "avatar": "avatar-1600697352038.png",
+    "rol": "user"
+  },
+  {
+    "id": 3,
+    "first_name": " Gonzalo",
+    "last_name": "Ledesma",
+    "email": "gonzalo@ledesma.com",
+    "password": "$2b$10$G.EbiM6HnpHgw0iSxuzYqOlIVJauEP.Csq5ArqeW5GhI9jl/9kUOW",
+    "avatar": "avatar-1600700924824.jpg",
+    "rol": "user"
+  },
+  {
+    "id": 5,
+    "first_name": "jose",
+    "last_name": "perez",
+    "email": "joseperez1@gmail.com",
+    "password": "$2b$10$2Qi9244Tuh9JkMUGCAqcy.F92ALNK11UVPJ0cn5kgz/wj7D/Q/5Rm",
+    "avatar": "avatar-1600701162913.jpg",
+    "rol": "user"
+  }
+]
