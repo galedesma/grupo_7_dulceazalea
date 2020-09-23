@@ -23,7 +23,9 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(methodOverride('_method'));
-app.use(session({ secret: 'DulceAzaleaHome' }));
+app.use(
+  session({ secret: 'DulceAzaleaHome', resave: true, saveUninitialized: true })
+);
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);

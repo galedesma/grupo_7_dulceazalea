@@ -9,12 +9,14 @@ module.exports = {
     res.render('products', {
       title: 'Todos los Productos',
       productos: database,
+      usuario: req.session.usuario,
     }); //muestra información de prueba
   },
   agregar: function (req, res) {
     res.render('productAdd', {
       title: 'Cargar Producto',
       categorias: dbCategorias,
+      usuario: req.session.usuario,
     });
   },
   detalle: function (req, res) {
@@ -27,6 +29,7 @@ module.exports = {
       title: 'Detalle del Producto',
       id: id,
       producto: producto[0],
+      usuario: req.session.usuario,
     });
   },
   publicar: function (req, res, next) {
@@ -70,6 +73,7 @@ module.exports = {
       title: 'Editar Producto',
       producto: producto[0],
       categorias: dbCategorias,
+      usuario: req.session.usuario,
     });
   },
   edit: function (req, res) {

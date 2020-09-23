@@ -3,19 +3,18 @@
   <%- include('partials/head') %>
   <body>
     <%- include('partials/header') %>
-    <div class="container-fluid sections">
+    <div class="container sections">
       <section>
         <div class="row articulos">
           <div class="col-12">
             <h1>Perfil de usuario</h1>
           </div>
-          <div class="col-12 col-sm-6 col-md-4 imagen_profile">
+          <div class="col-12 col-lg-5 imagen_profile">
             <img src="/img/users/<%= usuario.avatar %> " alt="" />
           </div>
-          <div class="col-12 col-sm-6 col-md-4">
+          <div class="col-12 col-lg-4 user_info">
             <h2><%= usuario.nick %></h2>
-          </div>
-          <div class="col-12 col-sm-6 col-md-4">
+
             <h2><%= usuario.email %></h2>
           </div>
         </div>

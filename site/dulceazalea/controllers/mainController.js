@@ -14,7 +14,7 @@ module.exports = {
 
     res.render('home', {
       title: 'Dulce Azalea',
-
+      usuario: req.session.usuario,
       principal: principal,
       ofertas: ofertas,
       masVendidos: masVendidos,
@@ -33,8 +33,9 @@ module.exports = {
       if (producto.category.toLowerCase().includes(busqueda)) {
         productos.push(producto);
       }
-    }) */;
-    if (productos.length == 0) {
+    }) */ if (
+      productos.length == 0
+    ) {
       titulo = 'Producto no encontrado';
     } else {
       titulo = 'Resultado de la búsqueda';
@@ -42,6 +43,7 @@ module.exports = {
     res.render('products', {
       title: titulo,
       productos: productos,
+      usuario: req.session.usuario,
     });
   },
 };

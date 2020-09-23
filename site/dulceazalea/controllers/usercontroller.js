@@ -59,14 +59,14 @@ module.exports = {
   },
   mostrar_Login: function (req, res) {
     res.render('UserLogin', {
-      title: 'UserPerfil',
+      title: 'Ingresá a tu cuenta',
       usuario: req.session.usuario,
     });
   },
 
   processLogin: function (req, res) {
     let errors = validationResult(req);
-    console.log(validationResult(req));
+    // console.log(validationResult(req));
     if (errors.isEmpty()) {
       dbUsers.forEach(function (usuario) {
         if (usuario.email == req.body.email) {
@@ -84,7 +84,7 @@ module.exports = {
         });
       }
       res.redirect('/');
-      console.log(req.session.usuario);
+      // console.log(req.session.usuario);
     } else {
       res.render('UserLogin', {
         title: 'Ingresá a tu cuenta',
@@ -95,13 +95,12 @@ module.exports = {
     }
   },
   profile: function (req, res) {
+    console.log(req.session.usuario, 'test');
     res.render('UserPerfil', {
       title: 'Perfil',
-      dbUsers: dbUsers,
       // dbProducts: dbProducts,
       usuario: req.session.usuario,
     });
-    console.log(usuario, 'test');
   },
   logout: function (req, res) {
     req.session.destroy();
