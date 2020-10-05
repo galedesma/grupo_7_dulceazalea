@@ -7,8 +7,8 @@ const controller = require('../controllers/mainController');
 /* GET home page. */
 router.get('/', cookieCheck, controller.index);
 router.get('/search', controller.search);
-router.get('/carrito', function (req, res) {
-  res.render('productCart', { title: 'Carrito' });
+router.get('/carrito', cookieCheck, function (req, res) {
+  res.render('productCart', { title: 'Carrito', usuario: req.session.usuario });
 });
 router.get('/error', function (req, res) {
   res.render('placeholder', {
