@@ -8,19 +8,19 @@ SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 
 -- -----------------------------------------------------
--- Schema mydb
+-- Schema DULCE_AZALEA
 -- -----------------------------------------------------
 
 -- -----------------------------------------------------
--- Schema mydb
+-- Schema DULCE_AZALEA
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 ;
-USE `mydb` ;
+CREATE SCHEMA IF NOT EXISTS `DULCE_AZALEA` DEFAULT CHARACTER SET utf8 ;
+USE `DULCE_AZALEA` ;
 
 -- -----------------------------------------------------
--- Table `mydb`.`address_user`
+-- Table `DULCE_AZALEA`.`address_user`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`address_user` (
+CREATE TABLE IF NOT EXISTS `DULCE_AZALEA`.`address_user` (
   `idUser_direccion` INT NOT NULL AUTO_INCREMENT,
   `address` VARCHAR(255) NULL,
   `city` VARCHAR(255) NULL,
@@ -31,9 +31,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Users`
+-- Table `DULCE_AZALEA`.`Users`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Users` (
+CREATE TABLE IF NOT EXISTS `DULCE_AZALEA`.`Users` (
   `id_user` INT NOT NULL AUTO_INCREMENT,
   `first_name` VARCHAR(45) NOT NULL,
   `last_name` VARCHAR(45) NOT NULL,
@@ -47,16 +47,16 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Users` (
   INDEX `fk_User_User_direccion1_idx` (`address_user` ASC),
   CONSTRAINT `address_user`
     FOREIGN KEY (`address_user`)
-    REFERENCES `mydb`.`address_user` (`idUser_direccion`)
+    REFERENCES `DULCE_AZALEA`.`address_user` (`idUser_direccion`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Categories`
+-- Table `DULCE_AZALEA`.`Categories`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Categories` (
+CREATE TABLE IF NOT EXISTS `DULCE_AZALEA`.`Categories` (
   `idCategorie` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(100) NOT NULL,
   PRIMARY KEY (`idCategorie`))
@@ -64,9 +64,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Products`
+-- Table `DULCE_AZALEA`.`Products`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Products` (
+CREATE TABLE IF NOT EXISTS `DULCE_AZALEA`.`Products` (
   `idProducts` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(100) NOT NULL,
   `descripcion` VARCHAR(280) NOT NULL,
@@ -78,16 +78,16 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Products` (
   INDEX `fk_Productos_Categorias1_idx` (`Categorias_idCategorias` ASC),
   CONSTRAINT `fk_Productos_Categorias1`
     FOREIGN KEY (`Categorias_idCategorias`)
-    REFERENCES `mydb`.`Categories` (`idCategorie`)
+    REFERENCES `DULCE_AZALEA`.`Categories` (`idCategorie`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`favorite_products`
+-- Table `DULCE_AZALEA`.`favorite_products`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`favorite_products` (
+CREATE TABLE IF NOT EXISTS `DULCE_AZALEA`.`favorite_products` (
   `idfavorite_products` INT NOT NULL AUTO_INCREMENT,
   `Users_id_user` INT NOT NULL,
   `product_id` INT NOT NULL,
@@ -96,21 +96,21 @@ CREATE TABLE IF NOT EXISTS `mydb`.`favorite_products` (
   INDEX `fk_produts_idx` (`product_id` ASC),
   CONSTRAINT `fk_favorite_products_Users1`
     FOREIGN KEY (`Users_id_user`)
-    REFERENCES `mydb`.`Users` (`id_user`)
+    REFERENCES `DULCE_AZALEA`.`Users` (`id_user`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_produts`
     FOREIGN KEY (`product_id`)
-    REFERENCES `mydb`.`Products` (`idProducts`)
+    REFERENCES `DULCE_AZALEA`.`Products` (`idProducts`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Cart`
+-- Table `DULCE_AZALEA`.`Cart`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Cart` (
+CREATE TABLE IF NOT EXISTS `DULCE_AZALEA`.`Cart` (
   `idcart` INT NOT NULL AUTO_INCREMENT,
   `Users_id_user` INT NOT NULL,
   `product_id` INT NOT NULL,
@@ -119,12 +119,12 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Cart` (
   INDEX `fk_products_id_idx` (`product_id` ASC),
   CONSTRAINT `fk_favorite_products_Users10`
     FOREIGN KEY (`Users_id_user`)
-    REFERENCES `mydb`.`Users` (`id_user`)
+    REFERENCES `DULCE_AZALEA`.`Users` (`id_user`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_products_id0`
     FOREIGN KEY (`product_id`)
-    REFERENCES `mydb`.`Products` (`idProducts`)
+    REFERENCES `DULCE_AZALEA`.`Products` (`idProducts`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
