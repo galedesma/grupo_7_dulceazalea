@@ -1,13 +1,32 @@
+const { DataTypes } = require('sequelize/types');
 const { sequelize } = require('.');
 
 module.exports = (sequelize, database) => {
   let alias = 'address_user';
   let rols = {
-    idcart: {},
-    Users_id_user: {},
-    product_id: {},
+    idUser_direccion: {
+      type: DataTypes.INTEGER.UNSIGNED,
+      autoIncrement: true,
+      allowNull: false,
+      primaryKey: true,
+    },
+    address: {
+      type: DataTypes.STRING,
+    },
+    city: {
+      type: DataTypes.STRING,
+    },
+    province: {
+      type: DataTypes.STRING(100),
+    },
+    departament: {
+      type: DataTypes.STRING(45),
+    },
   };
-  let config = {};
+  let config = {
+    tableName: 'address_user',
+    underscored: true,
+  };
   const addres_user = sequelize.define(alias, rols, config);
 
   return addres_user;

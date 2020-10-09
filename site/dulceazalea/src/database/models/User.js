@@ -32,8 +32,12 @@ module.exports = (sequelize, database) => {
     },
     rol: {
       type: DataTypes.BIGINT(11),
+      allowNull: false,
     },
-    address_user: {},
+    address_user: {
+      type: DataTypes.INTEGER(11),
+      allowNull: false,
+    },
   };
 
   let config = {
