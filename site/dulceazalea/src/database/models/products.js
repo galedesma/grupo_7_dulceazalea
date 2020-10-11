@@ -1,6 +1,6 @@
-const { DataTypes } = require('sequelize/types');
+/* const { DataTypes } = require('sequelize/types'); //¿Qué es? */
 
-module.exports = (sequelize, database) => {
+module.exports = (sequelize, DataTypes) => { //Corregí el database por DataTypes 
   let alias = 'Products';
   let cols = {
     idProducts: {
@@ -13,7 +13,7 @@ module.exports = (sequelize, database) => {
       type: DataTypes.STRING(100),
       allowNull: false,
     },
-    description: {
+    descripcion: { //El nombre de la columna esta en español en SQL. Antes: description
       type: DataTypes.STRING(280),
       allowNull: false,
     },
@@ -21,7 +21,7 @@ module.exports = (sequelize, database) => {
       type: DataTypes.INTEGER(6),
       allowNull: false,
     },
-    Categoria_idCaregorias: {
+    Categorias_idCategorias: {
       type: DataTypes.INTEGER(11),
       allowNull: false,
     },
@@ -29,14 +29,26 @@ module.exports = (sequelize, database) => {
       type: DataTypes.STRING,
       allowNull: false,
     },
+    /* created_at: {
+      type: DataTypes.DATE,
+      allowNull: true
+    } */
   };
   let config = {
     tableName: 'products',
-    timestamps: true,
-    underscored: true,
+    timestamps: false,
+    /* underscored: true, */ //Esto agrega un guión bajo antes de una letra mayúscula que no sea la inicial del nombre de la columna. EJ: idProducts = id_Products
   };
 
   const Products = sequelize.define(alias, cols, config);
 
+  Products.associate = function(models){ //Establezco relación con tabla categories, hay que cambiar nombre de los models?
+    Products.belongsTo(models.Categories,{
+      as: 'categoria',
+      foreignKey: 'Categoria_idCategorias'
+    })
+  }
+
+  
   return Products;
 };

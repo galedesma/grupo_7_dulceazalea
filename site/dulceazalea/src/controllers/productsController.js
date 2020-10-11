@@ -3,14 +3,24 @@ const dbCategorias = require('../data/categorias.json');
 const fs = require('fs');
 const path = require('path');
 
+const db = require('../database/models')
+
 module.exports = {
   //exporto un objeto literal con todos los metodos
   listar: function (req, res) {
-    res.render('products', {
-      title: 'Todos los Productos',
-      productos: database,
-      usuario: req.session.usuario,
-    }); //muestra información de prueba
+    db.Products.findAll()
+    .then(function(resultado){
+      res.render('products', {
+        title: 'Todos los Productos',
+        /* productos: database,
+        usuario: req.session.usuario, */ //Código viejo usando el JSON para mostrar los productos.
+      },
+      res.send(resultado))
+    })
+    .catch(function(errors){
+      res.send(errors)
+    })
+    ;
   },
   agregar: function (req, res) {
     res.render('productAdd', {

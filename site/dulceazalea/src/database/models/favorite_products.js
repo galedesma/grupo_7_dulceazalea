@@ -1,7 +1,7 @@
-const { DataTypes } = require('sequelize/types');
-const { sequelize } = require('.');
+/* const { DataTypes } = require('sequelize/types');
+const { sequelize } = require('.'); */
 
-module.exports = (sequelize, database) => {
+module.exports = (sequelize, DataTypes) => {
   let alias = 'favorite_products';
   let rols = {
     idfavorite_products: {
