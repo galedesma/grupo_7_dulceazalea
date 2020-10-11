@@ -3,7 +3,7 @@
 module.exports = (sequelize, DataTypes) => { //Corregí el database por DataTypes 
   let alias = 'Products';
   let cols = {
-    idProducts: {
+    id_products: {
       type: DataTypes.INTEGER.UNSIGNED,
       autoIncrement: true,
       allowNull: false,
@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => { //Corregí el database por DataType
       type: DataTypes.STRING(100),
       allowNull: false,
     },
-    descripcion: { //El nombre de la columna esta en español en SQL. Antes: description
+    description: { //El nombre de la columna esta en español en SQL. Antes: description
       type: DataTypes.STRING(280),
       allowNull: false,
     },
@@ -21,7 +21,7 @@ module.exports = (sequelize, DataTypes) => { //Corregí el database por DataType
       type: DataTypes.INTEGER(6),
       allowNull: false,
     },
-    Categorias_idCategorias: {
+    id_categories: {
       type: DataTypes.INTEGER(11),
       allowNull: false,
     },
@@ -45,7 +45,7 @@ module.exports = (sequelize, DataTypes) => { //Corregí el database por DataType
   Products.associate = function(models){ //Establezco relación con tabla categories, hay que cambiar nombre de los models?
     Products.belongsTo(models.Categories,{
       as: 'categoria',
-      foreignKey: 'Categoria_idCategorias'
+      foreignKey: 'id_categories'
     })
   }
 

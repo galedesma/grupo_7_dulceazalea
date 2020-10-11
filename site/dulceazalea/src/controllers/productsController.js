@@ -23,11 +23,15 @@ module.exports = {
     ;
   },
   agregar: function (req, res) {
-    res.render('productAdd', {
-      title: 'Cargar Producto',
-      categorias: dbCategorias,
-      usuario: req.session.usuario,
-    });
+    db.Categories.findAll()
+    .then(function(categorias){
+      res.render('productAdd', {
+        title: 'Cargar Producto',
+        categorias: categorias,
+        usuario: req.session.usuario,
+      })
+    })
+    ;
   },
   detalle: function (req, res) {
     let id = req.params.id;
@@ -42,20 +46,22 @@ module.exports = {
       usuario: req.session.usuario,
     });
   },
-  publicar: function (req, res, next) {
+  publicar: function (req, res, next) { //Por qué teníamos un next?
     console.log(validationResult(req));
     let errors = validationResult(req);
-    let lastID = database.length;
+    /* let lastID = database.length; */ //Ya no se necesita
     if (errors.isEmpty()) {
-      let newProduct = {
-        id: lastID + 1,
+      db.Products.create({
         name: req.body.name,
-        description: req.body.description,
-        category: req.body.category,
-        colors: req.body.colors,
+        descripcion: req.body.description,
+        Categorias_idCategorias: Number(req.body.category),
+        /* colors: req.body.colors, */ //Por ahora no hay columna colors
         price: Number(req.body.price),
-        image: req.files[0] ? req.files[0].filename : 'default-image.png',
-      };
+        image: req.files[0] ? req.files[0].filename : 'default-image.png'
+      })
+      /* let newProduct = { //No se necesita.
+        id: lastID + 1,
+      }; */
 
       database.push(newProduct);
 
