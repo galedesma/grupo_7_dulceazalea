@@ -1,5 +1,7 @@
 const dbUsers = require('../data/dbUsers');
 
+const db = require('../database/models');
+
 const { validationResult } = require('express-validator');
 const fs = require('fs');
 const path = require('path');
@@ -12,50 +14,33 @@ module.exports = {
     });
   },
   ProcessRegister: function (req, res) {
-    console.log(validationResult(req));
+    // console.log(validationResult(req));
     let errors = validationResult(req);
-    let lastID = 0;
-    if (dbUsers.length > 0) {
-      dbUsers.forEach((user) => {
-        if (user.id > lastID) {
-          lastID = user.id;
-        }
-      });
-    }
 
     if (errors.isEmpty()) {
-      let UserNuevo = {
-        id: lastID + 1,
-        first_name: req.body.first_name,
-        last_name: req.body.last_name,
-        email: req.body.email,
+      db.Users.create({
+        first_name: req.body.first_name.trim(),
+        last_name: req.body.last_name.trim(),
+        user_mail: req.body.email.trim(),
         password: bcrypt.hashSync(req.body.password, 10),
-        avatar: req.files[0].filename,
-        rol: 'user',
-      };
-      dbUsers.push(UserNuevo);
-
-      fs.writeFileSync(
-        path.join(__dirname, '..', 'data', 'users.json'),
-        JSON.stringify(dbUsers),
-        'utf-8'
-      );
+        avatar: req.file[0] ? req.file[0].filename : null,
+        rol: 0,
+      })
+        .then((result) => {
+          console.log(result);
+          return res.redirect('/users/login');
+        })
+        .catch((errores) => {
+          console.log(errores);
+          return res.redirect('/users/register');
+        });
     } else {
-      // if (!errors.isEmpty()) {
-      // return res.render('UserRegister', {
-      //   errors: errors.errors,
-      //   title: 'Registro',
-      // });
       res.render('UserRegister', {
         title: 'Registro',
         errors: errors.mapped(),
         old: req.body,
       });
     }
-
-    res.render('UserLogin', {
-      title: 'Ingresar',
-    });
   },
   mostrar_Login: function (req, res) {
     res.render('UserLogin', {
