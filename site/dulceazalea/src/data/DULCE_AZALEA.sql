@@ -74,7 +74,7 @@ CREATE TABLE IF NOT EXISTS `DULCE_AZALEA`.`Products` (
   `id_categories` INT NOT NULL,
   `image` VARCHAR(255) NOT NULL,
  /*  `created_at` TIMESTAMP NULL, */
-  PRIMARY KEY (`id_Products`),
+  PRIMARY KEY (`id_products`),
   INDEX `fk_Productos_Categorias1_idx` (`id_categories` ASC),
   CONSTRAINT `fk_Productos_Categorias1`
     FOREIGN KEY (`id_categories`)
@@ -93,13 +93,13 @@ CREATE TABLE IF NOT EXISTS `DULCE_AZALEA`.`favorite_products` (
   `product_id` INT NOT NULL,
   PRIMARY KEY (`id_favorite_products`),
   INDEX `fk_favorite_products_Users1_idx` (`users_id_user` ASC),
-  INDEX `fk_produts_idx` (`product_id` ASC),
+  INDEX `fk_products_idx` (`product_id` ASC),
   CONSTRAINT `fk_favorite_products_Users1`
     FOREIGN KEY (`users_id_user`)
     REFERENCES `DULCE_AZALEA`.`Users` (`id_user`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
-  CONSTRAINT `fk_produts`
+  CONSTRAINT `fk_products`
     FOREIGN KEY (`product_id`)
     REFERENCES `DULCE_AZALEA`.`Products` (`id_products`)
     ON DELETE NO ACTION

@@ -2,6 +2,7 @@ const database = require('../data/database');
 const dbCategorias = require('../data/categorias.json');
 const fs = require('fs');
 const path = require('path');
+const {validationResult} = require('express-validator')
 
 const db = require('../database/models')
 
@@ -90,7 +91,7 @@ module.exports = {
       })
       ;
     }
-    res.redirect('/products');
+   /*  res.redirect('/products'); */
   },
   mostrar: function (req, res) {
     let id = req.params.id;
@@ -109,7 +110,7 @@ module.exports = {
     database.forEach((producto) => {
       if (producto.id == id) {
         producto.id = Number(req.body.id);
-        producto.name = req.body.name;
+        producto.name = String(req.body.name);
         producto.description = req.body.description;
         producto.category = req.body.category;
         producto.colors = req.body.colors;
