@@ -14,23 +14,23 @@
             <h2><%= title %></h2>
           </div>
 
-          <% productos.forEach(producto => { %>
+          <% products.forEach(product => { %>
 
           <div class="col-12 col-md-6 col-lg-3">
-            <a href="/products/<%= producto.id %> ">
+            <a href="/products/<%= product.id_products %> ">
               <div class="productos">
                 <figure>
                   <img
-                    src="/img/products/<%- producto.image %> "
+                    src="/img/products/<%- product.image %> "
                     alt=""
                     class="figure"
                   />
                 </figure>
                 <article>
                   <!--precio-->
-                  <h2>$ <%= producto.price %></h2>
+                  <h2>$ <%= product.price %></h2>
                   <!--nombre del producto ??-->
-                  <p><%= producto.name %></p>
+                  <p><%= product.name %></p>
                 </article>
               </div>
             </a>

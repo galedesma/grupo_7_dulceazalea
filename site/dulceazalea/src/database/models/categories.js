@@ -1,9 +1,9 @@
-const { DataTypes } = require('sequelize/types');
+/* const { DataTypes } = require('sequelize/types'); //¿Qué es? */
 
-module.exports = (sequelize, database) => {
-  let alias = 'categories';
+module.exports = (sequelize, DataTypes) => {
+  let alias = 'Categories';
   let rols = {
-    idCaregorie: {
+    id_category: {
       type: DataTypes.INTEGER.UNSIGNED,
       autoIncrement: true,
       allowNull: false,
@@ -16,8 +16,16 @@ module.exports = (sequelize, database) => {
   };
   let config = {
     tableName: 'categories',
+    timestamps: false
   };
-  const categories = sequelize.define(alias, rols, config);
+  const Categories = sequelize.define(alias, rols, config);
 
-  return categories;
+  Categories.associate = function(models){
+    Categories.hasMany(models.Products,{
+      as:'productos',
+      foreignKey: 'id_categories'
+    })
+  }
+
+  return Categories;
 };

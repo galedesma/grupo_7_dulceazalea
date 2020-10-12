@@ -17,7 +17,7 @@ router.post(
 ); //4)Acción de creación (a dónde se envía el formulario)
 
 router.get('/edit/:id', sessionUserCheck, controller.mostrar); //5)Formulario de edición de productos
-router.put('/sent/:id', upImageProduct.any(), controller.edit); //6)Acción de edición (a dónde se envía el formulario)
+router.put('/edit/:id', upImageProduct.any(), controller.edit); //6)Acción de edición (a dónde se envía el formulario)
 router.delete('/delete/:id', controller.eliminar); //7)Acción de borrado
 
 module.exports = router;

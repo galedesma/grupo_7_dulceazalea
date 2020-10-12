@@ -1,7 +1,7 @@
-const { DataTypes, INTEGER } = require('sequelize/types');
-const config = require('../config/config');
+/* const { DataTypes, INTEGER } = require('sequelize/types');
+const config = require('../config/config'); */
 
-module.exports = (sequelize, database) => {
+module.exports = (sequelize, DataTypes) => {
   let alias = 'Users';
   let cols = {
     id: {

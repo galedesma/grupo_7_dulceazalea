@@ -6,7 +6,7 @@
 
 		<section class="container formularioCarga" >
 			<h2>
-				Prublicar Producto
+				Publicar Producto
 			</h2>
 			<div class="row"id="form__create">
 				<div
@@ -54,18 +54,18 @@
 							</li>
 							<li>
 								<p>Categoria:</p>
-								<input list="categoria" name="category" id="form__categoria__producto">
-  								<datalist id="categoria">
-										<% categorias.forEach(categoria => { %>	 
-										<option value="<%= categoria.name %> ">
-											<% }) %>
-  								</datalist>
+								<!-- <input list="categoria" name="category" id="form__categoria__producto"> -->
+  								<select id="categoria" name='category' id="form__categoria__producto">
+									<% for(i=0; i<categorias.length; i++){ %>
+										<option value="<%= categorias[i].id_category%>"><%= categorias[i].name%></option>
+									<% } %>
+								</select>
 							</li>
-							<li>
+							<!-- <li>
 								<p>Color</p>
 									<input type="text" name="colors"/>
 								</select>
-							</li>
+							</li> -->
 							<li>
 								<p>Precio:</p>
 								<input class="<%= (typeof old != "undefined" && old.price)?"is-valid":(typeof errors != "undefined" && errors.price)?"is-invalid": "" %> " type="number" name="price"
