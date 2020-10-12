@@ -23,7 +23,7 @@
 				<div
 					class="col-12 col-sm-12 col-md-6 col-lg-6 align-items-center justify-content-center formularioCarga"
 				>
-					<form action="/products/sent/<%= producto.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+					<form action="/products/edit/<%= producto.id_products %>?_method=PUT" method="POST" enctype="multipart/form-data">
 						<ul>
 							<li>
 								<input type="file" id="image" name="image" accept="image/*" />
@@ -35,7 +35,7 @@
 							<li>
 								<p>Descripción:</p>
 								<textarea
-									name="descripcion"
+									name="description"
 									id="description__product__edit"
 									cols="30"
 									rows="4"
@@ -44,17 +44,17 @@
 							<li>
 								<p>Categoria:</p>
 								<input list="categoria" name="category"  >
-  								<datalist id="categoria" >
-										<% categorias.forEach(categoria => { %>	 
-										<option value="<%= categoria.name %> ">
-											<% }) %>
-  								</datalist>
+								<datalist id="categoria">
+									<% categorias.forEach(categoria => { %>	 
+									<option value="<%= categoria.id_category%>"><%= categoria.name%></option>
+										<% }) %>
+							  </datalist>
 							</li>
-							<li>
+							<!-- <li>
 								<p>Color</p>
 									<input type="text" name="colors" value="<%= producto.colors %> "/>
 								</select>
-							</li>
+							</li> -->
 							<li>
 								<p>Precio:</p>
 								<input type="text" name="price" value="<%= producto.price %> "/>
@@ -62,7 +62,7 @@
 						</ul>
 						<button type="submit" name="id" value="<%= producto.id %> "id="boton">Cargar Producto</button>
 					</form>
-					<form action="/products/delete/<%= producto.id %>?_method=DELETE" method="POST">
+					<form action="/products/delete/<%= producto.id_products %>?_method=DELETE" method="POST">
 						<button type="submit"id="boton">Eliminar Producto</button>
 					</form>
 				</div>
