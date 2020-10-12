@@ -28,17 +28,18 @@ module.exports = [
       }
     });
   }),
+  check('email').isEmail().withMessage('Debes ingresar un email válido'),
 
   check('password')
     .isLength({ min: 6, max: 12 })
     .withMessage('La contraseña debe tener entre 6 y 12 caracteres'),
 
-  // body('password_confirmation')
-  //   .custom(function (value, { req }) {
-  //     if (value != req.body.password) {
-  //       return false;
-  //     }
-  //     return true;
-  //   })
-  //   .withMessage('Las contraseñas no coinciden'),
+  body('password_confirmation')
+    .custom(function (value, { req }) {
+      if (value != req.body.password) {
+        return false;
+      }
+      return true;
+    })
+    .withMessage('Las contraseñas no coinciden'),
 ];

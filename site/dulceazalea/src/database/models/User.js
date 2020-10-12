@@ -1,10 +1,10 @@
-const { DataTypes, INTEGER } = require('sequelize/types');
+const { DataTypes, INTEGER } = require('sequelize');
 const config = require('../config/config');
 
 module.exports = (sequelize, database) => {
   let alias = 'Users';
   let cols = {
-    id: {
+    id_user: {
       type: DataTypes.INTEGER.UNSIGNED,
       primaryKey: true,
       autoIncrement: true,
@@ -36,13 +36,13 @@ module.exports = (sequelize, database) => {
     },
     address_user: {
       type: DataTypes.INTEGER(11),
-      allowNull: false,
+      allowNull: true,
     },
   };
 
   let config = {
     tableName: 'users',
-    timestamps: true,
+    timestamps: false,
     underscored: true,
   };
 

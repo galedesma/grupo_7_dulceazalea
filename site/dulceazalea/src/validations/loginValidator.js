@@ -2,6 +2,8 @@ const { check, validatorResult, body } = require('express-validator');
 const dbUsers = require('../data/dbUsers');
 const bcrypt = require('bcrypt');
 
+const db = require('../database/models');
+
 module.exports = [
   check('email').isEmail().withMessage('Debes ingresar un email válido'),
 
@@ -9,35 +11,26 @@ module.exports = [
     .isLength({ min: 1 })
     .withMessage('Debes ingresar una contraseña'),
 
-  body('email')
-    .custom(function (value) {
-      let usuario = dbUsers.filter(function (user) {
-        return user.email == value;
-      });
-
-      if (usuario == false) {
-        return false;
-      } else {
-        return true;
+  body('email').custom(function (value) {
+    return db.Users.findOne({
+      user_mail: value,
+    }).then((user) => {
+      if (!user) {
+        return Promise.reject('email no registrado');
       }
-    })
-    .withMessage('El usuario no está registrado'),
+    });
+  }),
 
-  body('password')
-    .custom(function (value, { req }) {
-      let resultado = true;
-      dbUsers.forEach(function (user) {
-        if (user.email == req.body.email) {
-          if (!bcrypt.compareSync(value, user.password)) {
-            resultado = false;
-          }
-        }
-      });
-      if (resultado == false) {
-        return false;
-      } else {
-        return true;
+  body('password').custom(function (value, { req }) {
+    return db.Users.findOne({
+      where: { user_mail: req.body.mail },
+    });
+    then((user) => {
+      if (!bcrypt.compareSync(value, user.dataValues.password)) {
+        return Promise.reject();
       }
-    })
-    .withMessage('Contraseña incorrecta'),
+    }).catch(() => {
+      return Promise.reject('Contraseña incorrecta');
+    });
+  }),
 ];

@@ -1,16 +1,16 @@
-const { DataTypes } = require('sequelize/types');
+const { DataTypes } = require('sequelize');
 const { sequelize } = require('.');
 
 module.exports = (sequelize, database) => {
   let alias = 'cart';
   let rols = {
-    idcart: {
+    id_cart: {
       type: DataTypes.INTEGER.UNSIGNED,
       autoIncrement: true,
       allowNull: false,
       primaryKey: true,
     },
-    Users_id_user: {
+    users_id_user: {
       type: DataTypes.INTEGER(11),
       allowNull: false,
     },

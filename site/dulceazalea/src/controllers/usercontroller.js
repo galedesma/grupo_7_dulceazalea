@@ -23,8 +23,9 @@ module.exports = {
         last_name: req.body.last_name.trim(),
         user_mail: req.body.email.trim(),
         password: bcrypt.hashSync(req.body.password, 10),
-        avatar: req.file[0] ? req.file[0].filename : null,
-        rol: 0,
+        avatar: req.files[0] ? req.files[0].filename : 'user-profile.jpg',
+        rol: '0',
+        //null
       })
         .then((result) => {
           console.log(result);
@@ -53,23 +54,28 @@ module.exports = {
     let errors = validationResult(req);
     // console.log(validationResult(req));
     if (errors.isEmpty()) {
-      dbUsers.forEach(function (usuario) {
-        if (usuario.email == req.body.email) {
-          req.session.usuario = {
-            id: usuario.id,
-            nick: usuario.first_name + ' ' + usuario.last_name,
-            email: usuario.email,
-            avatar: usuario.avatar,
-          };
-        }
+      db.Users.findOne({
+        where: {
+          user_mail: req.body.email,
+        },
       });
-      if (req.body.Recordarme) {
-        res.cookie('userDulceAzalea', req.session.usuario, {
-          maxAge: 1000 * 60 * 2,
-        });
-      }
-      res.redirect('/');
-      // console.log(req.session.usuario);
+      then((user) => {
+        req.session.user = {
+          id: user.id_user,
+          nick: user.first_name + ' ' + user.last_name,
+          email: user.user_mail,
+          avatar: user.avatar,
+          rol: user.rol,
+        };
+        if (req.body.Recordarme) {
+          res.cookie('userDulceAzalea', req.session.user, {
+            maxAge: 1000 * 60 * 2,
+          });
+        }
+        res.locals.user = req.session.user;
+
+        return res.redirect('/');
+      });
     } else {
       res.render('UserLogin', {
         title: 'Ingresá a tu cuenta',
@@ -83,7 +89,6 @@ module.exports = {
     console.log(req.session.usuario, 'test');
     res.render('UserPerfil', {
       title: 'Perfil',
-      // dbProducts: dbProducts,
       usuario: req.session.usuario,
     });
   },
@@ -94,4 +99,12 @@ module.exports = {
     }
     return res.redirect('/');
   },
+  // editProfile: function (req, res) {
+  //   db.Users.update({
+  //     first_name:req.body.first_name,
+  //     last_name:req.body.last_name,
+  //     avatar:(req.files[0])?req.files,
+  //   })
+  // },
+  // delete: function (req, res) {},
 };

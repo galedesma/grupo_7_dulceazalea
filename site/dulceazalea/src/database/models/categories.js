@@ -1,9 +1,9 @@
-const { DataTypes } = require('sequelize/types');
+const { DataTypes } = require('sequelize');
 
 module.exports = (sequelize, database) => {
   let alias = 'categories';
   let rols = {
-    idCaregorie: {
+    id_caregory: {
       type: DataTypes.INTEGER.UNSIGNED,
       autoIncrement: true,
       allowNull: false,

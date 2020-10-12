@@ -1,9 +1,9 @@
-const { DataTypes } = require('sequelize/types');
+const { DataTypes } = require('sequelize');
 
 module.exports = (sequelize, database) => {
   let alias = 'Products';
   let cols = {
-    idProducts: {
+    id_products: {
       type: DataTypes.INTEGER.UNSIGNED,
       autoIncrement: true,
       allowNull: false,
@@ -21,7 +21,7 @@ module.exports = (sequelize, database) => {
       type: DataTypes.INTEGER(6),
       allowNull: false,
     },
-    Categoria_idCaregorias: {
+    id_caregories: {
       type: DataTypes.INTEGER(11),
       allowNull: false,
     },
@@ -32,7 +32,6 @@ module.exports = (sequelize, database) => {
   };
   let config = {
     tableName: 'products',
-    timestamps: true,
     underscored: true,
   };
 

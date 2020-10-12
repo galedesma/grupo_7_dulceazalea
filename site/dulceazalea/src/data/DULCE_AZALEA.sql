@@ -21,12 +21,12 @@ USE `DULCE_AZALEA` ;
 -- Table `DULCE_AZALEA`.`address_user`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `DULCE_AZALEA`.`address_user` (
-  `idUser_direccion` INT NOT NULL AUTO_INCREMENT,
+  `id_user_address` INT NOT NULL AUTO_INCREMENT,
   `address` VARCHAR(255) NULL,
   `city` VARCHAR(255) NULL,
   `province` VARCHAR(100) NULL,
   `department` VARCHAR(45) NULL,
-  PRIMARY KEY (`idUser_direccion`))
+  PRIMARY KEY (`id_user_address`))
 ENGINE = InnoDB;
 
 
@@ -41,13 +41,12 @@ CREATE TABLE IF NOT EXISTS `DULCE_AZALEA`.`Users` (
   `password` VARCHAR(60) NOT NULL,
   `avatar` VARCHAR(45) NULL,
   `rol` INT NOT NULL,
-  `create_at` TIMESTAMP NULL,
-  `address_user` INT NOT NULL,
+  `address_user` INT NULL,
   PRIMARY KEY (`id_user`),
   INDEX `fk_User_User_direccion1_idx` (`address_user` ASC),
   CONSTRAINT `address_user`
     FOREIGN KEY (`address_user`)
-    REFERENCES `DULCE_AZALEA`.`address_user` (`idUser_direccion`)
+    REFERENCES `DULCE_AZALEA`.`address_user` (`id_user_address`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -57,9 +56,9 @@ ENGINE = InnoDB;
 -- Table `DULCE_AZALEA`.`Categories`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `DULCE_AZALEA`.`Categories` (
-  `idCategorie` INT NOT NULL AUTO_INCREMENT,
+  `id_category` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(100) NOT NULL,
-  PRIMARY KEY (`idCategorie`))
+  PRIMARY KEY (`id_category`))
 ENGINE = InnoDB;
 
 
@@ -67,18 +66,17 @@ ENGINE = InnoDB;
 -- Table `DULCE_AZALEA`.`Products`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `DULCE_AZALEA`.`Products` (
-  `idProducts` INT NOT NULL AUTO_INCREMENT,
+  `id_products` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(100) NOT NULL,
-  `descripcion` VARCHAR(280) NOT NULL,
+  `description` VARCHAR(280) NOT NULL,
   `price` INT(6) NOT NULL,
-  `Categorias_idCategorias` INT NOT NULL,
+  `id_categories` INT NULL,
   `image` VARCHAR(255) NOT NULL,
-  `created_at` TIMESTAMP NULL,
-  PRIMARY KEY (`idProducts`),
-  INDEX `fk_Productos_Categorias1_idx` (`Categorias_idCategorias` ASC),
+  PRIMARY KEY (`id_Products`),
+  INDEX `fk_Productos_Categorias1_idx` (`id_categories` ASC),
   CONSTRAINT `fk_Productos_Categorias1`
-    FOREIGN KEY (`Categorias_idCategorias`)
-    REFERENCES `DULCE_AZALEA`.`Categories` (`idCategorie`)
+    FOREIGN KEY (`id_categories`)
+    REFERENCES `DULCE_AZALEA`.`Categories` (`id_category`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -88,20 +86,20 @@ ENGINE = InnoDB;
 -- Table `DULCE_AZALEA`.`favorite_products`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `DULCE_AZALEA`.`favorite_products` (
-  `idfavorite_products` INT NOT NULL AUTO_INCREMENT,
-  `Users_id_user` INT NOT NULL,
+  `id_favorite_products` INT NOT NULL AUTO_INCREMENT,
+  `users_id_user` INT NOT NULL,
   `product_id` INT NOT NULL,
-  PRIMARY KEY (`idfavorite_products`),
-  INDEX `fk_favorite_products_Users1_idx` (`Users_id_user` ASC),
+  PRIMARY KEY (`id_favorite_products`),
+  INDEX `fk_favorite_products_Users1_idx` (`users_id_user` ASC),
   INDEX `fk_produts_idx` (`product_id` ASC),
   CONSTRAINT `fk_favorite_products_Users1`
-    FOREIGN KEY (`Users_id_user`)
+    FOREIGN KEY (`users_id_user`)
     REFERENCES `DULCE_AZALEA`.`Users` (`id_user`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_produts`
     FOREIGN KEY (`product_id`)
-    REFERENCES `DULCE_AZALEA`.`Products` (`idProducts`)
+    REFERENCES `DULCE_AZALEA`.`Products` (`id_products`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -111,20 +109,20 @@ ENGINE = InnoDB;
 -- Table `DULCE_AZALEA`.`Cart`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `DULCE_AZALEA`.`Cart` (
-  `idcart` INT NOT NULL AUTO_INCREMENT,
-  `Users_id_user` INT NOT NULL,
+  `id_cart` INT NOT NULL AUTO_INCREMENT,
+  `users_id_user` INT NOT NULL,
   `product_id` INT NOT NULL,
-  PRIMARY KEY (`idcart`),
-  INDEX `fk_favorite_products_Users1_idx` (`Users_id_user` ASC),
+  PRIMARY KEY (`id_cart`),
+  INDEX `fk_favorite_products_Users1_idx` (`users_id_user` ASC),
   INDEX `fk_products_id_idx` (`product_id` ASC),
   CONSTRAINT `fk_favorite_products_Users10`
-    FOREIGN KEY (`Users_id_user`)
+    FOREIGN KEY (`users_id_user`)
     REFERENCES `DULCE_AZALEA`.`Users` (`id_user`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_products_id0`
     FOREIGN KEY (`product_id`)
-    REFERENCES `DULCE_AZALEA`.`Products` (`idProducts`)
+    REFERENCES `DULCE_AZALEA`.`Products` (`id_products`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
