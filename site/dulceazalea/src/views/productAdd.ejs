@@ -54,12 +54,12 @@
 							</li>
 							<li>
 								<p>Categoria:</p>
-								<input list="categoria" name="category" id="form__categoria__producto">
-  								<datalist id="categoria">
-										<% categorias.forEach(categoria => { %>	 
-										<option value="<%= categoria.id_category%>"><%= categoria.name%></option>
-											<% }) %>
-  								</datalist>
+								<!-- <input list="categoria" name="category" id="form__categoria__producto"> -->
+  								<select id="categoria" name='category' id="form__categoria__producto">
+									<% for(i=0; i<categorias.length; i++){ %>
+										<option value="<%= categorias[i].id_category%>"><%= categorias[i].name%></option>
+									<% } %>
+								</select>
 							</li>
 							<!-- <li>
 								<p>Color</p>

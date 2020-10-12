@@ -5,7 +5,6 @@ const path = require('path');
 const {validationResult} = require('express-validator')
 
 const db = require('../database/models');
-const categories = require('../database/models/categories');
 
 module.exports = {
   //exporto un objeto literal con todos los metodos
@@ -14,9 +13,8 @@ module.exports = {
     .then(function(result){
       res.render('products', {
         title: 'Todos los Productos',
-        products: result
-        /* productos: database,
-        usuario: req.session.usuario, */ //Código viejo usando el JSON para mostrar los productos.
+        products: result,
+        usuario: req.session.usuario,
       }/* ,
       res.send(result) */)
     })
