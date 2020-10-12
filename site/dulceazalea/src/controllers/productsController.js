@@ -9,13 +9,14 @@ module.exports = {
   //exporto un objeto literal con todos los metodos
   listar: function (req, res) {
     db.Products.findAll()
-    .then(function(resultado){
+    .then(function(result){
       res.render('products', {
         title: 'Todos los Productos',
+        products: result
         /* productos: database,
         usuario: req.session.usuario, */ //Código viejo usando el JSON para mostrar los productos.
       },
-      res.send(resultado))
+      res.send(result))
     })
     .catch(function(errors){
       res.send(errors)
@@ -53,30 +54,41 @@ module.exports = {
     if (errors.isEmpty()) {
       db.Products.create({
         name: req.body.name,
-        descripcion: req.body.description,
-        Categorias_idCategorias: Number(req.body.category),
+        description: req.body.description,
+        id_categories: Number(req.body.category),
         /* colors: req.body.colors, */ //Por ahora no hay columna colors
         price: Number(req.body.price),
         image: req.files[0] ? req.files[0].filename : 'default-image.png'
+      })
+      .then(function(result){
+        console.log(result),
+        res.redirect('/')
+      })
+      .catch(function(errors){
+        res.send(errors)
       })
       /* let newProduct = { //No se necesita.
         id: lastID + 1,
       }; */
 
-      database.push(newProduct);
+      /* database.push(newProduct);
 
       fs.writeFileSync(
         path.join(__dirname, '..', 'data', 'products.json'),
         JSON.stringify(database),
         'utf-8'
-      );
+      ); */ //Ya no se necesita con la nueva base de datos
     } else {
-      res.render('productAdd', {
-        title: 'Cargar Producto',
-        categorias: dbCategorias,
-        errors: errors.mapped(),
-        old: req.body,
-      });
+      db.Categories.findAll()
+      .then(function(categories){
+        res.render('productAdd', {
+          title: 'Cargar Producto',
+          categories: categories,
+          errors: errors.mapped(),
+          old: req.body,
+        })
+      })
+      ;
     }
     res.redirect('/products');
   },

@@ -6,7 +6,7 @@
 
 		<section class="container formularioCarga" >
 			<h2>
-				Prublicar Producto
+				Publicar Producto
 			</h2>
 			<div class="row"id="form__create">
 				<div
@@ -61,11 +61,11 @@
 											<% }) %>
   								</datalist>
 							</li>
-							<li>
+							<!-- <li>
 								<p>Color</p>
 									<input type="text" name="colors"/>
 								</select>
-							</li>
+							</li> -->
 							<li>
 								<p>Precio:</p>
 								<input class="<%= (typeof old != "undefined" && old.price)?"is-valid":(typeof errors != "undefined" && errors.price)?"is-invalid": "" %> " type="number" name="price"
