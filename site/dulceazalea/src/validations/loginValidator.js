@@ -11,19 +11,23 @@ module.exports = [
     .isLength({ min: 1 })
     .withMessage('Debes ingresar una contraseña'),
 
-  body('email').custom(function (value) {
-    return db.Users.findOne({
-      user_mail: value,
-    }).then((user) => {
-      if (!user) {
-        return Promise.reject('email no registrado');
-      }
-    });
-  }),
+  // body('email').custom(function (value) {
+  //   return (
+  //     db.Users.findOne({
+  //       user_mail: value,
+  //     })
+  //       // .then(console.log(value + 'xd'))
+  //       .then((user) => {
+  //         if (!user) {
+  //           return Promise.reject('email no registrado');
+  //         }
+  //       })
+  //   );
+  // }),
 
   body('password').custom(function (value, { req }) {
     return db.Users.findOne({
-      where: { user_mail: req.body.mail },
+      where: { user_mail: req.body.email },
     });
     then((user) => {
       if (!bcrypt.compareSync(value, user.dataValues.password)) {

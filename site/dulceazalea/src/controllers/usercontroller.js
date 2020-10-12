@@ -6,6 +6,7 @@ const { validationResult } = require('express-validator');
 const fs = require('fs');
 const path = require('path');
 const bcrypt = require('bcrypt');
+const { where } = require('sequelize');
 
 module.exports = {
   mostrar_Registro: function (req, res) {
@@ -52,24 +53,27 @@ module.exports = {
 
   processLogin: function (req, res) {
     let errors = validationResult(req);
-    // console.log(validationResult(req));
+    console.log(validationResult(req));
+    console.log(req.body.email + 'email');
+    // console.log(errors + ' errors');
     if (errors.isEmpty()) {
       db.Users.findOne({
         where: {
           user_mail: req.body.email,
         },
-      });
-      then((user) => {
+      }).then((user) => {
         req.session.user = {
           id: user.id_user,
-          nick: user.first_name + ' ' + user.last_name,
+          first_name: user.first_name,
+          last_name: user.last_name,
           email: user.user_mail,
           avatar: user.avatar,
           rol: user.rol,
         };
+        console.log(req.session.user + 'usuarop');
         if (req.body.Recordarme) {
           res.cookie('userDulceAzalea', req.session.user, {
-            maxAge: 1000 * 60 * 2,
+            maxAge: 1000 * 60 * 5,
           });
         }
         res.locals.user = req.session.user;
@@ -81,15 +85,15 @@ module.exports = {
         title: 'Ingresá a tu cuenta',
         errors: errors.mapped(),
         old: req.body,
-        usuario: req.session.usuario,
+        user: req.session.user,
       });
     }
   },
   profile: function (req, res) {
-    console.log(req.session.usuario, 'test');
+    console.log(req.session.user, 'test');
     res.render('UserPerfil', {
       title: 'Perfil',
-      usuario: req.session.usuario,
+      user: req.session.user,
     });
   },
   logout: function (req, res) {
@@ -100,11 +104,18 @@ module.exports = {
     return res.redirect('/');
   },
   // editProfile: function (req, res) {
-  //   db.Users.update({
-  //     first_name:req.body.first_name,
-  //     last_name:req.body.last_name,
-  //     avatar:(req.files[0])?req.files,
-  //   })
+  //   db.Users.update(
+  //     {
+  //       first_name: req.body.first_name,
+  //       last_name: req.body.last_name,
+  //       avatar: req.files[0] ? req.files.filename : 'user-profile.jpg',
+  //     },
+  //     {
+  //       where: {
+  //         id: req.params.id,
+  //       },
+  //     }
+  //   );
   // },
   // delete: function (req, res) {},
 };
