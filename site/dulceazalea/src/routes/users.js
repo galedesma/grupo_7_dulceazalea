@@ -19,7 +19,9 @@ router.post(
 router.get('/login', controller.mostrar_Login);
 router.post('/login', loginValidator, controller.processLogin);
 
-router.get('/profile', sessionUserCheck, controller.profile);
+router.get('/profile', controller.profile);
+// router.put('/editProfile/:id', upImageAvatar.any(), controller.editProfile);
+// router.delete('/delete/id', controller.delete);
 router.get('/logout', controller.logout);
 
 module.exports = router;

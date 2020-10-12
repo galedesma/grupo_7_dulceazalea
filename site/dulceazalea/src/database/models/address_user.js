@@ -1,10 +1,14 @@
+<<<<<<< HEAD
 /* const { DataTypes } = require('sequelize/types');
+=======
+const { DataTypes } = require('sequelize');
+>>>>>>> CRUDusers
 const { sequelize } = require('.');
  */
 module.exports = (sequelize, DataTypes) => {
   let alias = 'address_user';
   let rols = {
-    idUser_direccion: {
+    id_user_direccion: {
       type: DataTypes.INTEGER.UNSIGNED,
       autoIncrement: true,
       allowNull: false,
@@ -19,7 +23,7 @@ module.exports = (sequelize, DataTypes) => {
     province: {
       type: DataTypes.STRING(100),
     },
-    departament: {
+    department: {
       type: DataTypes.STRING(45),
     },
   };

@@ -41,8 +41,12 @@ CREATE TABLE IF NOT EXISTS `DULCE_AZALEA`.`Users` (
   `password` VARCHAR(60) NOT NULL,
   `avatar` VARCHAR(45) NULL,
   `rol` INT NOT NULL,
+<<<<<<< HEAD
   /* `create_at` TIMESTAMP NULL, */
   `address_user` INT NOT NULL,
+=======
+  `address_user` INT NULL,
+>>>>>>> CRUDusers
   PRIMARY KEY (`id_user`),
   INDEX `fk_User_User_direccion1_idx` (`address_user` ASC),
   CONSTRAINT `address_user`
@@ -73,8 +77,12 @@ CREATE TABLE IF NOT EXISTS `DULCE_AZALEA`.`Products` (
   `price` INT(6) NOT NULL,
   `id_categories` INT NULL,
   `image` VARCHAR(255) NOT NULL,
+<<<<<<< HEAD
  /*  `created_at` TIMESTAMP NULL, */
   PRIMARY KEY (`id_products`),
+=======
+  PRIMARY KEY (`id_Products`),
+>>>>>>> CRUDusers
   INDEX `fk_Productos_Categorias1_idx` (`id_categories` ASC),
   CONSTRAINT `fk_Productos_Categorias1`
     FOREIGN KEY (`id_categories`)
@@ -93,7 +101,11 @@ CREATE TABLE IF NOT EXISTS `DULCE_AZALEA`.`favorite_products` (
   `product_id` INT NOT NULL,
   PRIMARY KEY (`id_favorite_products`),
   INDEX `fk_favorite_products_Users1_idx` (`users_id_user` ASC),
+<<<<<<< HEAD
   INDEX `fk_products_idx` (`product_id` ASC),
+=======
+  INDEX `fk_produts_idx` (`product_id` ASC),
+>>>>>>> CRUDusers
   CONSTRAINT `fk_favorite_products_Users1`
     FOREIGN KEY (`users_id_user`)
     REFERENCES `DULCE_AZALEA`.`Users` (`id_user`)

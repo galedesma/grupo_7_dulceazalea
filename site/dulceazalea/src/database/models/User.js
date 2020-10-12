@@ -1,10 +1,15 @@
+<<<<<<< HEAD
 /* const { DataTypes, INTEGER } = require('sequelize/types');
 const config = require('../config/config'); */
+=======
+const { DataTypes, INTEGER } = require('sequelize');
+const config = require('../config/config');
+>>>>>>> CRUDusers
 
 module.exports = (sequelize, DataTypes) => {
   let alias = 'Users';
   let cols = {
-    id: {
+    id_user: {
       type: DataTypes.INTEGER.UNSIGNED,
       primaryKey: true,
       autoIncrement: true,
@@ -36,13 +41,13 @@ module.exports = (sequelize, DataTypes) => {
     },
     address_user: {
       type: DataTypes.INTEGER(11),
-      allowNull: false,
+      allowNull: true,
     },
   };
 
   let config = {
     tableName: 'users',
-    timestamps: true,
+    timestamps: false,
     underscored: true,
   };
 

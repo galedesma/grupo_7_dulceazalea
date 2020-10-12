@@ -1,9 +1,12 @@
 const dbUsers = require('../data/dbUsers');
 
+const db = require('../database/models');
+
 const { validationResult } = require('express-validator');
 const fs = require('fs');
 const path = require('path');
 const bcrypt = require('bcrypt');
+const { where } = require('sequelize');
 
 module.exports = {
   mostrar_Registro: function (req, res) {
@@ -12,50 +15,34 @@ module.exports = {
     });
   },
   ProcessRegister: function (req, res) {
-    console.log(validationResult(req));
+    // console.log(validationResult(req));
     let errors = validationResult(req);
-    let lastID = 0;
-    if (dbUsers.length > 0) {
-      dbUsers.forEach((user) => {
-        if (user.id > lastID) {
-          lastID = user.id;
-        }
-      });
-    }
 
     if (errors.isEmpty()) {
-      let UserNuevo = {
-        id: lastID + 1,
-        first_name: req.body.first_name,
-        last_name: req.body.last_name,
-        email: req.body.email,
+      db.Users.create({
+        first_name: req.body.first_name.trim(),
+        last_name: req.body.last_name.trim(),
+        user_mail: req.body.email.trim(),
         password: bcrypt.hashSync(req.body.password, 10),
-        avatar: req.files[0].filename,
-        rol: 'user',
-      };
-      dbUsers.push(UserNuevo);
-
-      fs.writeFileSync(
-        path.join(__dirname, '..', 'data', 'users.json'),
-        JSON.stringify(dbUsers),
-        'utf-8'
-      );
+        avatar: req.files[0] ? req.files[0].filename : 'user-profile.jpg',
+        rol: '0',
+        //null
+      })
+        .then((result) => {
+          console.log(result);
+          return res.redirect('/users/login');
+        })
+        .catch((errores) => {
+          console.log(errores);
+          return res.redirect('/users/register');
+        });
     } else {
-      // if (!errors.isEmpty()) {
-      // return res.render('UserRegister', {
-      //   errors: errors.errors,
-      //   title: 'Registro',
-      // });
       res.render('UserRegister', {
         title: 'Registro',
         errors: errors.mapped(),
         old: req.body,
       });
     }
-
-    res.render('UserLogin', {
-      title: 'Ingresar',
-    });
   },
   mostrar_Login: function (req, res) {
     res.render('UserLogin', {
@@ -66,40 +53,47 @@ module.exports = {
 
   processLogin: function (req, res) {
     let errors = validationResult(req);
-    // console.log(validationResult(req));
+    console.log(validationResult(req));
+    console.log(req.body.email + 'email');
+    // console.log(errors + ' errors');
     if (errors.isEmpty()) {
-      dbUsers.forEach(function (usuario) {
-        if (usuario.email == req.body.email) {
-          req.session.usuario = {
-            id: usuario.id,
-            nick: usuario.first_name + ' ' + usuario.last_name,
-            email: usuario.email,
-            avatar: usuario.avatar,
-          };
+      db.Users.findOne({
+        where: {
+          user_mail: req.body.email,
+        },
+      }).then((user) => {
+        req.session.user = {
+          id: user.id_user,
+          first_name: user.first_name,
+          last_name: user.last_name,
+          email: user.user_mail,
+          avatar: user.avatar,
+          rol: user.rol,
+        };
+        console.log(req.session.user + 'usuarop');
+        if (req.body.Recordarme) {
+          res.cookie('userDulceAzalea', req.session.user, {
+            maxAge: 1000 * 60 * 5,
+          });
         }
+        res.locals.user = req.session.user;
+
+        return res.redirect('/');
       });
-      if (req.body.Recordarme) {
-        res.cookie('userDulceAzalea', req.session.usuario, {
-          maxAge: 1000 * 60 * 2,
-        });
-      }
-      res.redirect('/');
-      // console.log(req.session.usuario);
     } else {
       res.render('UserLogin', {
         title: 'Ingresá a tu cuenta',
         errors: errors.mapped(),
         old: req.body,
-        usuario: req.session.usuario,
+        user: req.session.user,
       });
     }
   },
   profile: function (req, res) {
-    console.log(req.session.usuario, 'test');
+    console.log(req.session.user, 'test');
     res.render('UserPerfil', {
       title: 'Perfil',
-      // dbProducts: dbProducts,
-      usuario: req.session.usuario,
+      user: req.session.user,
     });
   },
   logout: function (req, res) {
@@ -109,4 +103,19 @@ module.exports = {
     }
     return res.redirect('/');
   },
+  // editProfile: function (req, res) {
+  //   db.Users.update(
+  //     {
+  //       first_name: req.body.first_name,
+  //       last_name: req.body.last_name,
+  //       avatar: req.files[0] ? req.files.filename : 'user-profile.jpg',
+  //     },
+  //     {
+  //       where: {
+  //         id: req.params.id,
+  //       },
+  //     }
+  //   );
+  // },
+  // delete: function (req, res) {},
 };

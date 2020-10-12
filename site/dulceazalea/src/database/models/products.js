@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* const { DataTypes } = require('sequelize/types'); //¿Qué es? */
+=======
+const { DataTypes } = require('sequelize');
+>>>>>>> CRUDusers
 
 module.exports = (sequelize, DataTypes) => { //Corregí el database por DataTypes 
   let alias = 'Products';
@@ -21,7 +25,11 @@ module.exports = (sequelize, DataTypes) => { //Corregí el database por DataType
       type: DataTypes.INTEGER(6),
       allowNull: false,
     },
+<<<<<<< HEAD
     id_categories: {
+=======
+    id_caregories: {
+>>>>>>> CRUDusers
       type: DataTypes.INTEGER(11),
       allowNull: true,
     },
@@ -36,8 +44,12 @@ module.exports = (sequelize, DataTypes) => { //Corregí el database por DataType
   };
   let config = {
     tableName: 'products',
+<<<<<<< HEAD
     timestamps: false,
     /* underscored: true, */ //Esto agrega un guión bajo antes de una letra mayúscula que no sea la inicial del nombre de la columna. EJ: idProducts = id_Products
+=======
+    underscored: true,
+>>>>>>> CRUDusers
   };
 
   const Products = sequelize.define(alias, cols, config);

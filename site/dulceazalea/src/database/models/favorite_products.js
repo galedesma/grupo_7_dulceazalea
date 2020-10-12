@@ -1,16 +1,21 @@
+<<<<<<< HEAD
 /* const { DataTypes } = require('sequelize/types');
 const { sequelize } = require('.'); */
+=======
+const { DataTypes } = require('sequelize');
+const { sequelize } = require('.');
+>>>>>>> CRUDusers
 
 module.exports = (sequelize, DataTypes) => {
   let alias = 'favorite_products';
   let rols = {
-    idfavorite_products: {
+    id_favorite_products: {
       type: DataTypes.INTEGER.UNSIGNED,
       autoIncrement: true,
       allowNull: false,
       primaryKey: true,
     },
-    Users_id_user: {
+    users_id_user: {
       type: DataTypes.INTEGER(11),
       allowNull: false,
     },
