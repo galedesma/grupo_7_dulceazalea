@@ -23,7 +23,7 @@ module.exports = (sequelize, DataTypes) => { //Corregí el database por DataType
     },
     id_categories: {
       type: DataTypes.INTEGER(11),
-      allowNull: false,
+      allowNull: true,
     },
     image: {
       type: DataTypes.STRING,

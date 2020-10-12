@@ -16,8 +16,8 @@ module.exports = {
         products: result
         /* productos: database,
         usuario: req.session.usuario, */ //Código viejo usando el JSON para mostrar los productos.
-      },
-      res.send(result))
+      }/* ,
+      res.send(result) */)
     })
     .catch(function(errors){
       res.send(errors)

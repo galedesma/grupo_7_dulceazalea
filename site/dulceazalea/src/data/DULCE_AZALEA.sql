@@ -71,7 +71,7 @@ CREATE TABLE IF NOT EXISTS `DULCE_AZALEA`.`Products` (
   `name` VARCHAR(100) NOT NULL,
   `description` VARCHAR(280) NOT NULL,
   `price` INT(6) NOT NULL,
-  `id_categories` INT NOT NULL,
+  `id_categories` INT NULL,
   `image` VARCHAR(255) NOT NULL,
  /*  `created_at` TIMESTAMP NULL, */
   PRIMARY KEY (`id_products`),
