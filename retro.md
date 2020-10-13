@@ -7,6 +7,7 @@ deberían empezar a hacer, qué deberían dejar de hacer.
 
 Siguiendo la consigna y usando la [retrospectiva de estrella de mar], el grupo concordó:
 
+## **Sprint 1**
 1. ### Seguir Haciendo
 - Más reuniones programadas
 
@@ -25,3 +26,21 @@ Siguiendo la consigna y usando la [retrospectiva de estrella de mar], el grupo c
 5. ### Empezar a hacer
 - Microentregas
 - Involucrarse en la tarea del otro.
+
+## **Actualización Sprint 5**
+1. ### Seguir Haciendo
+- Más reuniones programadas
+
+2. ### Hacer más
+-Actualizaciones de nuestro progreso individual
+-Actualizaciones del archivo retro.md
+-Mejoras al sitio.
+
+3. ### Hacer menos
+- Atrasarse con las tareas del sprint
+
+4. ### Dejar de hacer
+-Tardar en organizarnos.
+
+5. ### Empezar a hacer
+-Involucarse en la tarea del otro.
