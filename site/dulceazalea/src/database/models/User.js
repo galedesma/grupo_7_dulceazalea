@@ -1,10 +1,5 @@
-<<<<<<< HEAD
 /* const { DataTypes, INTEGER } = require('sequelize/types');
 const config = require('../config/config'); */
-=======
-const { DataTypes, INTEGER } = require('sequelize');
-const config = require('../config/config');
->>>>>>> CRUDusers
 
 module.exports = (sequelize, DataTypes) => {
   let alias = 'Users';
@@ -39,9 +34,17 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.BIGINT(11),
       allowNull: false,
     },
-    address_user: {
-      type: DataTypes.INTEGER(11),
-      allowNull: true,
+    address: {
+      type: DataTypes.STRING,
+    },
+    city: {
+      type: DataTypes.STRING,
+    },
+    province: {
+      type: DataTypes.STRING(100),
+    },
+    department: {
+      type: DataTypes.STRING(45),
     },
   };
 

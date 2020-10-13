@@ -10,7 +10,7 @@ router.get('/search', controller.search);
 router.get('/carrito', cookieCheck, function (req, res) {
   res.render('productCart', { title: 'Carrito', usuario: req.session.usuario });
 });
-router.get('/error', function (req, res) {
+router.get('/:?', function (req, res) {
   res.render('placeholder', {
     title: 'Ocurrió un error',
   });

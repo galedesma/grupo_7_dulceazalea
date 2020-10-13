@@ -1,10 +1,5 @@
-<<<<<<< HEAD
 /* const { DataTypes } = require('sequelize/types');
 const { sequelize } = require('.'); */
-=======
-const { DataTypes } = require('sequelize');
-const { sequelize } = require('.');
->>>>>>> CRUDusers
 
 module.exports = (sequelize, DataTypes) => {
   let alias = 'cart';
