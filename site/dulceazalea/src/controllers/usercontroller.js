@@ -103,19 +103,40 @@ module.exports = {
     }
     return res.redirect('/');
   },
-  // editProfile: function (req, res) {
-  //   db.Users.update(
-  //     {
-  //       first_name: req.body.first_name,
-  //       last_name: req.body.last_name,
-  //       avatar: req.files[0] ? req.files.filename : 'user-profile.jpg',
-  //     },
-  //     {
-  //       where: {
-  //         id: req.params.id,
-  //       },
-  //     }
-  //   );
-  // },
-  // delete: function (req, res) {},
+  editProfile: function (req, res) {
+    res.send(req.body);
+    db.Users.update(
+      {
+        // avatar: req.files[0] ? req.files.filename : req.session.user.avatar,
+        address: req.body.address,
+        city: req.body.city,
+        province: req.body.province,
+        department: req.body.department,
+      },
+      {
+        where: {
+          id_user: req.params.id,
+        },
+      }
+    )
+      .then((result) => {
+        console.log(req.session.user + ' dato de put');
+
+        return res.redirect('/');
+      })
+      .catch((err) => {
+        console.log(err + ' error en el put de perfil');
+      });
+  },
+  delete: function (req, res) {
+    req.session.destroy();
+    if (req.cookies.userDulceAzalea) {
+      res.cookie('userDulceAzalea', '', { maxAge: -1 });
+    } //se realiza un loguot
+    // console.log(req);
+    db.Users.destroy({
+      where: { id_user: req.params.id },
+    });
+    return res.redirect('/');
+  },
 };

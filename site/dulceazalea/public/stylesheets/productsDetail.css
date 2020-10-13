@@ -1,43 +1,56 @@
 .productDetail {
-	margin: 30px 5px 40px;
-	padding: 20px;
-	background-color: var(--color-rosa_claro);
-	border-radius: 25px;
+  margin: 30px 5px 40px;
+  padding: 20px;
+  background-color: var(--color-rosa_claro);
+  border-radius: 25px;
 }
 #imagen__product {
-	width: 100%;
+  width: 100%;
 }
 form .icon {
-	font-size: 40px;
+  font-size: 40px;
 }
 form ul li {
-	display: inline;
+  display: inline;
 }
 form #boton {
-	padding: 6px 0px;
-	width: 100%;
-	margin: auto;
-	border-radius: 10px;
-	background-color: var(--color-azul);
+  padding: 6px 0px;
+  width: 100%;
+  margin: auto;
+  border-radius: 10px;
+  background-color: var(--color-azul);
+}
+form #boton_borrar {
+  padding: 6px 0px;
+  width: 100%;
+  margin: auto;
+  border-radius: 10px;
+  background-color: #ff0000;
 }
 .descripcion {
-	border-top: solid #000000 1px;
-	text-align: center;
-	padding-top: 10px;
-	padding-bottom: 15px;
+  border-top: solid #000000 1px;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 15px;
 }
 .pagos__detail img {
-	height: 40px;
-	border-radius: 5px;
-	margin-bottom: 5px;
+  height: 40px;
+  border-radius: 5px;
+  margin-bottom: 5px;
 }
 .pagos__detail {
-	padding-bottom: 10px;
+  padding-bottom: 10px;
 }
 /* PIE DE PAGINA */
 
 @media (min-width: 992px) {
-	form #boton {
-		width: 302px;
-	}
+  form #boton {
+    width: 302px;
+  }
+}
+@media (min-width: 1200px) {
+  .form__btn__delete {
+    width: 302px;
+    margin: auto;
+  }
 }
