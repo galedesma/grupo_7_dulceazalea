@@ -63,12 +63,16 @@ module.exports = {
         },
       }).then((user) => {
         req.session.user = {
-          id: user.id_user,
+          id_user: user.id_user,
           first_name: user.first_name,
           last_name: user.last_name,
           email: user.user_mail,
           avatar: user.avatar,
           rol: user.rol,
+          address: user.address,
+          city: user.city,
+          province: user.province,
+          department: user.department,
         };
         console.log(req.session.user + 'usuarop');
         if (req.body.Recordarme) {
@@ -91,20 +95,21 @@ module.exports = {
   },
   profile: function (req, res) {
     console.log(req.session.user, 'test');
-    res.render('UserPerfil', {
-      title: 'Perfil',
-      user: req.session.user,
-    });
-  },
-  logout: function (req, res) {
-    req.session.destroy();
-    if (req.cookies.userDulceAzalea) {
-      res.cookie('userDulceAzalea', '', { maxAge: -1 });
+    if (req.session.user) {
+      db.Users.findByPk(req.session.user.id_user).then((user) => {
+        console.log('profileuser' + user);
+        res.render('UserPerfil', {
+          title: 'Perfil',
+          user: user,
+        });
+      });
+    } else {
+      res.redirect('/');
     }
-    return res.redirect('/');
   },
+
   editProfile: function (req, res) {
-    res.send(req.body);
+    // res.send(req.body);
     db.Users.update(
       {
         // avatar: req.files[0] ? req.files.filename : req.session.user.avatar,
@@ -115,7 +120,7 @@ module.exports = {
       },
       {
         where: {
-          id_user: req.params.id,
+          id_user: req.session.user.id_user,
         },
       }
     )
@@ -137,6 +142,13 @@ module.exports = {
     db.Users.destroy({
       where: { id_user: req.params.id },
     });
+    return res.redirect('/');
+  },
+  logout: function (req, res) {
+    req.session.destroy();
+    if (req.cookies.userDulceAzalea) {
+      res.cookie('userDulceAzalea', '', { maxAge: -1 });
+    }
     return res.redirect('/');
   },
 };
