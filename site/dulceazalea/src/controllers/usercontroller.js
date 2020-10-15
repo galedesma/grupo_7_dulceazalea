@@ -75,6 +75,15 @@ module.exports = {
           province: user.province,
           department: user.department,
         };
+        let favorite_products = db.favorite_products
+          .findOne({
+            where: {
+              users_id_user: req.session.user.id_user,
+            },
+          })
+          .then((result) => {
+            console.log(db.favorite_products + ' ---------------------------');
+          });
         console.log(req.session.user + 'usuarop');
         if (req.body.Recordarme) {
           res.cookie('userDulceAzalea', req.session.user, {
@@ -140,6 +149,22 @@ module.exports = {
       });
   },
   delete: function (req, res) {
+    if (
+      fs.existsSync(
+        path.join(
+          __dirname,
+          '../../public/img/users/' + req.session.user.avatar
+        )
+      ) &&
+      req.session.user.avatar != 'user-profile.jpg'
+    ) {
+      fs.unlinkSync(
+        path.join(
+          __dirname,
+          '../../public/img/users/' + req.session.user.avatar
+        )
+      );
+    }
     req.session.destroy();
     if (req.cookies.userDulceAzalea) {
       res.cookie('userDulceAzalea', '', { maxAge: -1 });
