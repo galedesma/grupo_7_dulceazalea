@@ -1,4 +1,5 @@
 const dbUsers = require('../data/dbUsers');
+const dbProduct = require('../data/database');
 
 const db = require('../database/models');
 
@@ -94,6 +95,9 @@ module.exports = {
     }
   },
   profile: function (req, res) {
+    let principal = dbProduct.filter((producto) => {
+      return producto.categoryHome == 'principal';
+    });
     console.log(req.session.user, 'test');
     if (req.session.user) {
       db.Users.findByPk(req.session.user.id_user).then((user) => {
@@ -101,6 +105,7 @@ module.exports = {
         res.render('UserPerfil', {
           title: 'Perfil',
           user: user,
+          principal: principal,
         });
       });
     } else {
@@ -120,12 +125,13 @@ module.exports = {
       },
       {
         where: {
-          id_user: req.session.user.id_user,
+          id_user: req.params.id,
         },
       }
     )
       .then((result) => {
         console.log(req.session.user + ' dato de put');
+        console.log(req.session.user.id + ' ud del usuario');
 
         return res.redirect('/');
       })
