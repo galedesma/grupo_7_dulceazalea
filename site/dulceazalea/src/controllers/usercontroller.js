@@ -124,9 +124,27 @@ module.exports = {
 
   editProfile: function (req, res) {
     // res.send(req.body);
+    if (req.files[0]) {
+      if (
+        fs.existsSync(
+          path.join(
+            __dirname,
+            '../../public/img/users/' + req.session.user.avatar
+          )
+        )
+      ) {
+        fs.unlinkSync(
+          path.join(
+            __dirname,
+            '../../public/img/users/' + req.session.user.avatar
+          )
+        );
+        res.locals.user.avatar = req.files[0].filename;
+      }
+    }
     db.Users.update(
       {
-        // avatar: req.files[0] ? req.files.filename : req.session.user.avatar,
+        avatar: req.files[0] ? req.files[0].filename : req.session.user.avatar,
         address: req.body.address,
         city: req.body.city,
         province: req.body.province,
