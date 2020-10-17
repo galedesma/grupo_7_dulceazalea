@@ -1,6 +1,8 @@
 /* const { DataTypes, INTEGER } = require('sequelize/types');
 const config = require('../config/config'); */
 
+const favorite_products = require('./favorite_products');
+
 module.exports = (sequelize, DataTypes) => {
   let alias = 'Users';
   let cols = {
@@ -55,6 +57,11 @@ module.exports = (sequelize, DataTypes) => {
   };
 
   const User = sequelize.define(alias, cols, config);
-
+  User.associate = function (models) {
+    User.hasOne(models.favorite_products, {
+      as: 'favorite_product',
+      foreignKey: 'users_id_user',
+    });
+  };
   return User;
 };

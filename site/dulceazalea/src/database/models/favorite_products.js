@@ -25,6 +25,11 @@ module.exports = (sequelize, DataTypes) => {
   };
 
   const favorite_products = sequelize.define(alias, rols, config);
-
+  favorite_products.associate = function (models) {
+    favorite_products.belongsTo(models.Users, {
+      as: 'user',
+      foreingKey: 'users_id_user',
+    });
+  };
   return favorite_products;
 };
