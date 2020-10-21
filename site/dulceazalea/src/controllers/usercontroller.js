@@ -54,7 +54,7 @@ module.exports = {
 
   processLogin: function (req, res) {
     let errors = validationResult(req);
-    console.log(validationResult(req));
+    console.log(validationResult(req) + ' errorssss');
     console.log(req.body.email + 'email');
     // console.log(errors + ' errors');
     if (errors.isEmpty()) {

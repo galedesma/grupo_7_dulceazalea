@@ -42,4 +42,14 @@ module.exports = [
       return true;
     })
     .withMessage('Las contraseñas no coinciden'),
+
+  body('avatar')
+    .custom((value, { req }) => {
+      if (req.fileValidationError) {
+        return false;
+      } else {
+        return true;
+      }
+    })
+    .withMessage('Seleccione un archivo valido'),
 ];

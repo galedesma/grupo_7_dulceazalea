@@ -93,9 +93,13 @@
                   </small>
                 </div>
                 <div>
-                  <input type="file" class="custom-file <%= (typeof errors !=
-                  'undefined' && errors.avatar)?"is-invalid": "" %>" id="avatar"
-                  name="avatar" accept="image/*" />
+                  <input
+                    type="file"
+                    class="custom-file"
+                    id="avatar"
+                    name="avatar"
+                    accept="image/*"
+                  />
                   <small class="text-danger"
                     ><%= (typeof errors != 'undefined' &&
                     errors.avatar)?errors.avatar.msg: "" %>
