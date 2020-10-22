@@ -26,13 +26,14 @@ module.exports = [
   body('password').custom(function (value, { req }) {
     return db.Users.findOne({
       where: { user_mail: req.body.email },
-    });
-    then((user) => {
-      if (!bcrypt.compareSync(value, user.dataValues.password)) {
-        return Promise.reject('no');
-      }
-    }).catch(() => {
-      return Promise.reject('Contraseña incorrecta');
-    });
+    })
+      .then((user) => {
+        if (!bcrypt.compareSync(value, user.dataValues.password)) {
+          return Promise.reject('no');
+        }
+      })
+      .catch(() => {
+        return Promise.reject('Contraseña incorrecta');
+      });
   }),
 ];
