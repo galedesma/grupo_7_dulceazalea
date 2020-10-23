@@ -6,10 +6,10 @@ window,
   addEventListener('load', function () {
     console.log('test JS vinculado');
 
-    let formulario = qs('form#register');
+    let form = qs('form#register');
     // console.log(formulario);
 
-    let element = formulario.elements;
+    let elements = form.elements;
     // console.log(element);
 
     let inputFirst_name = qs('#first_name');
@@ -94,6 +94,52 @@ window,
           this.classList.add('is-valid');
           errorPassword.innerHTML = '';
           break;
+      }
+    });
+    inputPassword_confirmation.addEventListener('blur', function () {
+      switch (true) {
+        case this.value == 0:
+          errorPassword_confirmation.innerHTML =
+            'El campo no puede estar vacio';
+          this.classList.add('is-invalid');
+          break;
+        case inputPassword.value != this.value:
+          errorPassword_confirmation.innerHTML = 'Las contraseñas no coinciden';
+          this.classList.add('is-invalid');
+          break;
+        default:
+          this.classList.remove('is-invalid');
+          this.classList.add('is-valid');
+          errorPassword_confirmation.innerHTML = '';
+          break;
+      }
+    });
+    // inputAvatar.addEventListener('change', function () {
+    //   let reader = new FileReader();
+
+    //   reader.readAsDataURL(e.target.file[0]);
+
+    //   reader.onload = function () {
+    //     vistaPrevia.src = reader.result;
+    //     inputAvatar.classList.remove('is-invalid');
+    //     inputAvatar.classList.add('is-valid');
+    //     errorAvatar.innerHTML = '';
+    //   };
+    // });
+
+    form.addEventListener('submit', function (event) {
+      event.preventDefault(); //evita el sumit salvo que se cumple todo
+      let error = false;
+      for (let index = 0; index < elements.length - 1; index++) {
+        if (elements[index].value == 0) {
+          elements[index].classList.add('is-invalid');
+          error = true;
+        }
+      }
+      if (!error) {
+        form.submit();
+      } else {
+        errorSumbit.innerHTML = 'Los campos señadados son obligatorios';
       }
     });
   });
