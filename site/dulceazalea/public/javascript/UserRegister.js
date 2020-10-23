@@ -28,12 +28,12 @@ window,
         case this.value == 0:
           errorFirst_name.innerHTML = 'El campo no puede estar vacio';
           this.classList.add('is-invalid');
-          console.log('error1');
+          // console.log('error1');
           break;
         case this.value.trim().length <= 2:
           errorFirst_name.innerHTML = 'El nombre debe ser mayor a 3 caracteres';
           this.classList.add('is-invalid');
-          console.log('error2');
+          // console.log('error2');
           break;
         default:
           this.classList.remove('is-invalid');
@@ -43,5 +43,57 @@ window,
           break;
       }
     });
-    inputLast_name.addEventListener('blur', function () {});
+    inputLast_name.addEventListener('blur', function () {
+      switch (true) {
+        case this.value == 0:
+          errorLast_name.innerHTML = 'El campo no puede estar vacio';
+          this.classList.add('is-invalid');
+          break;
+        case this.value.trim().length <= 2:
+          errorLast_name.innerHTML =
+            'El apellido debe ser mayor a 3 caracteres';
+          this.classList.add('is-invalid');
+          break;
+        default:
+          this.classList.remove('is-invalid');
+          this.classList.add('is-valid');
+          errorLast_name.innerHTML = '';
+          break;
+      }
+    });
+    inputEmail.addEventListener('blur', function () {
+      switch (true) {
+        case this.value == 0:
+          errorEmail.innerHTML = 'El campo no puede estar vacio';
+          this.classList.add('is-invalid');
+          break;
+        case !regExEmail.test(this.value):
+          errorEmail.innerHTML = 'Ingrese un mail válido';
+          this.classList.add('is-invalid');
+          break;
+        default:
+          this.classList.remove('is-invalid');
+          this.classList.add('is-valid');
+          errorEmail.innerHTML = '';
+          break;
+      }
+    });
+    inputPassword.addEventListener('blur', function () {
+      switch (true) {
+        case this.value == 0:
+          errorPassword.innerHTML = 'El campo no puede estar vacio';
+          this.classList.add('is-invalid');
+          break;
+        case !regExPass.test(this.value):
+          errorPassword.innerHTML =
+            'La contraseña debe tener entre 6 y 12 caracteres, una mayúscula una minúscula y un número';
+          this.classList.add('is-invalid');
+          break;
+        default:
+          this.classList.remove('is-invalid');
+          this.classList.add('is-valid');
+          errorPassword.innerHTML = '';
+          break;
+      }
+    });
   });
