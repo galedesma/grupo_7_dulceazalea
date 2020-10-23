@@ -111,18 +111,6 @@ window.addEventListener('load', function () {
         break;
     }
   });
-  // inputAvatar.addEventListener('change', function () {
-  //   let reader = new FileReader();
-
-  //   reader.readAsDataURL(e.target.file[0]);
-
-  //   reader.onload = function () {
-  //     vistaPrevia.src = reader.result;
-  //     inputAvatar.classList.remove('is-invalid');
-  //     inputAvatar.classList.add('is-valid');
-  //     errorAvatar.innerHTML = '';
-  //   };
-  // });
 
   form.addEventListener('submit', function (event) {
     event.preventDefault(); //evita el sumit salvo que se cumple todo
