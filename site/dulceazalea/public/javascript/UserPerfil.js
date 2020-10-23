@@ -9,6 +9,7 @@ window.addEventListener('load', function () {
   let elements = form.elements;
 
   let inputAvatar = qs('#avatar');
+  let submitBorrar = qs('#boton_borrar');
 
   inputAvatar.addEventListener('change', function (e) {
     let reader = new FileReader();
@@ -18,5 +19,8 @@ window.addEventListener('load', function () {
     reader.onload = function () {
       vistaPrevia.src = reader.result;
     };
+  });
+  submitBorrar.addEventListener('click', function () {
+    confirm('¿Estás seguro de que quieres eliminar tu cuenta?');
   });
 });
