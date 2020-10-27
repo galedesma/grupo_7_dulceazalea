@@ -54,8 +54,8 @@ module.exports = {
 
   processLogin: function (req, res) {
     let errors = validationResult(req);
-    console.log(validationResult(req));
-    console.log(req.body.email + 'email');
+    // console.log(validationResult(req));
+    // console.log(req.body.email + ' email user');
     // console.log(errors + ' errors');
     if (errors.isEmpty()) {
       db.Users.findOne({
@@ -82,9 +82,9 @@ module.exports = {
             },
           })
           .then((result) => {
-            console.log(db.favorite_products + ' ---------------------------');
+            console.log(db.favorite_products + ' test');
           });
-        console.log(req.session.user + 'usuarop');
+        console.log(req.session.user + 'usuaro');
         if (req.body.Recordarme) {
           res.cookie('userDulceAzalea', req.session.user, {
             maxAge: 1000 * 60 * 5,
@@ -107,10 +107,10 @@ module.exports = {
     let principal = dbProduct.filter((producto) => {
       return producto.categoryHome == 'principal';
     });
-    console.log(req.session.user, 'test');
+    // console.log(req.session.user, 'test');
     if (req.session.user) {
       db.Users.findByPk(req.session.user.id_user).then((user) => {
-        console.log('profileuser' + user);
+        console.log('profile user ' + user);
         res.render('UserPerfil', {
           title: 'Perfil',
           user: user,
@@ -158,7 +158,7 @@ module.exports = {
     )
       .then((result) => {
         console.log(req.session.user + ' dato de put');
-        console.log(req.session.user.id + ' ud del usuario');
+        console.log(req.session.user.id + ' id del usuario');
 
         return res.redirect('/');
       })

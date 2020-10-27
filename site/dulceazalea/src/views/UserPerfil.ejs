@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
   <%- include('partials/head') %>
+  <script src="/javascript/UserPerfil.js"></script>
   <body>
     <%- include('partials/header') %>
     <div class="container sections">
@@ -15,10 +16,12 @@
               action="/users/editProfile/<%= user.id_user %> ?_method=PUT"
               method="POST"
               enctype="multipart/form-data"
+              id="formProfile"
             >
               <div class="form-row justify-content-center">
                 <div class="col-12 imagen_profile">
-                  <img src="/img/users/<%= user.avatar %> " alt="" />
+                  
+                  <img id="vistaPrevia" src="/img/users/<%= user.avatar %> " alt="" />
                 </div>
                 <div class="col-12 ">
                   <input type="file" class="custom-file" id="avatar"

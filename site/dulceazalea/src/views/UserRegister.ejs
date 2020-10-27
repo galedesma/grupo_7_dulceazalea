@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
   <%- include('partials/head') %>
+  <script src="/javascript/UserRegister.js"></script>
 
   <body>
     <%- include('partials/header') %>
@@ -27,6 +28,7 @@
                 method="POST"
                 class="form__reg"
                 enctype="multipart/form-data"
+                id="register"
               >
                 <div class="form-group">
                   <label class="form-label" for="first_name">Nombre</label>
@@ -36,7 +38,7 @@
                   id="first_name" name="first_name" placeholder="nombre"
                   value="<%= (typeof old!= 'undefined' &&
                   old.first_name)?old.first_name:"" %> "/>
-                  <small class="text-danger"
+                  <small class="text-danger" id="errorFirst_name"
                     ><%= (typeof errors != 'undefined' &&
                     errors.first_name)?errors.first_name.msg: "" %>
                   </small>
@@ -49,7 +51,7 @@
                   errors.last_name)?"is-invalid": "" %>" autocorrect="off"
                   name="last_name" placeholder="Apellido" value="<%= (typeof
                   old!= 'undefined' && old.last_name)?old.last_name:'' %> " />
-                  <small class="text-danger"
+                  <small class="text-danger" id="errorLast_name"
                     ><%= (typeof errors != 'undefined' &&
                     errors.last_name)?errors.last_name.msg: "" %>
                   </small>
@@ -61,7 +63,7 @@
                   "undefined" && errors.email)?"is-invalid": "" %>"
                   autocorrect="off" name="email" placeholder="Email" value="<%=
                   (typeof old!= 'undefined' && old.email)?old.email:"" %> " />
-                  <small class="text-danger"
+                  <small class="text-danger" id="errorEmail"
                     ><%= (typeof errors != 'undefined' &&
                     errors.email)?errors.email.msg: "" %>
                   </small>
@@ -72,7 +74,7 @@
                   (typeof errors != 'undefined' &&
                   errors.password)?"is-invalid": "" %>" autocorrect="off"
                   name="password" placeholder="Contraseña" />
-                  <small class="text-danger"
+                  <small class="text-danger" id="errorPassword"
                     ><%= (typeof errors != 'undefined' &&
                     errors.password)?errors.password.msg: "" %>
                   </small>
@@ -86,22 +88,27 @@
                   errors.password_confirmation)?"is-invalid": "" %>"
                   autocorrect="off" name="password_confirmation"
                   placeholder="Repetir Contraseña" />
-                  <small class="text-danger"
+                  <small class="text-danger" id="errorPassword_confirmation"
                     ><%= (typeof errors != 'undefined' &&
                     errors.password_confirmation)?errors.password_confirmation.msg:
                     "" %>
                   </small>
                 </div>
                 <div>
-                  <input type="file" class="custom-file <%= (typeof errors !=
-                  'undefined' && errors.avatar)?"is-invalid": "" %>" id="avatar"
-                  name="avatar" accept="image/*" />
-                  <small class="text-danger"
+                  <input
+                    type="file"
+                    class="custom-file"
+                    id="avatar"
+                    name="avatar"
+                    accept="image/*"
+                  />
+                  <small class="text-danger" id="errorAvatar"
                     ><%= (typeof errors != 'undefined' &&
                     errors.avatar)?errors.avatar.msg: "" %>
                   </small>
                 </div>
                 <div class="form-group">
+                  <span class="text-danger" id="errorSumbit"></span>
                   <button
                     type="submit"
                     id="boton"
