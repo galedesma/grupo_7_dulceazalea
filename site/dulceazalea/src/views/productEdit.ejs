@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 	<%- include('partials/head') %>
+	<script src="/javascript/productEdit.js"></script>
 	
 	<body>
 		<%- include('partials/header') %>
@@ -23,14 +24,15 @@
 				<div
 					class="col-12 col-sm-12 col-md-6 col-lg-6 align-items-center justify-content-center formularioCarga"
 				>
-					<form action="/products/edit/<%= producto.id_products %>?_method=PUT" method="POST" enctype="multipart/form-data">
+					<form action="/products/edit/<%= producto.id_products %>?_method=PUT" method="POST" enctype="multipart/form-data" id="edit">
 						<ul>
 							<li>
 								<input type="file" id="image" name="image" accept="image/*" />
 							</li>
 							<li>
 								<p>Nombre del producto:</p>
-								<input type="text" name="name" value="<%= producto.name %> ">
+								<input type="text" name="name" value="<%= producto.name %> " id="name">
+								<small class="text-danger" id="errorName"><%= (typeof errors != 'undefined' &&errors.name)?errors.name.msg: "" %></small>
 							</li>
 							<li>
 								<p>Descripción:</p>
@@ -40,6 +42,7 @@
 									cols="30"
 									rows="4"
 								><%= producto.description %> </textarea>
+								<small class="text-danger" id="errorDescription"><%= (typeof errors != 'undefined' &&errors.description)?errors.description.msg: "" %></small>
 							</li>
 							<li>
 								<p>Categoria:</p>
@@ -56,12 +59,13 @@
 							</li> -->
 							<li>
 								<p>Precio:</p>
-								<input type="text" name="price" value="<%= producto.price %> "/>
+								<input type="text" name="price" value="<%= producto.price %> " id="price"/>
+								<small class="text-danger" id="errorPrice"><%= (typeof errors != 'undefined' &&errors.price)?errors.price.msg: "" %></small>
 							</li>
 						</ul>
 						<button type="submit" name="id" value="<%= producto.id %> "id="boton">Cargar Producto</button>
 					</form>
-					<form action="/products/delete/<%= producto.id_products %>?_method=DELETE" method="POST">
+					<form action="/products/delete/<%= producto.id_products %>?_method=DELETE" method="POST" id="delete">
 						<button type="submit"id="boton">Eliminar Producto</button>
 					</form>
 				</div>

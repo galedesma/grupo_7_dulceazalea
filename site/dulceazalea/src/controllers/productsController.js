@@ -96,6 +96,24 @@ module.exports = {
     });
   },
   edit: function (req, res) {
+    /* if (req.files[0]) {
+      if (
+        fs.existsSync(
+          path.join(
+            __dirname,
+            '../../public/img/products/' + products.image
+          )
+        )
+      ) {
+        fs.unlinkSync(
+          path.join(
+            __dirname,
+            '../../public/img/products/' + products.image
+          )
+        );
+      }
+    } */
+
     db.Products.update(
       {
         name: req.body.name,
