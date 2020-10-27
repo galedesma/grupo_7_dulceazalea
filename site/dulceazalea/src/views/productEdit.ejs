@@ -30,7 +30,8 @@
 							</li>
 							<li>
 								<p>Nombre del producto:</p>
-								<input type="text" name="name" value="<%= producto.name %> ">
+								<input type="text" name="name" id='name' value="<%= producto.name %> ">
+								<small class="text-danger" id="errorName"><%= (typeof errors != 'undefined' &&errors.name)?errors.name.msg: "" %></small>
 							</li>
 							<li>
 								<p>Descripción:</p>
@@ -40,6 +41,7 @@
 									cols="30"
 									rows="4"
 								><%= producto.description %> </textarea>
+								<small class="text-danger" id="errorDescription"><%= (typeof errors != 'undefined' &&errors.description)?errors.description.msg: "" %></small>
 							</li>
 							<li>
 								<p>Categoria:</p>
@@ -56,7 +58,8 @@
 							</li> -->
 							<li>
 								<p>Precio:</p>
-								<input type="text" name="price" value="<%= producto.price %> "/>
+								<input type="text" name="price" id='price' value="<%= producto.price %> "/>
+								<small class="text-danger" id="errorPrice"><%= (typeof errors != 'undefined' &&errors.price)?errors.price.msg: "" %></small>
 							</li>
 						</ul>
 						<button type="submit" name="id" value="<%= producto.id %> "id="boton">Cargar Producto</button>
