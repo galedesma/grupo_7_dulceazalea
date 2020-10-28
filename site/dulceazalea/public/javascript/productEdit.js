@@ -14,10 +14,7 @@ window.addEventListener('load', function(){
  
     let campoCategoria = qs('#categoria')
     
-
     let campoPrice = qs('#price')
-    let errorPrice = qs('#errorPrice')
-
 
     campoName.addEventListener('blur', function(){
         switch(true){

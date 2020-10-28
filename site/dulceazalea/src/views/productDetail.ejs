@@ -21,9 +21,11 @@
             <h2>
               $<%= producto.price %> 
             </h2>
+            <% if (typeof user != "undefined" && user.rol=="1") { %>
             <form action="/products/edit/<%= producto.id_products%>">
               <button type="submit" id="boton">EDITAR</button>
             </form>
+            <% } %>
             <form action="">
               <input type="number" class="form-control js-quantity-input form-control-inline" autocorrect="off" autocapitalize="off" name="quantity" value="1" min="1" aria-label="Cambiar cantidad">
               <h3>18 cuotas de <%= (producto.price/18).toFixed(2) %> </h3>

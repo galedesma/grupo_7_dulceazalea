@@ -22,7 +22,7 @@
 					class="col-12 col-sm-12 col-md-6 col-lg-6 align-items-center justify-content-center formularioCarga"
 				>
 				
-					<form action="" method="POST" enctype="multipart/form-data">
+					<form action="" method="POST" enctype="multipart/form-data" id="create">
 						<ul>
 							<li>
 								<input type="file" id="img" name="image" accept="image/*" />
@@ -32,7 +32,7 @@
 								<input type="text"
 									class="form-control<%= (typeof old != 'undefined' && old.name)?"is-valid":(typeof errors != "undefined" && errors.name)?"is-invalid": "" %>"
 									name="name" 
-									id=""
+									id="nameProduct"
 									value="<%= (typeof old!= 'undefined' && old.name)?old.name:'' %> "
 									placeholder="Nombre del Producto"
 									cols="30"
@@ -45,7 +45,7 @@
 								<textarea
 									class="form-control <%= (typeof old != "undefined" && old.description)?"is-valid":(typeof errors != "undefined" && errors.description)?"is-invalid": "" %>"
 									name="description"
-									id=""
+									id="description"
 									cols="30"
 									rows="4"
 									value="<%= (typeof old!='undefined' && old.description)?old.description:'' %> "
@@ -68,7 +68,7 @@
 							</li> -->
 							<li>
 								<p>Precio:</p>
-								<input class="<%= (typeof old != "undefined" && old.price)?"is-valid":(typeof errors != "undefined" && errors.price)?"is-invalid": "" %> " type="number" name="price"
+								<input id="price" class="<%= (typeof old != "undefined" && old.price)?"is-valid":(typeof errors != "undefined" && errors.price)?"is-invalid": "" %> " type="number" name="price"
 								value="<%= (typeof old!='undefined' && old.price)?old.price:'' %> "/><br>
 								<small class="text-danger"><%= (typeof errors !='undefined' && errors.price)?errors.price.msg: "" %> </small>
 							</li>

@@ -13,8 +13,8 @@ window.addEventListener('load', function () {
   let inputEmail = qs('#email');
   let inputPassword = qs('#password');
 
-  let regExEmail = /^(([^<>()\[\]\.,;:\s@\”]+(\.[^<>()\[\]\.,;:\s@\”]:+)*)|(\”.+\”))@(([^<>()[\]\.,;:\s@\”]+\.)+[^<>()[\]\.,;:\s@\”]{2,})$/;
-
+  let regExEmail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+  
   inputEmail.addEventListener('blur', function () {
     switch (true) {
       case this.value == 0:
