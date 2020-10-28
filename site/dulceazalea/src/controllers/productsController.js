@@ -126,22 +126,6 @@ module.exports = {
         where: { id_products: req.params.id },
       }
     );
-    /* let id = req.params.id;
-    database.forEach((producto) => {
-      if (producto.id == id) {
-        producto.id = Number(req.body.id);
-        producto.name = String(req.body.name);
-        producto.description = req.body.description;
-        producto.category = req.body.category;
-        producto.colors = req.body.colors;
-        producto.price = Number(req.body.price);
-        producto.image = req.files[0] ? req.files[0].filename : producto.image;
-      }
-    }); */
-    /* let newDatabase = fs.writeFileSync(
-      path.join(__dirname, '../data/products.json'),
-      JSON.stringify(database)
-    ); */
     res.redirect('/products/' + req.params.id);
   },
   eliminar: function (req, res) {

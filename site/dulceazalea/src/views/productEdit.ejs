@@ -59,11 +59,15 @@
 							</li> -->
 							<li>
 								<p>Precio:</p>
-								<input type="text" name="price" value="<%= producto.price %> " id="price"/>
+								<input type="number" name="price" value="<%= producto.price %>" id="price" min="0" list="defaultPrice" />
+								<!-- <datalist id='defaultPrice'>
+									<option value="<%= producto.price %>">
+								</datalist> -->
 								<small class="text-danger" id="errorPrice"><%= (typeof errors != 'undefined' &&errors.price)?errors.price.msg: "" %></small>
 							</li>
 						</ul>
 						<button type="submit" name="id" value="<%= producto.id %> "id="boton">Cargar Producto</button>
+						<span class="text-danger" id="errorSumbitEdit"></span>
 					</form>
 					<form action="/products/delete/<%= producto.id_products %>?_method=DELETE" method="POST" id="delete">
 						<button type="submit"id="boton">Eliminar Producto</button>

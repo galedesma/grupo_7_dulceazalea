@@ -6,21 +6,18 @@ window.addEventListener('load', function(){
     console.log('validacion vinculada')
     let formulario = qs('form#edit');
 
+    let elements = formulario.elements;
+
     let campoName = qs('#name')
-   /*  let errorName = qs('#errorName') */ //Hace falta capturar los errores?
 
     let campoDescription = qs('#description__product__edit')
-    /* let errorDescription = qs('#errorDescription')
- */
+ 
     let campoCategoria = qs('#categoria')
-    let errorCategoria = qs('#errorCategory')
+    
 
     let campoPrice = qs('#price')
     let errorPrice = qs('#errorPrice')
 
-    formulario.addEventListener('submit', function(e){
-        e.preventDefault();
-    })
 
     campoName.addEventListener('blur', function(){
         switch(true){
@@ -55,8 +52,16 @@ window.addEventListener('load', function(){
 
     campoPrice.addEventListener('blur', function(){
         switch(true){
+            /* case !this.value.isInteger():
+                errorPrice.innerHTML = 'Ingrese el precio del producto';
+                this.classList.add('is-invalid');
+                break; */
             case this.value == '':
                 errorPrice.innerHTML = 'Ingrese el precio del producto';
+                this.classList.add('is-invalid');
+                break;
+            case this.value.isInteger() :
+                errorPrice.innerHTML = 'Ingrese un precio numérico';
                 this.classList.add('is-invalid');
                 break;
             default:
@@ -65,4 +70,23 @@ window.addEventListener('load', function(){
                 errorPrice.innerHTML = '';
         }
     })
+
+    formulario.addEventListener('submit', function(e){
+        e.preventDefault();
+
+        let error = false;
+        for (let i = 0; i < elements.length - 1; i++) {
+        if (elements[i].value == 0) {
+        elements[i].classList.add('is-invalid');
+        error = true;
+      }
+    }
+        if (!error) {
+      formLogin.submit();
+      // console.log('test submit');
+        } else {
+      // console.log('test span');
+      errorSumbitEdit.innerHTML = 'Los campos señadados son obligatorios';
+        }
+    });
 })
