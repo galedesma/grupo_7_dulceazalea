@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 	<%- include('partials/head') %>
+	<script src="/javascript/productAdd.js"></script>
 	<body>
 		<%- include('partials/header') %>
 
@@ -26,6 +27,7 @@
 						<ul>
 							<li>
 								<input type="file" id="img" name="image" accept="image/*" />
+								<small class="text-danger" id="errorImage"><%= (typeof errors != 'undefined' && errors.image)?errors.image.msg: "" %> </small>
 							</li>
 							<li>
 								<p>Nombre del producto:</p>
@@ -38,7 +40,7 @@
 									cols="30"
 									rows="1"
 								/><br>
-								<small class="text-danger"><%= (typeof errors != 'undefined' && errors.name)?errors.name.msg: "" %> </small>
+								<small class="text-danger" id="errorName"><%= (typeof errors != 'undefined' && errors.name)?errors.name.msg: "" %> </small>
 							</li>
 							<li>
 								<p>Descripción:</p>
@@ -50,7 +52,7 @@
 									rows="4"
 									value="<%= (typeof old!='undefined' && old.description)?old.description:'' %> "
 								></textarea>
-								<small class="text-danger"><%= (typeof errors !='undefined' && errors.description)?errors.description.msg: "" %> </small>
+								<small class="text-danger" id="errorDescription"><%= (typeof errors !='undefined' && errors.description)?errors.description.msg: "" %> </small>
 							</li>
 							<li>
 								<p>Categoria:</p>
@@ -70,10 +72,11 @@
 								<p>Precio:</p>
 								<input id="price" class="<%= (typeof old != "undefined" && old.price)?"is-valid":(typeof errors != "undefined" && errors.price)?"is-invalid": "" %> " type="number" name="price"
 								value="<%= (typeof old!='undefined' && old.price)?old.price:'' %> "/><br>
-								<small class="text-danger"><%= (typeof errors !='undefined' && errors.price)?errors.price.msg: "" %> </small>
+								<small class="text-danger" id="errorPrice"><%= (typeof errors !='undefined' && errors.price)?errors.price.msg: "" %> </small>
 							</li>
 						</ul>
 						<button type="submit"id="boton">Cargar Producto</button>
+						<small class="text-danger" id="errorSubmitAdd"><%= (typeof errors != 'undefined' && errors.submit)?errors.submit.msg: "" %> </small>
 					</form>
 					
 				</div>
