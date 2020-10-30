@@ -1,6 +1,6 @@
-const qs = function qs(element) {
-  return document.querySelector(element);
-};
+// const qs = function qs(element) {
+//   return document.querySelector(element);
+// };
 
 window.addEventListener('load', function () {
   console.log('test JS vinculado');
