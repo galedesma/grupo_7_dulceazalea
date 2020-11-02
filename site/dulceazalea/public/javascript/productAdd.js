@@ -84,7 +84,7 @@ window.addEventListener('load', function(){
       }
     }
         if (!error) {
-      formLogin.submit();
+      formulario.submit();
         } else {
       errorSumbitAdd.innerHTML = 'Los campos señadados son obligatorios';
         }
