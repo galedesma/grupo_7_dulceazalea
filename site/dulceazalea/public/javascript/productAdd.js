@@ -1,21 +1,19 @@
-const qs = function qs(element) {
-    return document.querySelector(element);
-};
+// const qs = function qs(element) {
+//     return document.querySelector(element);
+// };
 
-window.addEventListener('load', function(){
-    console.log('Vinculación exitosa')
+window.addEventListener('load', function () {
+  console.log('Vinculación exitosa');
 
-    let formulario = qs('form #create');
+  let formulario = qs('form #create');
 
-    let elements = formulario.elements;
+  let elements = formulario.elements;
 
-    let campoImage = qs('input #img');
+  let campoImage = qs('input #img');
 
-    let campoNombre = qs('input #nameProduct');
+  let campoNombre = qs('input #nameProduct');
 
-    let campoDescripcion = qs('input #description');
+  let campoDescripcion = qs('input #description');
 
-    let campoPrecio = qs('input #price');
-
-
-})
+  let campoPrecio = qs('input #price');
+});
