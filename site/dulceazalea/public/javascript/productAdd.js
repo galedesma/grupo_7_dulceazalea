@@ -34,13 +34,28 @@ window.addEventListener('load', function(){
     })
 
     campoImage.addEventListener('blur', function(){
-        if (!file.originalname.match(/\.(jpg|jpeg|png|gif)$/)){
+
+        function hasExtension(inputID, exts) {
+            var fileName = document.getElementById(inputID).value;
+            return (new RegExp('(' + exts.join('|').replace(/\./g, '\\.') + ')$')).test(fileName);
+        }
+
+        if (!hasExtension('img', ['.jpg', '.jpeg', '.png'])) {
+            errorImage.innerHTML= 'El formato de la imágen es incorrecto.\nPor favor, verifique que el formato sea jpg, jpeg o png'
+            this.classList.add('is-invalid');
+            this.value = ""
+        } else {
+            this.classList.add('is-valid')
+            errorImage.innerHTML= '';
+        }
+
+        /* if (!file.originalname.match(/\.(jpg|jpeg|png|gif)$/)){
             errorImage.innerHTML= 'El formato de la imágen es incorrecto.\nPor favor, verifique que el formato sea jpg, jpeg o png'
             this.classList.add('is-invalid');
         } else {
             this.classList.add('is-valid')
             errorImage.innerHTML= '';
-        }
+        } */
     })
 
     campoDescripcion.addEventListener('blur', function(){
@@ -85,7 +100,9 @@ window.addEventListener('load', function(){
     }
         if (!error) {
       formulario.submit();
+      // console.log('test submit');
         } else {
+      // console.log('test span');
       errorSumbitAdd.innerHTML = 'Los campos señadados son obligatorios';
         }
     });
