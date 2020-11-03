@@ -16,6 +16,25 @@ window.addEventListener('load', function(){
     
     let campoPrice = qs('#price')
 
+    let campoImagen = qs('input#image')
+
+    campoImagen.addEventListener('blur', function(){
+
+        function hasExtension(inputID, exts) {
+            var fileName = document.getElementById(inputID).value;
+            return (new RegExp('(' + exts.join('|').replace(/\./g, '\\.') + ')$')).test(fileName);
+        }
+
+        if (!hasExtension('image', ['.jpg', '.jpeg', '.png'])) {
+            errorImage.innerHTML= 'El formato de la imágen es incorrecto.\nPor favor, verifique que el formato sea jpg, jpeg o png'
+            this.classList.add('is-invalid');
+            this.value = ""
+        } else {
+            this.classList.add('is-valid')
+            errorImage.innerHTML= '';
+        }
+    })
+
     campoName.addEventListener('blur', function(){
         switch(true){
             case this.value == 0:
@@ -79,7 +98,7 @@ window.addEventListener('load', function(){
       }
     }
         if (!error) {
-      formLogin.submit();
+      formulario.submit();
       // console.log('test submit');
         } else {
       // console.log('test span');
