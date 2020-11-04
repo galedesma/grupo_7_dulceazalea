@@ -132,7 +132,8 @@ module.exports = {
   eliminar: function (req, res) {
     db.Products.destroy({
       where: { id_products: req.params.id },
+    }).then(() => {
+      res.redirect('/products');
     });
-    res.redirect('/products');
   },
 };
