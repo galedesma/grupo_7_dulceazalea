@@ -31,52 +31,23 @@ module.exports = {
     //   }
     // });
     console.log(req.query.search);
-    db.Products.findOne({
+    db.Products.findAll({
       where: {
         name: req.query.search,
       },
-    })
-      // .then((element) => {
-      //   productos.push({
-      //     id_products: element.id_products,
-      //     name: element.name,
-      //     description: element.description,
-      //     price: element.price,
-      //     id_categories: element.id_categories,
-      //     image: element.image,
-      //   });
-      // });
-      // //  dbProduct.forEach((producto) => {
-      // //   if (producto.category.toLowerCase().includes(busqueda)) {
-      // //     productos.push(producto);
-      // //   }
-      // if (productos.length == 0) {
-      //   titulo = 'Producto no encontrado';
-      // } else {
-      //   titulo = 'Resultado de la búsqueda';
-      // }
-      // res.render('products', {
-      //   title: titulo,
-      //   products: productos,
-      //   usuario: req.session.usuario,
-      // });
-      .then((product) => {
-        producto = {
-          id_products: product.id_products,
-          name: product.name,
-          description: product.description,
-          price: product.price,
-          id_categories: product.id_categories,
-          image: product.image,
-        };
+    }).then((product) => {
+      // producto.push(product);
+      console.log(product);
+      res.render('products', {
+        title: 'Resultado de la búsqueda',
+        products: product,
+        usuario: req.session.usuario,
       });
-    console.log(producto);
+    });
+    // console.log(producto + 'xd');
     // .then(function (result) {
-    res.render('productsSearch', {
-      title: 'Resultado de la búsqueda',
-      products: producto,
-      usuario: req.session.usuario,
-    }); /* ,
+    //
+    /* ,
     res.send(result) */
     //   );
     // })
