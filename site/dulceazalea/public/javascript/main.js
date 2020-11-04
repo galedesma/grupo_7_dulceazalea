@@ -85,6 +85,10 @@ window.addEventListener('load', function () {
     for (let userVista of user_hw) {
       userVista.style.backgroundColor = '#B05502';
     }
+    let textos = document.querySelectorAll('.h2_titulo');
+    for (let h2 of textos) {
+      h2.style.color = '#ffffff';
+    }
     // console.log(document.getElementsByClassName('products__cart'));
     // console.log(document.getElementsByClassName('products__cart__venta'));
     // let carrito = document.getElementsByClassName('products__cart');
