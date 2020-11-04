@@ -6,7 +6,8 @@ const qs = function qs(element) {
 
 window.addEventListener('load', function () {
   console.log('vinculacion JS');
-
+  let dropdown_header = qs('.opciones_dropdown_li');
+  let dropdown_header_user = qs('.user_dropdown_li');
   let halloween = qs('#halloween');
   let btnModeHalloween = 'ModeHalloween';
   let cont = 0;
@@ -16,6 +17,19 @@ window.addEventListener('load', function () {
     cont = 1;
     console.log(cont);
   }
+  dropdown_header.addEventListener('mouseover', function () {
+    console.log('pasaste el mouse');
+    dropdown_header.classList.add('show');
+    document.querySelector('.opciones_dropdown_div').classList.add('show');
+  });
+  dropdown_header_user.addEventListener('mouseover', function () {
+    console.log('pasaste el mouse');
+    dropdown_header_user.classList.add('show');
+    let user_dropdown = document.querySelectorAll('.user_dropdown_div');
+    for (user_dd of user_dropdown) {
+      user_dd.classList.add('show');
+    }
+  });
   halloween.addEventListener('click', function () {
     console.log('test');
     cont++;
