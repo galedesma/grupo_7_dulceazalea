@@ -22,12 +22,25 @@ window.addEventListener('load', function () {
     dropdown_header.classList.add('show');
     document.querySelector('.opciones_dropdown_div').classList.add('show');
   });
+  dropdown_header.addEventListener('mouseout', function () {
+    console.log('sacaste el mouse');
+    dropdown_header.classList.remove('show');
+    document.querySelector('.opciones_dropdown_div').classList.remove('show');
+  });
   dropdown_header_user.addEventListener('mouseover', function () {
     console.log('pasaste el mouse');
     dropdown_header_user.classList.add('show');
     let user_dropdown = document.querySelectorAll('.user_dropdown_div');
     for (user_dd of user_dropdown) {
       user_dd.classList.add('show');
+    }
+  });
+  dropdown_header_user.addEventListener('mouseout', function () {
+    console.log('pasaste el mouse');
+    dropdown_header_user.classList.remove('show');
+    let user_dropdown = document.querySelectorAll('.user_dropdown_div');
+    for (user_dd of user_dropdown) {
+      user_dd.classList.remove('show');
     }
   });
   halloween.addEventListener('click', function () {
