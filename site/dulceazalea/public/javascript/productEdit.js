@@ -1,6 +1,6 @@
-// const qs = function qs(element) {
-//     return document.querySelector(element);
-//     };
+/* const qs = function qs(element) {
+     return document.querySelector(element);
+     }; */
 
 window.addEventListener('load', function () {
   console.log('validacion vinculada');
@@ -80,7 +80,7 @@ window.addEventListener('load', function () {
       }
     }
     if (!error) {
-      formLogin.submit();
+      formulario.submit();
       // console.log('test submit');
     } else {
       // console.log('test span');
