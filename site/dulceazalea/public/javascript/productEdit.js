@@ -26,7 +26,7 @@ window.addEventListener('load', function(){
         }
 
         if (!hasExtension('image', ['.jpg', '.jpeg', '.png'])) {
-            errorImage.innerHTML= 'El formato de la imágen es incorrecto.\nPor favor, verifique que el formato sea jpg, jpeg o png'
+            errorImage.innerHTML= 'El formato de la imágen es incorrecto. Por favor, verifique que el formato sea jpg, jpeg o png'
             this.classList.add('is-invalid');
             this.value = ""
         } else {
