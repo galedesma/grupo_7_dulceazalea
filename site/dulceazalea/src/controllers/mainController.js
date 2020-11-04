@@ -1,4 +1,5 @@
 const dbProduct = require('../data/database');
+const db = require('../database/models');
 
 module.exports = {
   index: (req, res) => {
@@ -21,29 +22,37 @@ module.exports = {
     });
   },
   search: function (req, res) {
-    let busqueda = req.query.search;
-    let productos = [];
-    let titulo;
-    dbProduct.forEach((producto) => {
-      if (producto.name.toLowerCase().includes(busqueda)) {
-        productos.push(producto);
-      }
+    // let busqueda = req.query.search;
+    // let titulo;
+    let producto;
+    // dbProduct.forEach((producto) => {
+    //   if (producto.name.toLowerCase().includes(busqueda)) {
+    //     productos.push(producto);
+    //   }
+    // });
+    console.log(req.query.search);
+    db.Products.findAll({
+      where: {
+        name: req.query.search,
+      },
+    }).then((product) => {
+      // producto.push(product);
+      console.log(product);
+      res.render('products', {
+        title: 'Resultado de la búsqueda',
+        products: product,
+        usuario: req.session.usuario,
+      });
     });
-    /* dbProduct.forEach((producto) => {
-      if (producto.category.toLowerCase().includes(busqueda)) {
-        productos.push(producto);
-      }
-    }) */ if (
-      productos.length == 0
-    ) {
-      titulo = 'Producto no encontrado';
-    } else {
-      titulo = 'Resultado de la búsqueda';
-    }
-    res.render('products', {
-      title: titulo,
-      productos: productos,
-      usuario: req.session.usuario,
-    });
+    // console.log(producto + 'xd');
+    // .then(function (result) {
+    //
+    /* ,
+    res.send(result) */
+    //   );
+    // })
+    // .catch((errors) => {
+    //   console.log(errors);
+    // });
   },
 };

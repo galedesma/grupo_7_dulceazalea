@@ -87,6 +87,14 @@ header .headerUserImagen {
   height: 40px;
   border-radius: 25px;
 }
+header .halloween {
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 10px;
+  border: none;
+  background: transparent;
+}
+
 /* BANNER */
 .banner {
   display: none;

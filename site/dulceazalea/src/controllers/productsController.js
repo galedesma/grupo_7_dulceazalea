@@ -125,8 +125,9 @@ module.exports = {
       {
         where: { id_products: req.params.id },
       }
-    );
-    res.redirect('/products/' + req.params.id);
+    ).then(() => {
+      res.redirect('/products/' + req.params.id);
+    });
   },
   eliminar: function (req, res) {
     db.Products.destroy({
