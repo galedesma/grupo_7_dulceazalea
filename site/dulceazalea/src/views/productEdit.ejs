@@ -27,7 +27,8 @@
 					<form action="/products/edit/<%= producto.id_products %>?_method=PUT" method="POST" enctype="multipart/form-data" id="edit">
 						<ul>
 							<li>
-								<input type="file" id="image" name="image" accept="image/*" />
+								<input type="file" id="image" name="image" accept="image/*" value="/img/products/<%= producto.image %>" />
+								<small class="text-danger" id="errorImage"><%= (typeof errors != 'undefined' && errors.image)?errors.image.msg: "" %> </small>
 							</li>
 							<li>
 								<p>Nombre del producto:</p>
