@@ -1,5 +1,6 @@
 const dbProduct = require('../data/database');
 const db = require('../database/models');
+let sequelize = require('sequelize');
 
 module.exports = {
   index: (req, res) => {
@@ -55,10 +56,15 @@ module.exports = {
     //     productos.push(producto);
     //   }
     // });
+    let lookupValue = req.query.search.toLowerCase();
     console.log(req.query.search);
     db.Products.findAll({
       where: {
-        name: req.query.search,
+        name: sequelize.where(
+          sequelize.fn('LOWER', sequelize.col('name')),
+          'LIKE',
+          '%' + lookupValue + '%'
+        ),
       },
     })
       .then((product) => {
