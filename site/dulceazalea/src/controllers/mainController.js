@@ -3,23 +3,48 @@ const db = require('../database/models');
 
 module.exports = {
   index: (req, res) => {
-    let principal = dbProduct.filter((producto) => {
-      return producto.categoryHome == 'principal';
+    // let principal = dbProduct.filter((producto) => {
+    //   return producto.categoryHome == 'principal';
+    // });
+    let principal = [];
+    // let ofertas = dbProduct.filter((producto) => {
+    //   return producto.categoryHome == 'ofertas';
+    // });
+    let ofertas = [];
+    // let masVendidos = dbProduct.filter((producto) => {
+    //   return producto.categoryHome == 'masVendidos';
+    // });
+    let masVendidos = [];
+    let otrosPrducts = [];
+    db.Products.findAll().then((result) => {
+      // if ((result.id_categories = 2)) {
+      //   principal.push(result);
+      // } else if ((result.id_categories = 3)) {
+      //   masVendidos.push(result);
+      // } else if ((result.id_categories = 4)) {
+      //   ofertas.push(result);
+      // } else {
+      //   otrosPrducts.push(result);
+      // }
+      res.render('home', {
+        title: 'Dulce Azalea',
+        usuario: req.session.usuario,
+        // principal: principal,
+        // ofertas: ofertas,
+        // masVendidos: masVendidos,
+        products: result,
+      });
     });
-    let ofertas = dbProduct.filter((producto) => {
-      return producto.categoryHome == 'ofertas';
-    });
-    let masVendidos = dbProduct.filter((producto) => {
-      return producto.categoryHome == 'masVendidos';
-    });
-
-    res.render('home', {
-      title: 'Dulce Azalea',
-      usuario: req.session.usuario,
-      principal: principal,
-      ofertas: ofertas,
-      masVendidos: masVendidos,
-    });
+    // .then(() => {
+    //   res.render('home', {
+    //     title: 'Dulce Azalea',
+    //     usuario: req.session.usuario,
+    //     principal: principal,
+    //     ofertas: ofertas,
+    //     masVendidos: masVendidos,
+    //     // products: db.Products,
+    //   });
+    // });
   },
   search: function (req, res) {
     // let busqueda = req.query.search;
@@ -35,24 +60,27 @@ module.exports = {
       where: {
         name: req.query.search,
       },
-    }).then((product) => {
-      // producto.push(product);
-      console.log(product);
-      res.render('products', {
-        title: 'Resultado de la búsqueda',
-        products: product,
-        usuario: req.session.usuario,
-      });
-    });
-    // console.log(producto + 'xd');
-    // .then(function (result) {
-    //
-    /* ,
+    })
+      .then((product) => {
+        // producto.push(product);
+        console.log(product + 'ejemplo');
+        if (product != null || product != 'undefined') {
+          res.render('products', {
+            title: 'Resultado de la búsqueda',
+            products: product,
+            usuario: req.session.usuario,
+          });
+        }
+      })
+      // console.log(producto + 'xd');
+      // .then(function (result) {
+      //
+      /* ,
     res.send(result) */
-    //   );
-    // })
-    // .catch((errors) => {
-    //   console.log(errors);
-    // });
+      //   );
+      // })
+      .catch((errors) => {
+        console.log(errors);
+      });
   },
 };
