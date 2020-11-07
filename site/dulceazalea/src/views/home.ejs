@@ -14,7 +14,7 @@
       <div id="carousel" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <a href="/search?search=halloween"
+            <a href="/ "
               ><img
                 class="d-block w-100"
                 src="../img/21538.jpg"
@@ -47,9 +47,9 @@
             <h2>principales</h2>
           </div>
 
-          <% principal.forEach(producto => { %>
+          <% products.forEach(producto => { if (producto.id_categories ==2) { %>
           <div class="col-12 col-md-6 col-lg-3">
-            <a href="/products/<%= producto.id %> ">
+            <a href="/products/<%= producto.id_products %> ">
               <div class="productos">
                 <figure>
                   <img
@@ -67,7 +67,7 @@
               </div>
             </a>
           </div>
-          <% }) %>
+          <%} }) %>
         </div>
       </section>
       <!-- cat2 -->
@@ -77,9 +77,9 @@
             <h2>Ofertas</h2>
           </div>
 
-          <% ofertas.forEach(producto => { %>
+          <% products.forEach(producto => { if (producto.id_categories ==3) { %>
           <div class="col-12 col-md-6 col-lg-3">
-            <a href="/products/<%= producto.id %> ">
+            <a href="/products/<%= producto.id_products %> ">
               <div class="productos">
                 <figure>
                   <img
@@ -97,7 +97,7 @@
               </div>
             </a>
           </div>
-          <% }) %>
+          <%} }) %>
         </div>
       </section>
       <!-- cat3 -->
@@ -107,9 +107,9 @@
             <h2>Mas Vendidos</h2>
           </div>
 
-          <% masVendidos.forEach(producto => { %>
+          <% products.forEach(producto => { if (producto.id_categories ==4) { %>
           <div class="col-12 col-md-6 col-lg-3">
-            <a href="/products/<%= producto.id %> ">
+            <a href="/products/<%= producto.id_products %> ">
               <div class="productos">
                 <figure>
                   <img
@@ -127,7 +127,7 @@
               </div>
             </a>
           </div>
-          <% }) %>
+          <%} }) %>
         </div>
       </section>
     </div>

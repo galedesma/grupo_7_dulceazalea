@@ -124,9 +124,9 @@ window.addEventListener('load', function () {
     // );
     // carrito.style.backgroundColor = '#B05502';
     // carritoSubmit.style.backgroundColor = '#B05502';
-    // let spans = document.querySelectorAll('span');
-    // for (let span of spans) {
-    //   span.style.backgroundColor = '#ffffff';
+    // let isInvalid = document.querySelectorAll('.is-invalid');
+    // for (let span of isInvalid) {
+    //   span.style.color = '#ffffff';
     // }
   } else {
     console.log('MODO AZALEA ON');
