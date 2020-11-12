@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
   <%- include('partials/head') %>
+  <script src="/javascript/productCart.js"></script>
 
   <body>
     <%- include('partials/header') %>
@@ -12,7 +13,7 @@
         <div class="row">
           <div class="products__cart col-12 col-md-8">
             <form class="">
-              <div class="Articulo">
+              <!-- <div class="Articulo">
                 <div class="col-4 imagen">
                   <img src="/img/products/img-prod1.jpg" alt="" />
                 </div>
@@ -34,7 +35,7 @@
                     ></a>
                   </div>
                 </div>
-              </div>
+              </div> -->
             </form>
           </div>
 
@@ -45,19 +46,19 @@
             <form class="">
               <!-- PAGO -->
               <div class="pagar">
-                <div class="subtotal">
-                  <h5>Subtotal</h5>
+                <!-- <div class="subtotal">
+                  <h5 class="cartSubtotal">Subtotal</h5>
                   <span>$590</span>
                 </div>
                 <div class="costo-envio">
                   <h5>Costo de envío</h5>
                   <span>$350</span>
-                </div>
+                </div> -->
                 <div class="total">
                   <h5>TOTAL</h5>
-                  <span>$940</span>
+                  <span class="cartTotal">$0</span>
                 </div>
-                <button type="submit" id="boton">PAGAR</button>
+                <button type="submit" id="boton" class="buttonPay">PAGAR</button>
               </div>
             </form>
           </div>

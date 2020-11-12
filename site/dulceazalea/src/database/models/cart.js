@@ -2,7 +2,7 @@
 const { sequelize } = require('.'); */
 
 module.exports = (sequelize, DataTypes) => {
-  let alias = 'cart';
+  let alias = 'Cart';
   let rols = {
     id_cart: {
       type: DataTypes.INTEGER.UNSIGNED,
@@ -24,7 +24,21 @@ module.exports = (sequelize, DataTypes) => {
     underscored: true,
   };
 
-  const cart = sequelize.define(alias, rols, config);
+  const Cart = sequelize.define(alias, rols, config);
 
-  return cart;
+  Cart.associate = function(models){
+    Cart.belongsTo(models.User, {
+      as: 'id_user',
+      foreignKey: 'users_id_user'
+    })
+  }
+
+  Cart.associate = function(models){
+    Cart.belongsTo(models.Products, {
+      as: 'id_products',
+      foreignKey: 'product_id'
+    })
+  }
+
+  return Cart;
 };
