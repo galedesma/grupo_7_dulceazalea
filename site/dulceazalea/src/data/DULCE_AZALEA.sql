@@ -97,6 +97,7 @@ CREATE TABLE IF NOT EXISTS `DULCE_AZALEA`.`Cart` (
   `id_cart` INT NOT NULL AUTO_INCREMENT,
   `users_id_user` INT NOT NULL,
   `product_id` INT NOT NULL,
+  `quantity` INT NOT NULL DEFAULT 1,
   PRIMARY KEY (`id_cart`),
   INDEX `fk_favorite_products_Users1_idx` (`users_id_user` ASC),
   INDEX `fk_products_id_idx` (`product_id` ASC),

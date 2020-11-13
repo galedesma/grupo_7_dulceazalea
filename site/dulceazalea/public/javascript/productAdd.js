@@ -11,6 +11,8 @@ window.addEventListener('load', function () {
 
   let campoImage = qs('input#img');
 
+  /* let campoVistaPrevia = qs('img#vistaPreviaEdit') */
+
   let campoNombre = qs('input#nameProduct');
 
   let campoDescripcion = qs('#description');
@@ -33,12 +35,21 @@ window.addEventListener('load', function () {
     }
   });
 
-  campoImage.addEventListener('blur', function () {
+  campoImage.addEventListener('change', function () {
     function hasExtension(inputID, exts) {
       var fileName = document.getElementById(inputID).value;
       return new RegExp('(' + exts.join('|').replace(/\./g, '\\.') + ')$').test(
         fileName
       );
+    }
+
+    function loadFile(event) {
+      var reader = new FileReader();
+      reader.onload = function(){
+        var output = document.getElementById('vistaPreviaEdit');
+        output.src = reader.result;
+      };
+      reader.readAsDataURL(event.target.files[0]);
     }
 
     if (!hasExtension('img', ['.jpg', '.jpeg', '.png'])) {
@@ -49,6 +60,8 @@ window.addEventListener('load', function () {
     } else {
       this.classList.add('is-valid');
       errorImage.innerHTML = '';
+      
+      loadFile(event)
     }
   });
   campoImagen.addEventListener('change', function (e) {

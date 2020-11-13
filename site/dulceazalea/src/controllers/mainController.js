@@ -89,4 +89,10 @@ module.exports = {
         console.log(errors);
       });
   },
+  cart: function(req,res){
+    res.render('productCart',{
+      title: 'Carrito',
+      usuario: req.session.usuario
+    })
+  }
 };

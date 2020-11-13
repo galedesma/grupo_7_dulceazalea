@@ -7,9 +7,7 @@ const controller = require('../controllers/mainController');
 /* GET home page. */
 router.get('/', cookieCheck, controller.index);
 router.get('/search', controller.search);
-router.get('/carrito', cookieCheck, function (req, res) {
-  res.render('productCart', { title: 'Carrito', usuario: req.session.usuario });
-});
+router.get('/carrito', cookieCheck, controller.cart);
 router.get('/error', function (req, res) {
   res.render('placeholder', {
     title: 'Ocurrió un error',
